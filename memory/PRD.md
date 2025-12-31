@@ -342,3 +342,18 @@ New section flow:
 - More direct path to conversion
 - Streamlined footer navigation
 
+
+---
+
+## Updates - December 31, 2025 (Removed Integration Image)
+
+### Image Removed
+- **Integration Section Dashboard Image** - Removed the second dashboard image that appeared below the integration cards
+- Section now displays only the integration partner cards (GitHub, GitLab, Jira, AWS EventBridge, npm, PyPI, Maven, Docker)
+- Cleaner, more focused integration section
+- Better visual flow from integrations directly to pricing section
+
+### Current Image Usage
+- **Hero Section**: Custom ASPM dashboard screenshot (primary showcase)
+- **Integrations Section**: Icon-based integration cards only (no additional images)
+
