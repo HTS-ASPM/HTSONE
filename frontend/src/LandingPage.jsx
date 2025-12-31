@@ -229,8 +229,8 @@ const LandingPage = () => {
 
           <div className="integration-image-container">
             <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" 
-              alt="DevOps Integration"
+              src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
+              alt="SecureASPM Dashboard - Remediation Overview"
               className="integration-img"
             />
           </div>
