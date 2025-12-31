@@ -129,8 +129,8 @@ const LandingPage = () => {
           </div>
           <div className="hero-image">
             <img 
-              src="https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86" 
-              alt="Security Dashboard"
+              src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
+              alt="SecureASPM Dashboard - Security Posture Management"
               className="hero-img"
             />
           </div>
