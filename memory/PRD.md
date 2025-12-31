@@ -238,3 +238,69 @@ Landing page is frontend-only and doesn't require backend functionality for disp
   - Application risk distribution
 
 This creates immediate visual credibility and helps prospects understand the platform's value at first glance.
+
+---
+
+## Updates - December 31, 2025 (Company Branding & Legal Pages)
+
+### Company Branding Update
+- **Company Name**: Changed from "SecureASPM" to "Horizontal Thinkers Private Limited"
+- Updated all branding references across:
+  - Header logo and navigation
+  - Footer branding section
+  - CTA sections
+  - Copyright notices
+
+### Legal Pages Created
+Created comprehensive legal documentation:
+
+1. **Privacy Policy** (`/privacy`)
+   - 14 comprehensive sections covering:
+     - Information collection (Personal, Technical, Security Scan Data)
+     - Data usage and sharing policies
+     - Security measures and data retention
+     - User rights (Access, Rectification, Deletion, Portability)
+     - Cookies and tracking technologies
+     - International data transfers
+     - GDPR and CCPA compliance
+     - Contact information
+
+2. **Terms of Use** (`/terms`)
+   - 16 detailed sections covering:
+     - Service description and acceptance
+     - Account registration and security
+     - Acceptable use policy
+     - Intellectual property rights
+     - Subscription and payment terms
+     - Data processing and privacy
+     - Service level agreements
+     - Termination policies
+     - Disclaimers and liability limitations
+     - Governing law (Indian jurisdiction)
+     - Dispute resolution via arbitration
+
+### Footer Updates
+- Legal section now shows only:
+  - Privacy Policy (links to `/privacy`)
+  - Terms of Use (links to `/terms`)
+- Removed: Security and Compliance links as requested
+- Added company legal name display
+
+### Technical Implementation
+- Created `PrivacyPolicy.jsx` component with full legal content
+- Created `TermsOfUse.jsx` component with comprehensive terms
+- Added routing for `/privacy` and `/terms` paths
+- Implemented "Back to Home" navigation
+- Added legal page styling with glassmorphism design
+- Maintained consistent branding and design language
+
+### Professional Legal Content
+Both documents include:
+- Proper legal structure and formatting
+- Industry-standard clauses for SaaS platforms
+- ASPM-specific terms (scan data, vulnerability findings)
+- Indian legal jurisdiction references
+- Placeholder contact information for customization
+- Last updated date (December 31, 2025)
+- Professional styling with cyan accent headings
+
