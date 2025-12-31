@@ -54,7 +54,7 @@ const LandingPage = () => {
           <div className="header-content">
             <div className="logo-section">
               <Shield className="logo-icon" />
-              <span className="logo-text">SecureASPM</span>
+              <span className="logo-text">Horizontal Thinkers</span>
             </div>
             
             <nav className="desktop-nav">
@@ -345,7 +345,7 @@ const LandingPage = () => {
           <div className="cta-content">
             <h2 className="cta-title">Ready to Secure Your Applications?</h2>
             <p className="cta-description">
-              Join hundreds of teams who trust SecureASPM for comprehensive application security
+              Join hundreds of teams who trust Horizontal Thinkers for comprehensive application security
             </p>
             <form onSubmit={handleDemoRequest} className="cta-form">
               <input 
@@ -372,10 +372,13 @@ const LandingPage = () => {
             <div className="footer-brand">
               <div className="footer-logo">
                 <Shield size={24} />
-                <span>SecureASPM</span>
+                <span>Horizontal Thinkers</span>
               </div>
               <p className="footer-tagline">
                 Unified Application Security Posture Management for modern DevOps teams
+              </p>
+              <p className="company-legal-name">
+                Horizontal Thinkers Private Limited
               </p>
             </div>
 
@@ -402,17 +405,15 @@ const LandingPage = () => {
             <div className="footer-links-section">
               <h4 className="footer-heading">Legal</h4>
               <ul className="footer-links">
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#terms">Terms of Service</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
               </ul>
             </div>
           </div>
 
           <div className="footer-bottom">
             <p className="footer-copyright">
-              © 2025 SecureASPM. All rights reserved.
+              © 2025 Horizontal Thinkers Private Limited. All rights reserved.
             </p>
             <div className="footer-social">
               <a href="#twitter" className="social-link">Twitter</a>
