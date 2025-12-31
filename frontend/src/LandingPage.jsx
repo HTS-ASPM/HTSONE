@@ -225,14 +225,6 @@ const LandingPage = () => {
               );
             })}
           </div>
-
-          <div className="integration-image-container">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
-              alt="SecureASPM Dashboard - Remediation Overview"
-              className="integration-img"
-            />
-          </div>
         </div>
       </section>
 
