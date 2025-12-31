@@ -19,7 +19,6 @@ import {
   ArrowRight,
   Menu,
   X,
-  Star,
   Zap,
   Lock,
   TrendingUp
@@ -28,7 +27,7 @@ import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion';
 import { Badge } from './components/ui/badge';
-import { features, scanners, integrations, testimonials, faqs, stats, pricingTiers } from './mock';
+import { features, scanners, integrations, faqs, stats, pricingTiers } from './mock';
 
 const iconMap = {
   Shield, Wrench, Eye, Brain, GitBranch, Building, CheckCircle, Target, Package,
@@ -237,40 +236,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <div className="section-container">
-          <div className="section-header">
-            <Badge className="section-badge">Testimonials</Badge>
-            <h2 className="section-title">Trusted by Security Teams Worldwide</h2>
-          </div>
-
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="testimonial-card">
-                <CardContent className="testimonial-content">
-                  <div className="stars">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="star-icon" fill="currentColor" />
-                    ))}
-                  </div>
-                  <p className="testimonial-text">"{testimonial.content}"</p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div>
-                      <div className="author-name">{testimonial.name}</div>
-                      <div className="author-role">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section id="pricing" className="pricing-section">
         <div className="section-container">
@@ -389,16 +354,6 @@ const LandingPage = () => {
                 <li><a href="#integrations">Integrations</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-links-section">
-              <h4 className="footer-heading">Company</h4>
-              <ul className="footer-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#careers">Careers</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
 
