@@ -304,3 +304,41 @@ Both documents include:
 - Last updated date (December 31, 2025)
 - Professional styling with cyan accent headings
 
+
+---
+
+## Updates - December 31, 2025 (Removed Testimonials & Company Section)
+
+### Sections Removed
+1. **Testimonials Section** - Completely removed from landing page
+   - Removed testimonial cards
+   - Removed star ratings
+   - Removed customer avatars and quotes
+   - Cleaned up unused imports (Star icon, testimonials data)
+
+2. **Company Section in Footer** - Removed from footer navigation
+   - Removed links: About Us, Careers, Blog, Contact
+   - Footer now has only:
+     - Brand/Logo section
+     - Product links
+     - Legal links (Privacy Policy, Terms of Use)
+     - Copyright and social links
+
+### Page Flow Updated
+New section flow:
+1. Hero
+2. Features (6 key features)
+3. Scanners (10+ security scanners)
+4. Integrations (DevOps tools)
+5. Pricing (3 tiers)
+6. FAQ (6 questions)
+7. CTA (email capture)
+8. Footer (streamlined)
+
+### Benefits
+- Cleaner, more focused page
+- Faster load time
+- Reduced content complexity
+- More direct path to conversion
+- Streamlined footer navigation
+
