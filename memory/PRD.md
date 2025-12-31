@@ -210,3 +210,31 @@ Landing page is frontend-only and doesn't require backend functionality for disp
 - Shadcn UI components used for accordion, buttons, cards
 - No backend required for current scope
 - Ready for production deployment as static site
+
+---
+
+## Updates - December 31, 2025 (Post-Initial Implementation)
+
+### Custom Dashboard Integration
+- **Updated hero section image** to use custom ASPM dashboard screenshot
+- **Updated integrations section image** to showcase actual product interface
+- Image URL: `https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg`
+- Benefits:
+  - Authentic product representation
+  - Shows actual Security Posture Score (57/100)
+  - Displays real remediation metrics (MTTR, Critical Issues, KonHeal Success)
+  - Demonstrates exposure management with visual charts
+  - Provides concrete proof of platform capabilities
+
+### Visual Impact
+- Dashboard showcases key ASPM features:
+  - Critical Risks tracking (24 items)
+  - Open Issues monitoring (0 issues)
+  - Exposure Events tracking (0 events)
+  - Scan Coverage metrics (24 scans, 95% target)
+  - Security Remediation Overview with bar charts
+  - Remediation Efficiency donut charts (12 Fixed)
+  - Top Priority Actions panel
+  - Application risk distribution
+
+This creates immediate visual credibility and helps prospects understand the platform's value at first glance.
