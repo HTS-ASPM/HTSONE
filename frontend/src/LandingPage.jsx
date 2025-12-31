@@ -111,30 +111,42 @@ const LandingPage = () => {
                 Watch Video
               </Button>
             </div>
-            <div className="hero-stats">
-              {stats.map((stat, index) => {
-                const Icon = iconMap[stat.icon];
-                return (
-                  <div key={index} className="stat-item">
-                    <Icon size={20} className="stat-icon" />
-                    <div>
-                      <div className="stat-value">{stat.value}</div>
-                      <div className="stat-label">{stat.label}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            {/* Stats moved to dedicated section below */}
           </div>
           <div className="hero-image">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
-              alt="SecureASPM Dashboard - Security Posture Management"
-              className="hero-img"
-            />
+            <div className="image-glow-wrapper">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
+                alt="SecureASPM Dashboard - Security Posture Management"
+                className="hero-img"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Stats Section - By the Numbers */}
+      <section className="stats-section">
+        <div className="section-container">
+          <div className="stats-grid-large">
+            {stats.map((stat, index) => {
+              const Icon = iconMap[stat.icon];
+              return (
+                <div key={index} className="stat-card-large">
+                  <Icon size={40} className="stat-card-icon" />
+                  <div className="stat-card-value">{stat.value}</div>
+                  <div className="stat-card-label">{stat.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+      </div>
 
       {/* Features Section */}
       <section id="features" className="features-section">
@@ -178,6 +190,11 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Visual Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+      </div>
+
       {/* Scanners Section */}
       <section className="scanners-section">
         <div className="section-container">
@@ -189,10 +206,10 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="scanners-grid">
+          <div className="scanners-grid-improved">
             {scanners.map((scanner, index) => (
-              <div key={index} className="scanner-card">
-                <Lock size={20} className="scanner-icon" />
+              <div key={index} className="scanner-card-improved">
+                <Lock size={24} className="scanner-icon" />
                 <div>
                   <div className="scanner-name">{scanner.name}</div>
                   <div className="scanner-description">{scanner.description}</div>
@@ -202,6 +219,11 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Visual Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+      </div>
 
       {/* Integrations Section */}
       <section id="integrations" className="integrations-section">
@@ -214,19 +236,43 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="integrations-grid">
+          <div className="integrations-grid-improved">
             {integrations.map((integration, index) => {
               const Icon = iconMap[integration.logo];
               return (
-                <div key={index} className="integration-card">
-                  <Icon size={32} className="integration-icon" />
+                <div key={index} className="integration-card-improved">
+                  <Icon size={36} className="integration-icon" />
                   <span className="integration-name">{integration.name}</span>
                 </div>
               );
             })}
           </div>
+
+          {/* Social Proof - Trust Indicators */}
+          <div className="trust-section">
+            <p className="trust-text">Trusted by security teams at fast-growing companies</p>
+            <div className="trust-badges">
+              <div className="trust-badge">
+                <Shield size={20} />
+                <span>SOC 2 Compliant</span>
+              </div>
+              <div className="trust-badge">
+                <CheckCircle size={20} />
+                <span>GDPR Ready</span>
+              </div>
+              <div className="trust-badge">
+                <Lock size={20} />
+                <span>ISO 27001</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Visual Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+      </div>
 
       {/* Pricing Section */}
       <section id="pricing" className="pricing-section">
@@ -253,6 +299,15 @@ const LandingPage = () => {
                   <CardDescription className="pricing-description">
                     {tier.description}
                   </CardDescription>
+                  <div className="pricing-price">
+                    {tier.name === 'Enterprise' ? (
+                      <span className="price-custom">Custom Pricing</span>
+                    ) : tier.name === 'Professional' ? (
+                      <span className="price-contact">Contact Sales</span>
+                    ) : (
+                      <span className="price-contact">Contact Sales</span>
+                    )}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="pricing-features">
@@ -264,7 +319,7 @@ const LandingPage = () => {
                     ))}
                   </ul>
                   <Button className="pricing-btn" variant={tier.popular ? "default" : "outline"}>
-                    Get Started
+                    {tier.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
                   </Button>
                 </CardContent>
               </Card>
@@ -272,6 +327,11 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Visual Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+      </div>
 
       {/* FAQ Section */}
       <section id="faq" className="faq-section">
@@ -313,7 +373,7 @@ const LandingPage = () => {
                 required
                 className="cta-input"
               />
-              <Button type="submit" size="lg" className="cta-btn">
+              <Button type="submit" size="lg" className="cta-btn-primary">
                 Request Demo
                 <ArrowRight size={18} />
               </Button>
