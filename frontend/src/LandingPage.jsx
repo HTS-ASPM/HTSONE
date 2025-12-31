@@ -65,7 +65,6 @@ const LandingPage = () => {
 
             <div className="header-actions">
               <Button variant="outline" className="sign-in-btn">Sign In</Button>
-              <Button className="demo-btn">Request Demo</Button>
               <button 
                 className="mobile-menu-btn"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -374,7 +373,7 @@ const LandingPage = () => {
                 className="cta-input"
               />
               <Button type="submit" size="lg" className="cta-btn-primary">
-                Request Demo
+                Get Started
                 <ArrowRight size={18} />
               </Button>
             </form>
