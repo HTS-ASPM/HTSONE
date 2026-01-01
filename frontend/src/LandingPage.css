@@ -64,6 +64,12 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
+.logo-svg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .logo-icon {
   color: var(--accent-purple);
   width: 28px;
@@ -1097,6 +1103,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.footer-logo-svg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .footer-product-name {
