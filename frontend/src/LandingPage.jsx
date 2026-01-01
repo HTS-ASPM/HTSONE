@@ -199,7 +199,7 @@ const LandingPage = () => {
         <div className="section-container">
           <div className="section-header">
             <Badge className="section-badge">10+ Security Scanners</Badge>
-            <h2 className="section-title">Unified Visibility Across All Security Tools</h2>
+            <h2 className="section-title">Unified Visibility Across All Security Tools + SBOM</h2>
             <p className="section-description">
               Cross-scanner correlation and smart deduplication eliminate redundant findings
             </p>
