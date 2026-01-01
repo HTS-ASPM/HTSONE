@@ -394,7 +394,7 @@ const LandingPage = () => {
             <div className="footer-brand">
               <div className="footer-logo">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/r8sald9o_Gemini_Generated_Image_wg2xvpwg2xvpwg2x.png" 
+                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
                   alt="HTSOne Logo" 
                   className="footer-logo-svg"
                 />

@@ -1116,11 +1116,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo-svg {
-  height: 60px;
-  width: 320px;
+  height: 50px;
+  width: auto;
   object-fit: contain;
-  mix-blend-mode: screen;
-  filter: invert(1) grayscale(1) brightness(2.2) sepia(1) hue-rotate(230deg) saturate(5);
 }
 
 .footer-product-name {
