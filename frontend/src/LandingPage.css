@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   background: none;
   border: none;
-  color: var(--text-primary);
+  color: #374151;
   cursor: pointer;
   padding: 0.5rem;
   transition: color 0.2s ease;
