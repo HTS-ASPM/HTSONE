@@ -33,21 +33,25 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      {/* Header */}
-      <header className="login-header">
-        <div className="login-header-container">
-          <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-            <img 
-              src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/jkdrhfkn_Picture%202.png" 
-              alt="HTSOne Logo" 
-              className="logo-svg"
-            />
-            <span className="logo-text">HTSOne</span>
+      {/* Header - Same as Landing Page */}
+      <header className="header">
+        <div className="header-container">
+          <div className="header-content">
+            <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
+                alt="HTSOne Logo" 
+                className="logo-svg"
+              />
+            </div>
+            
+            <div className="header-actions">
+              <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/')}>
+                <ArrowLeft size={16} />
+                Back to Home
+              </Button>
+            </div>
           </div>
-          <Button variant="ghost" onClick={() => navigate('/')} className="back-to-home">
-            <ArrowLeft size={18} />
-            Back to Home
-          </Button>
         </div>
       </header>
 
