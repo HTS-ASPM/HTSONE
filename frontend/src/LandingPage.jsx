@@ -92,7 +92,7 @@ const LandingPage = () => {
           <div className="hero-content">
             <Badge className="hero-badge">
               <Zap size={14} />
-              <span>10+ Security Scanners Unified</span>
+              <span>11 Security Scanners Unified</span>
             </Badge>
             <h1 className="hero-title">
               Unified Application Security Posture Management
@@ -198,7 +198,7 @@ const LandingPage = () => {
       <section className="scanners-section">
         <div className="section-container">
           <div className="section-header">
-            <Badge className="section-badge">10+ Security Scanners</Badge>
+            <Badge className="section-badge">11 Security Scanners</Badge>
             <h2 className="section-title">Unified Visibility Across All Security Tools + SBOM</h2>
             <p className="section-description">
               Cross-scanner correlation and smart deduplication eliminate redundant findings

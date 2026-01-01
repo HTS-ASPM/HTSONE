@@ -4,7 +4,7 @@ export const features = [
   {
     id: 1,
     title: "Unified Security Scanning",
-    description: "10+ integrated security scanners in one platform - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, and CBOM scanning",
+    description: "11 integrated security scanners in one platform - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM scanning",
     icon: "Shield",
     highlights: [
       "Cross-Scanner Correlation",
@@ -79,6 +79,7 @@ export const scanners = [
   { name: "Mobile", description: "APK/AAB/IPA Analysis" },
   { name: "PII", description: "Personal Data Detection" },
   { name: "API", description: "API Security Testing" },
+  { name: "SBOM", description: "Software Bill of Materials" },
   { name: "CBOM", description: "Crypto Bill of Materials" }
 ];
 
