@@ -65,9 +65,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 65px;
+  height: 85px;
   width: auto;
-  max-width: 280px;
+  max-width: 350px;
   object-fit: contain;
   padding: 4px 6px;
   mix-blend-mode: lighten;
@@ -1120,9 +1120,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo-svg {
-  height: 55px;
+  height: 70px;
   width: auto;
-  max-width: 240px;
+  max-width: 300px;
   object-fit: contain;
   padding: 4px 6px;
   mix-blend-mode: lighten;
