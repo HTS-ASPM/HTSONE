@@ -13,7 +13,11 @@ const TermsOfUse = () => {
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-              <Shield className="logo-icon" />
+              <img 
+                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/zjkbnpn8_HTSONe.svg" 
+                alt="HTSOne Logo" 
+                className="logo-svg"
+              />
               <span className="logo-text">HTSOne</span>
             </div>
             <Button variant="ghost" onClick={() => navigate('/')} className="back-btn">
