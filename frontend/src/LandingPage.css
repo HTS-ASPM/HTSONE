@@ -68,14 +68,15 @@ h1, h2, h3, h4, h5, h6 {
   height: 44px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  border-radius: 8px;
+  background: white;
+  padding: 4px 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-svg:hover {
-  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
-  opacity: 1;
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
 .logo-svg:hover {
@@ -1121,8 +1122,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 36px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
+  border-radius: 6px;
+  background: white;
+  padding: 3px 6px;
 }
 
 .footer-product-name {
