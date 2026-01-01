@@ -86,12 +86,9 @@ export const scanners = [
 export const integrations = [
   { name: "GitHub", logo: "Github", color: "#181717" },
   { name: "GitLab", logo: "GitBranch", color: "#FC6D26" },
+  { name: "Azure Repos", logo: "Cloud", color: "#0078D4" },
   { name: "Jira", logo: "Workflow", color: "#0052CC" },
-  { name: "AWS EventBridge", logo: "Cloud", color: "#FF9900" },
-  { name: "npm", logo: "Package", color: "#CB3837" },
-  { name: "PyPI", logo: "Code", color: "#3776AB" },
-  { name: "Maven", logo: "Box", color: "#C71A36" },
-  { name: "Docker", logo: "Container", color: "#2496ED" }
+  { name: "AWS EventBridge", logo: "Cloud", color: "#FF9900" }
 ];
 
 export const testimonials = [
