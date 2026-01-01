@@ -65,22 +65,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 45px;
-  width: 200px;
+  height: 55px;
+  width: 220px;
   object-fit: contain;
   mix-blend-mode: screen;
-  filter: invert(1) grayscale(1) brightness(2) sepia(1) hue-rotate(230deg) saturate(5);
-  border-radius: 4px;
+  filter: invert(1) grayscale(1) brightness(2.2) sepia(1) hue-rotate(230deg) saturate(5);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo-svg:hover {
   transform: scale(1.04);
-  filter: invert(1) grayscale(1) brightness(2.2) sepia(1) hue-rotate(230deg) saturate(6) drop-shadow(0 0 20px rgba(139, 92, 246, 1));
-}
-
-.logo-svg:hover {
-  filter: brightness(1.4) saturate(1.5) hue-rotate(260deg) drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
+  filter: invert(1) grayscale(1) brightness(2.5) sepia(1) hue-rotate(230deg) saturate(6) drop-shadow(0 0 20px rgba(139, 92, 246, 1));
 }
 
 .logo-icon {
