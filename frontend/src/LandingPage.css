@@ -65,13 +65,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 110px;
-  width: auto;
-  max-width: 420px;
+  height: 32px;
+  width: 165px;
   object-fit: contain;
   mix-blend-mode: screen;
   filter: invert(1) grayscale(1) brightness(2) sepia(1) hue-rotate(230deg) saturate(5);
-  border-radius: 8px;
+  border-radius: 4px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -1120,9 +1119,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo-svg {
-  height: 95px;
-  width: auto;
-  max-width: 380px;
+  height: 50px;
+  width: 300px;
   object-fit: contain;
   mix-blend-mode: screen;
   filter: invert(1) grayscale(1) brightness(2) sepia(1) hue-rotate(230deg) saturate(5);
