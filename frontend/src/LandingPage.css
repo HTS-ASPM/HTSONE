@@ -65,8 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 32px;
-  width: 165px;
+  height: 45px;
+  width: 200px;
   object-fit: contain;
   mix-blend-mode: screen;
   filter: invert(1) grayscale(1) brightness(2) sepia(1) hue-rotate(230deg) saturate(5);
