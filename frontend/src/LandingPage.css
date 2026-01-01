@@ -1261,6 +1261,7 @@ html {
 
 .login-content {
   min-height: calc(100vh - 72px);
+  margin-top: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
