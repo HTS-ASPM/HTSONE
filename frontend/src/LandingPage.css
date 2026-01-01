@@ -1542,6 +1542,7 @@ html {
 
 .legal-content {
   padding: 4rem 1.5rem;
+  margin-top: 72px;
   min-height: calc(100vh - 200px);
 }
 
