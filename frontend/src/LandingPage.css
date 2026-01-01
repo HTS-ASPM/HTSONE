@@ -68,10 +68,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 60px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   background: #ffffff;
+  margin: -10px 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
