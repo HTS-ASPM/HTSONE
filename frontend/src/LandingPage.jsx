@@ -102,8 +102,7 @@ const LandingPage = () => {
               Unified Application Security Posture Management
             </h1>
             <p className="hero-description">
-              One intelligent platform to scan, detect, and automatically fix vulnerabilities across your entire codebase. 
-              SAST, SCA, DAST, Container, IaC, Secrets, and Mobile security - all in one place.
+              Scan, detect, and automatically fix vulnerabilities across your entire codebase with 11 integrated security scanners in one intelligent platform.
             </p>
             <div className="hero-actions">
               <Button size="lg" className="hero-primary-btn">
