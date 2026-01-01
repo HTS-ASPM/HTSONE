@@ -363,7 +363,7 @@ const LandingPage = () => {
       {/* Pricing Section */}
       <section id="pricing" className="pricing-section">
         <div className="section-container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <Badge className="section-badge">Pricing</Badge>
             <h2 className="section-title">Choose Your Plan</h2>
             <p className="section-description">
@@ -373,7 +373,7 @@ const LandingPage = () => {
 
           <div className="pricing-grid">
             {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`pricing-card ${tier.popular ? 'popular' : ''}`}>
+              <Card key={index} className={`pricing-card ${tier.popular ? 'popular' : ''} animate-on-scroll delay-${index + 1}`}>
                 {tier.popular && (
                   <div className="popular-badge">
                     <TrendingUp size={14} />
@@ -422,12 +422,12 @@ const LandingPage = () => {
       {/* FAQ Section */}
       <section id="faq" className="faq-section">
         <div className="section-container-narrow">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <Badge className="section-badge">FAQ</Badge>
             <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
 
-          <Accordion type="single" collapsible className="faq-accordion">
+          <Accordion type="single" collapsible className="faq-accordion animate-on-scroll">
             {faqs.map((faq) => (
               <AccordionItem key={faq.id} value={`item-${faq.id}`}>
                 <AccordionTrigger className="faq-question">
