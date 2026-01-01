@@ -70,13 +70,14 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 240px;
   object-fit: contain;
   padding: 6px 10px;
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(230deg) brightness(108%) contrast(119%);
+  mix-blend-mode: lighten;
+  filter: hue-rotate(250deg) saturate(1.5) brightness(1.2);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo-svg:hover {
   transform: scale(1.03);
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(230deg) brightness(118%) contrast(119%) drop-shadow(0 0 15px rgba(139, 92, 246, 0.9));
+  filter: hue-rotate(250deg) saturate(1.8) brightness(1.4) drop-shadow(0 0 15px rgba(139, 92, 246, 0.9));
 }
 
 .logo-svg:hover {
@@ -1124,7 +1125,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 210px;
   object-fit: contain;
   padding: 5px 8px;
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(230deg) brightness(108%) contrast(119%);
+  mix-blend-mode: lighten;
+  filter: hue-rotate(250deg) saturate(1.5) brightness(1.2);
 }
 
 .footer-product-name {
