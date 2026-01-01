@@ -53,7 +53,7 @@ const LandingPage = () => {
       <header className="header">
         <div className="header-container">
           <div className="header-content">
-            <div className="logo-section">
+            <div className="logo-section" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
               <img 
                 src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
                 alt="HTSOne Logo" 
