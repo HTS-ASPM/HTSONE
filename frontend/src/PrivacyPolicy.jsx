@@ -33,9 +33,9 @@ const PrivacyPolicy = () => {
           <section className="legal-section">
             <h2>1. Introduction</h2>
             <p>
-              Horizontal Thinkers Private Limited ("we," "our," or "us") is committed to protecting your privacy. 
+              Horizontal Thinkers Cyber Security Private Limited ("we," "our," or "us") is committed to protecting your privacy. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
-              visit our website or use our Application Security Posture Management (ASPM) platform.
+              visit our website or use our Application Security Posture Management (ASPM) platform, HTSOne™.
             </p>
           </section>
 
@@ -201,7 +201,8 @@ const PrivacyPolicy = () => {
             <h2>13. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us:</p>
             <ul className="contact-info">
-              <li><strong>Company:</strong> Horizontal Thinkers Private Limited</li>
+              <li><strong>Company:</strong> Horizontal Thinkers Cyber Security Private Limited</li>
+              <li><strong>Product:</strong> HTSOne™</li>
               <li><strong>Email:</strong> privacy@horizontalthinkers.com</li>
               <li><strong>Address:</strong> [Your Company Address]</li>
               <li><strong>Phone:</strong> [Your Contact Number]</li>
@@ -222,7 +223,7 @@ const PrivacyPolicy = () => {
       {/* Footer */}
       <footer className="legal-footer">
         <div className="footer-container">
-          <p>© 2025 Horizontal Thinkers Private Limited. All rights reserved.</p>
+          <p>© 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.</p>
         </div>
       </footer>
     </div>

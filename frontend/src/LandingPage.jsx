@@ -394,7 +394,7 @@ const LandingPage = () => {
                 Unified Application Security Posture Management for modern DevOps teams
               </p>
               <p className="company-legal-name">
-                Horizontal Thinkers Private Limited
+                A product by Horizontal Thinkers Cyber Security Private Limited
               </p>
             </div>
 
@@ -419,7 +419,7 @@ const LandingPage = () => {
 
           <div className="footer-bottom">
             <p className="footer-copyright">
-              © 2025 Horizontal Thinkers Private Limited. All rights reserved.
+              © 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.
             </p>
             <div className="footer-social">
               <a href="#twitter" className="social-link">Twitter</a>

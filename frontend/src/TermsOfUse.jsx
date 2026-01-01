@@ -33,9 +33,9 @@ const TermsOfUse = () => {
           <section className="legal-section">
             <h2>1. Acceptance of Terms</h2>
             <p>
-              Welcome to Horizontal Thinkers Private Limited ("Company," "we," "our," or "us"). These Terms of Use 
+              Welcome to Horizontal Thinkers Cyber Security Private Limited ("Company," "we," "our," or "us"). These Terms of Use 
               ("Terms") govern your access to and use of our Application Security Posture Management (ASPM) platform, 
-              website, and related services (collectively, the "Services").
+              HTSOne™, website, and related services (collectively, the "Services").
             </p>
             <p>
               By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these 
@@ -46,7 +46,7 @@ const TermsOfUse = () => {
           <section className="legal-section">
             <h2>2. Description of Services</h2>
             <p>
-              Horizontal Thinkers provides a comprehensive ASPM platform that includes:
+              Horizontal Thinkers Cyber Security Private Limited provides a comprehensive ASPM platform under the trademark HTSOne™ that includes:
             </p>
             <ul>
               <li>Unified security scanning across multiple vulnerability detection tools</li>
@@ -107,8 +107,8 @@ const TermsOfUse = () => {
             <h3>5.1 Our Intellectual Property</h3>
             <p>
               The Services, including all content, features, functionality, software, and technology, are owned by 
-              Horizontal Thinkers Private Limited and are protected by copyright, trademark, patent, and other 
-              intellectual property laws.
+              Horizontal Thinkers Cyber Security Private Limited and are protected by copyright, trademark, patent, and other 
+              intellectual property laws. HTSOne™ is a registered trademark of Horizontal Thinkers Cyber Security Private Limited.
             </p>
 
             <h3>5.2 Your Content</h3>
@@ -229,7 +229,7 @@ const TermsOfUse = () => {
 
             <h3>11.2 Limitation of Liability</h3>
             <p>
-              TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL HORIZONTAL THINKERS PRIVATE LIMITED BE LIABLE 
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL HORIZONTAL THINKERS CYBER SECURITY PRIVATE LIMITED BE LIABLE 
               FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO 
               LOSS OF PROFITS, DATA, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES.
             </p>
@@ -242,7 +242,7 @@ const TermsOfUse = () => {
           <section className="legal-section">
             <h2>12. Indemnification</h2>
             <p>
-              You agree to indemnify, defend, and hold harmless Horizontal Thinkers Private Limited and its officers, 
+              You agree to indemnify, defend, and hold harmless Horizontal Thinkers Cyber Security Private Limited and its officers, 
               directors, employees, and agents from any claims, liabilities, damages, losses, and expenses, including 
               reasonable attorneys' fees, arising out of or related to:
             </p>
@@ -290,7 +290,7 @@ const TermsOfUse = () => {
             <h3>15.1 Entire Agreement</h3>
             <p>
               These Terms, together with our Privacy Policy, constitute the entire agreement between you and 
-              Horizontal Thinkers Private Limited regarding the Services.
+              Horizontal Thinkers Cyber Security Private Limited regarding the Services.
             </p>
 
             <h3>15.2 Severability</h3>
@@ -316,7 +316,8 @@ const TermsOfUse = () => {
             <h2>16. Contact Information</h2>
             <p>If you have any questions about these Terms of Use, please contact us:</p>
             <ul className="contact-info">
-              <li><strong>Company:</strong> Horizontal Thinkers Private Limited</li>
+              <li><strong>Company:</strong> Horizontal Thinkers Cyber Security Private Limited</li>
+              <li><strong>Product:</strong> HTSOne™</li>
               <li><strong>Email:</strong> legal@horizontalthinkers.com</li>
               <li><strong>Address:</strong> [Your Company Address]</li>
               <li><strong>Phone:</strong> [Your Contact Number]</li>
@@ -328,7 +329,7 @@ const TermsOfUse = () => {
       {/* Footer */}
       <footer className="legal-footer">
         <div className="footer-container">
-          <p>© 2025 Horizontal Thinkers Private Limited. All rights reserved.</p>
+          <p>© 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.</p>
         </div>
       </footer>
     </div>
