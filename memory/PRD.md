@@ -1290,3 +1290,65 @@ background: linear-gradient(135deg, purple, cyan);
 - Typography: Rajdhani + Space Grotesk + Inter
 - Company: Horizontal Thinkers Cyber Security Private Limited
 
+
+---
+
+## Updates - January 1, 2026 (Logo Removed - Text-Only Branding)
+
+### Logo Removal
+
+**Previous:** Custom HTSOne.svg logo image  
+**Updated:** Text-only "HTSOne" wordmark
+
+### Changes Made
+
+**Removed Logo From:**
+- Header (landing page, privacy, terms)
+- Footer (landing page)
+- All navigation bars
+
+**Retained:**
+- "HTSOne" text wordmark in Rajdhani font
+- Purple-cyan gradient styling
+- All branding typography
+
+### Current Branding
+
+**Text-Only Identity:**
+- Product name: HTSOne
+- Font: Rajdhani (700 weight)
+- Color: Purple-cyan gradient
+- Size: 1.5rem (header), 1.25rem (footer)
+- Letter spacing: 0.5px
+
+**Benefits of Text-Only:**
+- Cleaner, more minimal appearance
+- Faster page load (no image assets)
+- Focus on typography and color
+- Modern, wordmark-focused branding
+- Simpler brand implementation
+
+### Visual Identity
+
+**Complete Brand Package:**
+- ✅ Product name: HTSOne™
+- ✅ Wordmark: Rajdhani font with gradient
+- ✅ Color theme: Cyber Purple
+- ✅ Typography: Rajdhani + Space Grotesk + Inter
+- ✅ Company: Horizontal Thinkers Cyber Security Private Limited
+- ❌ Logo icon: Removed (text-only approach)
+
+**Style:**
+- Minimal, modern
+- Typography-focused
+- Clean and professional
+- Gradient provides visual interest
+- No distracting icon elements
+
+### Files Updated
+- `/app/frontend/src/LandingPage.jsx` - Header and footer
+- `/app/frontend/src/PrivacyPolicy.jsx` - Header
+- `/app/frontend/src/TermsOfUse.jsx` - Header
+
+**Result:** Clean, text-only branding with distinctive Rajdhani typography and purple-cyan gradient.
+
