@@ -643,14 +643,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-card-large:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px);
   border-color: var(--accent-purple);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
 }
 
 .stat-card-icon {
   color: var(--accent-purple);
   opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.stat-card-large:hover .stat-card-icon {
+  transform: scale(1.2) rotate(5deg);
 }
 
 .stat-card-value {
