@@ -53,7 +53,7 @@ const LandingPage = () => {
           <div className="header-content">
             <div className="logo-section">
               <Shield className="logo-icon" />
-              <span className="logo-text">Horizontal Thinkers</span>
+              <span className="logo-text">insigHTS One</span>
             </div>
             
             <nav className="desktop-nav">
@@ -361,7 +361,7 @@ const LandingPage = () => {
           <div className="cta-content">
             <h2 className="cta-title">Ready to Secure Your Applications?</h2>
             <p className="cta-description">
-              Join hundreds of teams who trust Horizontal Thinkers for comprehensive application security
+              Join hundreds of teams who trust insigHTS One for comprehensive application security
             </p>
             <form onSubmit={handleDemoRequest} className="cta-form">
               <input 
@@ -388,7 +388,7 @@ const LandingPage = () => {
             <div className="footer-brand">
               <div className="footer-logo">
                 <Shield size={24} />
-                <span>Horizontal Thinkers</span>
+                <span className="footer-product-name">insigHTS One</span>
               </div>
               <p className="footer-tagline">
                 Unified Application Security Posture Management for modern DevOps teams

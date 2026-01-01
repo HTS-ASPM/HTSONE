@@ -71,9 +71,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-text {
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.5px;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1096,6 +1097,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.footer-product-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-tagline {
