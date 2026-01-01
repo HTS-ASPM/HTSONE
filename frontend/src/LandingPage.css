@@ -143,8 +143,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .sign-in-btn {
   display: none;
-  border-color: var(--border-color);
-  color: var(--text-secondary);
+  border-color: #d1d5db;
+  color: #374151;
 }
 
 @media (min-width: 640px) {
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 .sign-in-btn:hover {
   border-color: var(--accent-purple);
   color: var(--accent-purple);
-  background: var(--hover-glow);
+  background: rgba(139, 92, 246, 0.1);
 }
 
 .demo-btn {
