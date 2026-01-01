@@ -216,9 +216,11 @@ const LandingPage = () => {
             {stats.map((stat, index) => {
               const Icon = iconMap[stat.icon];
               return (
-                <div key={index} className="stat-card-large">
+                <div key={index} className={`stat-card-large animate-on-scroll delay-${index + 1}`}>
                   <Icon size={40} className="stat-card-icon" />
-                  <div className="stat-card-value">{stat.value}</div>
+                  <div className="stat-card-value">
+                    <AnimatedCounter value={stat.value} suffix={stat.value.includes('+') ? '+' : stat.value.includes('%') ? '%' : ''} />
+                  </div>
                   <div className="stat-card-label">{stat.label}</div>
                 </div>
               );
@@ -235,7 +237,7 @@ const LandingPage = () => {
       {/* Features Section */}
       <section id="features" className="features-section">
         <div className="section-container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <Badge className="section-badge">Features</Badge>
             <h2 className="section-title">Everything You Need for Complete Security</h2>
             <p className="section-description">
@@ -244,10 +246,10 @@ const LandingPage = () => {
           </div>
 
           <div className="features-grid">
-            {features.map((feature) => {
+            {features.map((feature, index) => {
               const Icon = iconMap[feature.icon];
               return (
-                <Card key={feature.id} className="feature-card">
+                <Card key={feature.id} className={`feature-card animate-on-scroll delay-${(index % 4) + 1}`}>
                   <CardHeader>
                     <div className="feature-icon">
                       <Icon size={24} />
