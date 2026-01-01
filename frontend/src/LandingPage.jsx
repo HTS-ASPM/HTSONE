@@ -52,11 +52,6 @@ const LandingPage = () => {
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/zjkbnpn8_HTSONe.svg" 
-                alt="HTSOne Logo" 
-                className="logo-svg"
-              />
               <span className="logo-text">HTSOne</span>
             </div>
             
@@ -391,11 +386,6 @@ const LandingPage = () => {
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/zjkbnpn8_HTSONe.svg" 
-                  alt="HTSOne Logo" 
-                  className="footer-logo-svg"
-                />
                 <span className="footer-product-name">HTSOne</span>
               </div>
               <p className="footer-tagline">
