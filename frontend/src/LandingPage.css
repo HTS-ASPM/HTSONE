@@ -69,14 +69,13 @@ h1, h2, h3, h4, h5, h6 {
   height: 55px;
   width: 220px;
   object-fit: contain;
-  mix-blend-mode: screen;
-  filter: invert(1) grayscale(1) brightness(2.2) sepia(1) hue-rotate(230deg) saturate(5);
+  filter: hue-rotate(230deg) saturate(1.5) brightness(0.9);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo-svg:hover {
   transform: scale(1.04);
-  filter: invert(1) grayscale(1) brightness(2.5) sepia(1) hue-rotate(230deg) saturate(6) drop-shadow(0 0 20px rgba(139, 92, 246, 1));
+  filter: hue-rotate(230deg) saturate(2) brightness(0.85) drop-shadow(0 0 15px rgba(139, 92, 246, 0.6));
 }
 
 .logo-icon {
