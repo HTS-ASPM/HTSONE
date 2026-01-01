@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,22 +8,24 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="legal-page">
-      {/* Header */}
+      {/* Header - Same as Landing Page */}
       <header className="header">
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
               <img 
-                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/jkdrhfkn_Picture%202.png" 
+                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
                 alt="HTSOne Logo" 
                 className="logo-svg"
               />
-              <span className="logo-text">HTSOne</span>
             </div>
-            <Button variant="ghost" onClick={() => navigate('/')} className="back-btn">
-              <ArrowLeft size={18} />
-              Back to Home
-            </Button>
+            
+            <div className="header-actions">
+              <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/')}>
+                <ArrowLeft size={16} />
+                Back to Home
+              </Button>
+            </div>
           </div>
         </div>
       </header>
