@@ -284,7 +284,7 @@ const LandingPage = () => {
       {/* Scanners Section */}
       <section className="scanners-section">
         <div className="section-container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <Badge className="section-badge">11 Security Scanners</Badge>
             <h2 className="section-title">Unified Visibility Across All Security Tools + SBOM</h2>
             <p className="section-description">
@@ -294,7 +294,7 @@ const LandingPage = () => {
 
           <div className="scanners-grid-improved">
             {scanners.map((scanner, index) => (
-              <div key={index} className="scanner-card-improved">
+              <div key={index} className={`scanner-card-improved animate-on-scroll delay-${(index % 5) + 1}`}>
                 <Lock size={24} className="scanner-icon" />
                 <div>
                   <div className="scanner-name">{scanner.name}</div>
@@ -314,7 +314,7 @@ const LandingPage = () => {
       {/* Integrations Section */}
       <section id="integrations" className="integrations-section">
         <div className="section-container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <Badge className="section-badge">Integrations</Badge>
             <h2 className="section-title">Seamless DevOps Integration</h2>
             <p className="section-description">
@@ -326,7 +326,7 @@ const LandingPage = () => {
             {integrations.map((integration, index) => {
               const Icon = iconMap[integration.logo];
               return (
-                <div key={index} className="integration-card-improved">
+                <div key={index} className={`integration-card-improved animate-on-scroll delay-${(index % 4) + 1}`}>
                   <Icon size={36} className="integration-icon" />
                   <span className="integration-name">{integration.name}</span>
                 </div>
@@ -335,7 +335,7 @@ const LandingPage = () => {
           </div>
 
           {/* Social Proof - Trust Indicators */}
-          <div className="trust-section">
+          <div className="trust-section animate-on-scroll">
             <p className="trust-text">Trusted by security teams at fast-growing companies</p>
             <div className="trust-badges">
               <div className="trust-badge">
