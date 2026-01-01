@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Shield, 
   Wrench, 
@@ -35,6 +36,7 @@ const iconMap = {
 };
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [demoEmail, setDemoEmail] = useState('');
 
@@ -68,7 +70,9 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
-              <Button variant="outline" className="sign-in-btn">Sign In</Button>
+              <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/login')}>
+                Sign In
+              </Button>
               <button 
                 className="mobile-menu-btn"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
