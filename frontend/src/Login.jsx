@@ -61,7 +61,6 @@ const Login = () => {
           {/* Left Side - Branding */}
           <div className="login-branding">
             <div className="branding-content">
-              <Shield size={64} className="branding-icon" />
               <h1 className="branding-title">Welcome to HTSOne</h1>
               <p className="branding-description">
                 Unified Application Security Posture Management platform trusted by enterprise security teams worldwide.
