@@ -391,6 +391,24 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8rem 1.5rem 3rem;
   background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.08), transparent 50%);
   position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(139, 92, 246, 0.05) 0%, 
+    rgba(6, 182, 212, 0.05) 50%, 
+    rgba(139, 92, 246, 0.05) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  pointer-events: none;
 }
 
 .hero-container {
@@ -400,6 +418,8 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
@@ -428,6 +448,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
 }
 
 .hero-title {
@@ -439,6 +462,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
