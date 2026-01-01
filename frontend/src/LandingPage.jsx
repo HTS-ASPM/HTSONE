@@ -55,7 +55,7 @@ const LandingPage = () => {
           <div className="header-content">
             <div className="logo-section" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
               <img 
-                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
+                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
                 alt="HTSOne Logo" 
                 className="logo-svg"
               />
@@ -394,7 +394,7 @@ const LandingPage = () => {
             <div className="footer-brand">
               <div className="footer-logo">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
+                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
                   alt="HTSOne Logo" 
                   className="footer-logo-svg"
                 />
