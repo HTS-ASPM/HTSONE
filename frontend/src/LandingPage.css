@@ -68,10 +68,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 72px;
+  height: 56px;
   width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

@@ -55,7 +55,7 @@ const LandingPage = () => {
           <div className="header-content">
             <div className="logo-section">
               <img 
-                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/1d7gq2qu_Gemini_Generated_Image_6ej54g6ej54g6ej5.png" 
+                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/zclrxzet_Screenshot%202026-01-01%20at%2011.44.39%E2%80%AFPM.png" 
                 alt="HTSOne Logo" 
                 className="logo-svg"
               />
