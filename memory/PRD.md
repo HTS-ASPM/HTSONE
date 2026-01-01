@@ -964,3 +964,90 @@ background: linear-gradient(135deg, purple, cyan);
 ### Result
 **HTSOne** - Clean, professional, enterprise-ready product name for Horizontal Thinkers' ASPM platform.
 
+
+---
+
+## Updates - January 1, 2026 (Final Company Name & Trademark)
+
+### Company Legal Name Update
+
+**Previous:** Horizontal Thinkers Private Limited  
+**Updated:** **Horizontal Thinkers Cyber Security Private Limited**
+
+### Trademark Clarification
+
+**Product Name:** HTSOne™  
+**Status:** Registered Trademark
+
+### Brand Hierarchy
+
+**Company (Legal Entity):**
+- Horizontal Thinkers Cyber Security Private Limited
+- Full legal entity name for contracts, legal documents, privacy, and terms
+
+**Product (Trademark):**
+- HTSOne™
+- Registered trademark for ASPM platform
+- Used for branding, marketing, and customer-facing materials
+
+**Tagline:**
+- "Unified Application Security Posture Management for modern DevOps teams"
+
+### Updates Made Across Site
+
+**Landing Page:**
+- Footer: "A product by Horizontal Thinkers Cyber Security Private Limited"
+- Copyright: "© 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark."
+
+**Privacy Policy:**
+- Introduction: Updated company name with HTSOne™ reference
+- Contact section: Added both company name and product trademark
+- Footer: Full copyright with trademark notice
+
+**Terms of Use:**
+- Section 1: Updated company name and HTSOne™ trademark
+- Section 2: Clarified HTSOne™ as the product name
+- Section 5: Added trademark protection clause
+- Section 11-12: Updated company name in legal disclaimers
+- Section 16: Contact information with product trademark
+- Footer: Full copyright with trademark notice
+
+### Legal & Brand Positioning
+
+**Clear Separation:**
+1. **Company**: Horizontal Thinkers Cyber Security Private Limited (legal entity)
+2. **Product**: HTSOne™ (customer-facing brand, registered trademark)
+
+**Benefits:**
+- Professional legal structure
+- Clear trademark protection
+- Brand consistency across all materials
+- Proper separation of company and product identity
+
+**Trademark Symbol Usage:**
+- HTSOne™ in legal documents (Privacy, Terms)
+- HTSOne in marketing materials (landing page, headers)
+- Consistent branding throughout
+
+### Files Updated
+- `/app/frontend/src/LandingPage.jsx` - Footer and copyright
+- `/app/frontend/src/PrivacyPolicy.jsx` - 4 sections updated
+- `/app/frontend/src/TermsOfUse.jsx` - 7 sections updated
+
+### Complete Brand Identity
+
+**Company:** Horizontal Thinkers Cyber Security Private Limited  
+**Product:** HTSOne™  
+**Visual Identity:**
+- Logo: Purple shield + HTSOne wordmark (Rajdhani font)
+- Color Palette: Cyber Purple theme
+- Typography: Rajdhani (product) + Space Grotesk (headings) + Inter (body)
+
+**Legal Protection:**
+- Company name properly established
+- Trademark clearly indicated (™)
+- Copyright notices comprehensive
+- Privacy and Terms legally sound
+
+**Result:** Professional, legally compliant brand identity with clear company-product separation.
+
