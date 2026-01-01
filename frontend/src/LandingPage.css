@@ -65,10 +65,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-svg {
-  height: 40px;
+  height: 44px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.1) saturate(1.2) hue-rotate(240deg);
+  filter: invert(1) brightness(1.5) hue-rotate(200deg) saturate(2);
   transition: filter 0.3s ease;
 }
 
@@ -1112,10 +1112,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo-svg {
-  height: 32px;
+  height: 36px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.1) saturate(1.2) hue-rotate(240deg);
+  filter: invert(1) brightness(1.5) hue-rotate(200deg) saturate(2);
 }
 
 .footer-product-name {
