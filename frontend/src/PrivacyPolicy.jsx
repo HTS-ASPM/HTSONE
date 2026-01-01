@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
           <div className="header-content">
             <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
               <Shield className="logo-icon" />
-              <span className="logo-text">insigHTS One</span>
+              <span className="logo-text">HTSOne</span>
             </div>
             <Button variant="ghost" onClick={() => navigate('/')} className="back-btn">
               <ArrowLeft size={18} />
