@@ -1051,3 +1051,65 @@ background: linear-gradient(135deg, purple, cyan);
 
 **Result:** Professional, legally compliant brand identity with clear company-product separation.
 
+
+---
+
+## Updates - January 1, 2026 (SBOM Emphasis Added)
+
+### Scanners Section Title Update
+
+**Previous Title:** "Unified Visibility Across All Security Tools"
+**Updated Title:** "Unified Visibility Across All Security Tools + SBOM"
+
+### Why This Change?
+
+**SBOM Importance:**
+- Software Bill of Materials (SBOM) is a critical compliance requirement
+- Executive Order 14028 mandates SBOM for government software
+- Enterprise customers increasingly require SBOM generation
+- Supply chain security is a top priority in 2025-2026
+
+**Highlighting SBOM:**
+- Separates SBOM as a distinct, important capability
+- Emphasizes beyond standard scanning (SAST, SCA, DAST)
+- Shows commitment to supply chain security
+- Differentiates from competitors who only scan
+
+**Marketing Impact:**
+- SBOM is a key decision factor for enterprise buyers
+- Emphasizing it in the title increases perceived value
+- Shows compliance-ready platform
+- Positions HTSOne as comprehensive security solution
+
+### SBOM Already Featured
+
+**In Scanners Grid:**
+- CBOM (Crypto Bill of Materials) - already listed as 10th scanner
+
+**In Enterprise Features:**
+- "SBOM Generation" - listed as enterprise capability
+- Full description in feature card
+
+**Now Also in Title:**
+- Prominent placement in section heading
+- Clear visibility for quick scanning
+- SEO benefit for "ASPM + SBOM" searches
+
+### Section Content (Unchanged)
+- 10+ Security Scanners badge
+- Description about correlation and deduplication
+- Grid of 10 scanner types including CBOM
+- Enterprise features card with SBOM generation
+
+### SEO & Discoverability
+**Keywords Enhanced:**
+- "SBOM security platform"
+- "ASPM with SBOM"
+- "Unified security SBOM"
+
+**Target Audience:**
+- CISOs requiring compliance
+- Enterprise procurement teams
+- Government contractors
+- Supply chain security leaders
+
