@@ -13,6 +13,11 @@ const PrivacyPolicy = () => {
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/2f0n0rqf_Picture%201.jpg" 
+                alt="HTSOne Logo" 
+                className="logo-svg"
+              />
               <span className="logo-text">HTSOne</span>
             </div>
             <Button variant="ghost" onClick={() => navigate('/')} className="back-btn">
