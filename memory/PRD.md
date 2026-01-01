@@ -772,3 +772,119 @@ New section flow:
 ### Result
 **ASPM-Optimized Cyber Purple Theme** - Perfect for enterprise security platform with AI capabilities. Distinctive, premium, and perfectly positioned for the ASPM market.
 
+
+---
+
+## Updates - January 1, 2026 (Product Name Rebranding)
+
+### Product Name Change
+
+**Previous Name:** Horizontal Thinkers  
+**New Name:** **insigHTS One**
+
+**Company Name Maintained:** Horizontal Thinkers Private Limited (legal entity)
+
+### Stylish Font Implementation - Rajdhani
+
+**New Typography for Product Name:**
+- **Font**: Rajdhani (Google Fonts)
+- **Weights**: 500, 600, 700
+- **Characteristics**: 
+  - Modern, geometric sans-serif
+  - Tech-focused and futuristic
+  - Excellent legibility at all sizes
+  - Strong character for product branding
+
+**Why Rajdhani?**
+- **Modern & Tech**: Perfect for security/ASPM platform
+- **Distinctive**: Stands out from standard fonts
+- **Professional**: Enterprise-grade appearance
+- **Readable**: Clear at header and footer sizes
+- **Complements**: Works well with Space Grotesk and Inter
+
+### Visual Styling
+
+**Product Name Styling:**
+```css
+font-family: 'Rajdhani', sans-serif;
+font-weight: 700;
+font-size: 1.5rem (header), 1.25rem (footer);
+letter-spacing: 0.5px;
+background: linear-gradient(135deg, purple, cyan);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+
+**Gradient Effect:**
+- Purple (#8B5CF6) → Cyan (#06B6D4)
+- Matches Cyber Purple theme perfectly
+- Creates premium, tech-forward appearance
+- Distinctive brand identity
+
+### Brand Name Rationale
+
+**"insigHTS One" Breakdown:**
+- **insig**: Insights (security insights, intelligence)
+- **HTS**: Capitalized for emphasis (possibly: Horizontal Thinkers Security, or stylistic choice)
+- **One**: Unified platform, all-in-one solution
+
+**Brand Personality:**
+- Modern, intelligent, unified
+- Security-focused with data insights
+- Enterprise-grade premium product
+- All-in-one solution positioning
+
+### Updated Locations
+
+**Files Modified:**
+1. `/app/frontend/src/index.css` - Added Rajdhani font import
+2. `/app/frontend/src/LandingPage.css` - Added product name styling
+3. `/app/frontend/src/LandingPage.jsx` - Updated header, CTA, footer references
+4. `/app/frontend/src/PrivacyPolicy.jsx` - Updated header logo
+5. `/app/frontend/src/TermsOfUse.jsx` - Updated header logo
+
+**Elements Updated:**
+- Header logo and navigation
+- Footer branding section
+- CTA section copy
+- Privacy Policy header
+- Terms of Use header
+- Company legal name remains "Horizontal Thinkers Private Limited"
+
+### Typography Hierarchy
+
+**Current Font Stack:**
+1. **Product Name**: Rajdhani (bold, distinctive, gradient)
+2. **Headings**: Space Grotesk (modern, geometric)
+3. **Body Text**: Inter (professional, readable)
+
+**Visual Consistency:**
+- All three fonts are modern, tech-focused
+- Rajdhani adds distinctive product branding layer
+- Space Grotesk for section authority
+- Inter for body readability
+
+### Performance Impact
+- Added Rajdhani font: ~15KB (minimal)
+- Total Google Fonts: ~55KB (Rajdhani + Space Grotesk + Inter)
+- Display swap ensures no flash of unstyled text
+- Cached after first load
+
+### Brand Identity Complete
+
+**Logo Components:**
+- Shield icon (purple)
+- "insigHTS One" wordmark (purple-cyan gradient, Rajdhani font)
+
+**Brand Colors:**
+- Primary: Deep purple-black (#0F0B1F)
+- Accent: Vibrant purple (#8B5CF6)
+- Secondary: Cyan (#06B6D4)
+
+**Brand Fonts:**
+- Product: Rajdhani
+- Headings: Space Grotesk
+- Body: Inter
+
+**Result:** Distinctive, modern, enterprise-grade ASPM brand identity
+
