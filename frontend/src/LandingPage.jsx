@@ -55,7 +55,7 @@ const LandingPage = () => {
           <div className="header-content">
             <div className="logo-section">
               <img 
-                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/fedxmqk7_HTSOne%20Shield%20Logo%20-%20Text%20Next%20to%20Shield.png" 
+                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/dksn3077_HTSOne%20Shield%20Logo%20-%20Poppins%20SemiBold.png" 
                 alt="HTSOne Logo" 
                 className="logo-svg"
               />
@@ -394,7 +394,7 @@ const LandingPage = () => {
             <div className="footer-brand">
               <div className="footer-logo">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/fedxmqk7_HTSOne%20Shield%20Logo%20-%20Text%20Next%20to%20Shield.png" 
+                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/dksn3077_HTSOne%20Shield%20Logo%20-%20Poppins%20SemiBold.png" 
                   alt="HTSOne Logo" 
                   className="footer-logo-svg"
                 />
