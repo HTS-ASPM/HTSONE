@@ -1113,3 +1113,76 @@ background: linear-gradient(135deg, purple, cyan);
 - Government contractors
 - Supply chain security leaders
 
+
+---
+
+## Updates - January 1, 2026 (SBOM Added to Scanner List)
+
+### SBOM Scanner Added
+
+**Previous Count:** 10 Security Scanners  
+**Updated Count:** **11 Security Scanners**
+
+### Complete Scanner List (11 Total)
+
+1. **SAST** - Static Application Security Testing
+2. **SCA** - Software Composition Analysis
+3. **DAST** - Dynamic Application Security Testing
+4. **Container** - Container Security Scanning
+5. **IaC** - Infrastructure as Code
+6. **Secrets** - Secret Detection
+7. **Mobile** - APK/AAB/IPA Analysis
+8. **PII** - Personal Data Detection
+9. **API** - API Security Testing
+10. **SBOM** - Software Bill of Materials ✨ NEW
+11. **CBOM** - Crypto Bill of Materials
+
+### Why Both SBOM and CBOM?
+
+**SBOM (Software Bill of Materials):**
+- Complete inventory of software components
+- Open source dependencies and licenses
+- Supply chain transparency
+- Required by Executive Order 14028
+- Critical for vulnerability management
+
+**CBOM (Crypto Bill of Materials):**
+- Inventory of cryptographic assets
+- Encryption algorithms and keys
+- Post-quantum readiness assessment
+- Compliance with cryptographic standards
+- Separate but complementary to SBOM
+
+**Together:** Provide comprehensive visibility into both software dependencies AND cryptographic components.
+
+### Updates Made
+
+**Hero Badge:**
+- Changed from "10+ Security Scanners Unified"
+- To "11 Security Scanners Unified"
+
+**Scanners Section:**
+- Badge: "11 Security Scanners" (was "10+")
+- Title: "Unified Visibility Across All Security Tools + SBOM"
+- Grid: Now displays 11 scanner cards including SBOM
+
+**Features Section:**
+- Feature card: "11 integrated security scanners" (was "10+")
+- Description includes both SBOM and CBOM
+
+**Benefits:**
+- More accurate count (11 vs "10+")
+- SBOM gets dedicated visibility as a scanner
+- Clearer differentiation between SBOM and CBOM
+- Better SEO for "SBOM scanning" searches
+- Emphasizes comprehensive BOM coverage
+
+### Market Positioning
+
+**Complete BOM Coverage:**
+- SBOM for software supply chain
+- CBOM for cryptographic inventory
+- Only ASPM platform with both
+- Future-proof for quantum threats
+- Compliance-ready for all standards
+
