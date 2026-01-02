@@ -1,20 +1,20 @@
 /* ASPM Landing Page Styles */
 
-/* Root Variables - Cyber Purple (ASPM Security Theme) */
+/* Root Variables - Soothing & Comfortable Theme */
 :root {
-  --primary-blue: #0F0B1F;
-  --secondary-blue: #1E1835;
-  --accent-purple: #8B5CF6;
-  --accent-cyan: #06B6D4;
-  --accent-red: #EF4444;
-  --success-green: #10B981;
-  --dark-bg: #140F26;
-  --card-bg: rgba(30, 24, 53, 0.5);
-  --text-primary: #F8FAFC;
-  --text-secondary: #CBD5E1;
-  --text-muted: #94A3B8;
-  --border-color: rgba(139, 92, 246, 0.2);
-  --hover-glow: rgba(139, 92, 246, 0.1);
+  --primary-blue: #1A1625;
+  --secondary-blue: #241F31;
+  --accent-purple: #A78BFA;
+  --accent-cyan: #7DD3FC;
+  --accent-red: #F87171;
+  --success-green: #6EE7B7;
+  --dark-bg: #1C1829;
+  --card-bg: rgba(36, 31, 49, 0.4);
+  --text-primary: #F1F5F9;
+  --text-secondary: #D1D5DB;
+  --text-muted: #A8B3C1;
+  --border-color: rgba(167, 139, 250, 0.15);
+  --hover-glow: rgba(167, 139, 250, 0.08);
 }
 
 /* ========== ANIMATION KEYFRAMES ========== */
