@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -412,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
@@ -612,7 +612,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -683,7 +683,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .divider-line {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-color) 50%, transparent);
@@ -705,7 +705,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 .section-container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 4.5rem 2rem;
 }
@@ -1342,7 +1342,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 3rem 2rem 1.5rem;
 }
@@ -1498,7 +1498,7 @@ html {
 }
 
 .login-header-container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
   height: 72px;
