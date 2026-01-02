@@ -397,16 +397,34 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="integrations-grid-improved">
-            {integrations.map((integration, index) => {
-              const Icon = iconMap[integration.logo];
-              return (
-                <div key={index} className={`integration-card-improved animate-on-scroll delay-${(index % 4) + 1}`}>
-                  <Icon size={36} className="integration-icon" />
-                  <span className="integration-name">{integration.name}</span>
-                </div>
-              );
-            })}
+          {/* Infinite Marquee */}
+          <div className="marquee-container">
+            <div className="marquee-track">
+              {/* First set of integrations */}
+              {integrations.map((integration, index) => {
+                const Icon = iconMap[integration.logo];
+                return (
+                  <div key={`first-${index}`} className="marquee-item" data-color={index}>
+                    <div className="marquee-icon-wrapper">
+                      <Icon size={48} className="marquee-icon" />
+                    </div>
+                    <span className="marquee-name">{integration.name}</span>
+                  </div>
+                );
+              })}
+              {/* Duplicate set for seamless loop */}
+              {integrations.map((integration, index) => {
+                const Icon = iconMap[integration.logo];
+                return (
+                  <div key={`second-${index}`} className="marquee-item" data-color={index}>
+                    <div className="marquee-icon-wrapper">
+                      <Icon size={48} className="marquee-icon" />
+                    </div>
+                    <span className="marquee-name">{integration.name}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Social Proof - Trust Indicators */}
