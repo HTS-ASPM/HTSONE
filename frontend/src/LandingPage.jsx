@@ -564,7 +564,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="footer-tagline">
-                Your AI Security Engineer for modern DevOps teams
+                Your AI Security Engineer
               </p>
               <p className="company-legal-name">
                 A product by Horizontal Thinkers Cyber Security Private Limited
