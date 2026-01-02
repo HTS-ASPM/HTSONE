@@ -274,10 +274,10 @@ const LandingPage = () => {
       <section className="scanners-section">
         <div className="section-container">
           <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">11 Security Scanners</Badge>
-            <h2 className="section-title">Unified Visibility Across All Security Tools + SBOM</h2>
+            <Badge className="section-badge">Specializations</Badge>
+            <h2 className="section-title">One Engineer. 11 Specializations.</h2>
             <p className="section-description">
-              Cross-scanner correlation and smart deduplication eliminate redundant findings
+              Expert-level knowledge across every security domain — from static analysis to runtime protection
             </p>
           </div>
 
