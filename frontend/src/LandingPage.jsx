@@ -375,9 +375,9 @@ const LandingPage = () => {
         <div className="section-container">
           <div className="section-header animate-on-scroll">
             <Badge className="section-badge">Integrations</Badge>
-            <h2 className="section-title">Seamless DevOps Integration</h2>
+            <h2 className="section-title">Works Where You Work</h2>
             <p className="section-description">
-              Native integration with your favorite tools and workflows
+              HTSOne lives in your existing workflow — showing up where decisions are made
             </p>
           </div>
 
