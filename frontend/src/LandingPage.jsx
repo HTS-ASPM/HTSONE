@@ -218,31 +218,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Stats Section - By the Numbers */}
-      <section className="stats-section">
-        <div className="section-container">
-          <div className="stats-grid-large">
-            {stats.map((stat, index) => {
-              const Icon = iconMap[stat.icon];
-              return (
-                <div key={index} className={`stat-card-large animate-on-scroll delay-${index + 1}`}>
-                  <Icon size={40} className="stat-card-icon" />
-                  <div className="stat-card-value">
-                    <AnimatedCounter value={stat.value} suffix={stat.value.includes('+') ? '+' : stat.value.includes('%') ? '%' : ''} />
-                  </div>
-                  <div className="stat-card-label">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Divider */}
-      <div className="section-divider">
-        <div className="divider-line"></div>
-      </div>
-
       {/* Features Section */}
       <section id="features" className="features-section">
         <div className="section-container">
