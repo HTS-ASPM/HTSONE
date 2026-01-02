@@ -63,24 +63,24 @@ const Login = () => {
             <div className="branding-content">
               <h1 className="branding-title">Welcome to HTSOne</h1>
               <p className="branding-description">
-                Unified Application Security Posture Management platform trusted by enterprise security teams worldwide.
+                Your AI Security Engineer that works 24/7, trusted by enterprise security teams worldwide.
               </p>
               <div className="branding-features">
                 <div className="branding-feature">
                   <div className="feature-icon">✓</div>
-                  <span>11 Security Scanners</span>
+                  <span>11 Security Specializations</span>
                 </div>
                 <div className="branding-feature">
                   <div className="feature-icon">✓</div>
-                  <span>Automated Remediation</span>
+                  <span>Fixes While You Sleep</span>
                 </div>
                 <div className="branding-feature">
                   <div className="feature-icon">✓</div>
-                  <span>AI-Powered Security</span>
+                  <span>Thinks Like a Senior Engineer</span>
                 </div>
                 <div className="branding-feature">
                   <div className="feature-icon">✓</div>
-                  <span>Enterprise Ready</span>
+                  <span>Scales With You</span>
                 </div>
               </div>
             </div>
