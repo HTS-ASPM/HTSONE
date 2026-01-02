@@ -178,21 +178,21 @@ const LandingPage = () => {
           <div className="hero-content">
             <Badge className="hero-badge">
               <Zap size={14} />
-              <span>11 Security Scanners Unified</span>
+              <span>🤖 Meet Your New Team Member</span>
             </Badge>
             <h1 className="hero-title">
-              Unified Application Security Posture Management
+              Your AI Security Engineer
             </h1>
             <p className="hero-description">
-              Scan, detect, and automatically fix vulnerabilities across your entire codebase with 11 integrated security scanners in one intelligent platform.
+              HTSOne works alongside your developers — scanning every commit, triaging threats, and fixing vulnerabilities automatically. Like hiring a senior security engineer who never sleeps.
             </p>
             <div className="hero-actions">
               <Button size="lg" className="hero-primary-btn">
-                Request Demo
+                Hire HTSOne
                 <ArrowRight size={18} />
               </Button>
               <Button size="lg" variant="outline" className="hero-secondary-btn">
-                Watch Video
+                See It In Action
               </Button>
             </div>
             
