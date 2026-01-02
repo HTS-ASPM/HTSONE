@@ -704,15 +704,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 .section-container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem;
+  padding: 4.5rem 2rem;
 }
 
 .section-container-narrow {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem;
+  padding: 4.5rem 2rem;
 }
 
 .section-header {
