@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
             <h2>3. How We Use Your Information</h2>
             <p>We use the collected information to:</p>
             <ul>
-              <li>Provide, maintain, and improve our ASPM services</li>
+              <li>Provide, maintain, and improve our AI Security Engineer services</li>
               <li>Process transactions and send related information</li>
               <li>Send administrative information, updates, and security alerts</li>
               <li>Respond to your comments, questions, and customer service requests</li>

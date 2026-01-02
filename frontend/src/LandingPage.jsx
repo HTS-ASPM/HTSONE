@@ -210,7 +210,7 @@ const LandingPage = () => {
             <div className="image-glow-wrapper">
               <img 
                 src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
-                alt="SecureASPM Dashboard - Security Posture Management"
+                alt="HTSOne AI Security Engineer Dashboard"
                 className="hero-img"
               />
             </div>

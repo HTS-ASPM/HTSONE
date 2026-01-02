@@ -1,4 +1,4 @@
-// Mock data for ASPM Landing Page
+// Mock data for HTSOne - Your AI Security Engineer
 
 export const features = [
   {
@@ -105,7 +105,7 @@ export const testimonials = [
     name: "Michael Rodriguez",
     role: "DevOps Lead, CloudScale",
     company: "CloudScale",
-    content: "Integration with our GitHub workflow was seamless. PR security gates have prevented multiple vulnerabilities from reaching production. Best ASPM solution we've evaluated.",
+    content: "Integration with our GitHub workflow was seamless. PR security gates have prevented multiple vulnerabilities from reaching production. HTSOne is the best AI Security Engineer we've evaluated.",
     rating: 5
   },
   {
