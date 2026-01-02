@@ -330,8 +330,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-        </div>
-      </section>
 
       {/* Visual Divider */}
       <div className="section-divider">
