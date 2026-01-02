@@ -302,11 +302,8 @@ const LandingPage = () => {
             {/* Central Hub */}
             <div className="orbital-center">
               <div className="orbital-hub">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
-                  alt="HTSOne" 
-                  className="orbital-hub-logo"
-                />
+                <Shield size={36} className="orbital-hub-icon" />
+                <span className="orbital-hub-text">HTSOne</span>
               </div>
               <div className="orbital-pulse"></div>
               <div className="orbital-pulse delay-1"></div>
