@@ -773,6 +773,257 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--dark-bg);
 }
 
+/* ========== BENTO GRID FEATURES ========== */
+
+/* Color Variables for Features */
+.features-section {
+  --color-purple: #8B5CF6;
+  --color-cyan: #06B6D4;
+  --color-green: #10B981;
+  --color-orange: #F59E0B;
+  --color-pink: #EC4899;
+  --color-blue: #3B82F6;
+}
+
+.features-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .features-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .features-bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 2rem;
+  }
+  
+  .feature-bento-card.hero-card {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+.feature-bento-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.feature-bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Color-specific gradient borders */
+.feature-bento-card.purple::before {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.6), rgba(139, 92, 246, 0.1));
+}
+.feature-bento-card.cyan::before {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.6), rgba(6, 182, 212, 0.1));
+}
+.feature-bento-card.green::before {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.6), rgba(16, 185, 129, 0.1));
+}
+.feature-bento-card.orange::before {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.1));
+}
+.feature-bento-card.pink::before {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.6), rgba(236, 72, 153, 0.1));
+}
+.feature-bento-card.blue::before {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(59, 130, 246, 0.1));
+}
+
+.feature-bento-inner {
+  background: rgba(20, 15, 38, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 1.25rem;
+}
+
+.feature-bento-card.hero-card .feature-bento-inner {
+  padding: 2.5rem;
+}
+
+/* 3D Hover Effect */
+.feature-bento-card:hover {
+  transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+}
+
+.feature-bento-card.purple:hover {
+  box-shadow: 0 25px 60px rgba(139, 92, 246, 0.35), 0 0 40px rgba(139, 92, 246, 0.2);
+}
+.feature-bento-card.cyan:hover {
+  box-shadow: 0 25px 60px rgba(6, 182, 212, 0.35), 0 0 40px rgba(6, 182, 212, 0.2);
+}
+.feature-bento-card.green:hover {
+  box-shadow: 0 25px 60px rgba(16, 185, 129, 0.35), 0 0 40px rgba(16, 185, 129, 0.2);
+}
+.feature-bento-card.orange:hover {
+  box-shadow: 0 25px 60px rgba(245, 158, 11, 0.35), 0 0 40px rgba(245, 158, 11, 0.2);
+}
+.feature-bento-card.pink:hover {
+  box-shadow: 0 25px 60px rgba(236, 72, 153, 0.35), 0 0 40px rgba(236, 72, 153, 0.2);
+}
+.feature-bento-card.blue:hover {
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.35), 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Icon Wrapper with Color */
+.feature-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon-wrapper.purple {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
+  color: var(--color-purple);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+.feature-icon-wrapper.cyan {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.1));
+  color: var(--color-cyan);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+.feature-icon-wrapper.green {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1));
+  color: var(--color-green);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+.feature-icon-wrapper.orange {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+  color: var(--color-orange);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+.feature-icon-wrapper.pink {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(236, 72, 153, 0.1));
+  color: var(--color-pink);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+}
+.feature-icon-wrapper.blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+  color: var(--color-blue);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.feature-bento-card:hover .feature-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-bento-card.hero-card .feature-icon-wrapper {
+  width: 70px;
+  height: 70px;
+}
+
+/* Feature Title */
+.feature-bento-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.feature-bento-card.hero-card .feature-bento-title {
+  font-size: 1.625rem;
+}
+
+/* Feature Description */
+.feature-bento-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* Feature Highlights */
+.feature-bento-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature-bento-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.feature-bento-item:hover {
+  transform: translateX(5px);
+  color: var(--text-primary);
+}
+
+/* Colored Check Icons */
+.check-icon.purple { color: var(--color-purple); }
+.check-icon.cyan { color: var(--color-cyan); }
+.check-icon.green { color: var(--color-green); }
+.check-icon.orange { color: var(--color-orange); }
+.check-icon.pink { color: var(--color-pink); }
+.check-icon.blue { color: var(--color-blue); }
+
+/* Background Glow Effect */
+.feature-glow {
+  position: absolute;
+  bottom: -50%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.feature-glow.purple { background: var(--color-purple); }
+.feature-glow.cyan { background: var(--color-cyan); }
+.feature-glow.green { background: var(--color-green); }
+.feature-glow.orange { background: var(--color-orange); }
+.feature-glow.pink { background: var(--color-pink); }
+.feature-glow.blue { background: var(--color-blue); }
+
+.feature-bento-card:hover .feature-glow {
+  opacity: 0.5;
+}
+
+/* Old Features Grid - Keep for fallback */
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
