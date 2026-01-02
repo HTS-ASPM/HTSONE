@@ -603,13 +603,14 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
-  animation: glowPulse 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+  animation: glowPulse 4s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.2);
 }
 
 .hero-primary-btn:hover {
-  background: #7C3AED;
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  background: #9F7AEA;
+  box-shadow: 0 6px 30px rgba(167, 139, 250, 0.3);
   transform: translateY(-2px);
   animation: none;
 }
