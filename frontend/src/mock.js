@@ -121,33 +121,33 @@ export const testimonials = [
 export const faqs = [
   {
     id: 1,
-    question: "How many security scanners are integrated?",
-    answer: "We integrate 10+ security scanners including SAST, SCA, DAST, Container, IaC, Secrets, Mobile (APK/AAB/IPA), PII, API, and CBOM scanning. All findings are correlated and deduplicated in a unified dashboard."
+    question: "Is this actually like having a security engineer?",
+    answer: "Yes. HTSOne handles what a security engineer would: reviewing code, researching fixes, opening PRs, prioritizing risks. The difference? It works 24/7 across all repos simultaneously."
   },
   {
     id: 2,
-    question: "What programming languages and package managers are supported?",
-    answer: "We support npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. Our auto-fix feature works across all these ecosystems to automatically remediate vulnerabilities."
+    question: "Will this replace my security team?",
+    answer: "No — it amplifies them. HTSOne handles repetitive work so your engineers focus on strategy. Think of it as giving your team superpowers."
   },
   {
     id: 3,
-    question: "How does the auto-remediation work?",
-    answer: "Our KonHeal engine automatically creates pull requests with secure dependency versions. It analyzes vulnerabilities across multiple scanners and creates a single unified PR that addresses issues from different sources."
+    question: "How is this different from other security tools?",
+    answer: "Most tools generate reports. HTSOne takes action — it opens PRs with fixes, not just alerts. It's the difference between a dashboard and a team member."
   },
   {
     id: 4,
-    question: "Can you integrate with our existing DevOps pipeline?",
-    answer: "Yes! We have native integrations with GitHub, GitLab, Jira, and AWS EventBridge. Our PR security gates scan code changes before merge, and we can automatically create Jira tickets for vulnerabilities."
+    question: "What programming languages and package managers are supported?",
+    answer: "HTSOne works with npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. It fixes vulnerabilities across all these ecosystems automatically."
   },
   {
     id: 5,
-    question: "What makes your AI security features different?",
-    answer: "Our AI reduces false positives through intelligent analysis, provides a natural language chatbot for vulnerability queries, and automatically prioritizes risks based on your codebase context and threat landscape."
+    question: "Can it integrate with our existing DevOps pipeline?",
+    answer: "Yes! HTSOne joins your workflow with native integrations for GitHub, GitLab, Jira, and AWS EventBridge. It sets up PR security gates and handles ticketing automatically."
   },
   {
     id: 6,
     question: "Is this suitable for enterprise organizations?",
-    answer: "Absolutely. We offer multi-tenant architecture, role-based access control (RBAC), license compliance checking, DPDPA compliance tracking, and SBOM generation for supply chain security."
+    answer: "Absolutely. HTSOne scales with you — handling multi-tenant architecture, role-based access control (RBAC), license compliance, DPDPA compliance, and SBOM generation."
   }
 ];
 
