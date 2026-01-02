@@ -523,9 +523,9 @@ const LandingPage = () => {
       <section className="cta-section">
         <div className="cta-container">
           <div className="cta-content">
-            <h2 className="cta-title">Ready to Secure Your Applications?</h2>
+            <h2 className="cta-title">Ready to Hire Your AI Security Engineer?</h2>
             <p className="cta-description">
-              Join hundreds of teams who trust HTSOne for comprehensive application security
+              Join hundreds of teams who've added HTSOne to their roster. No interviews. No equity. Just results.
             </p>
             <form onSubmit={handleDemoRequest} className="cta-form">
               <input 
