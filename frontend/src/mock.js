@@ -152,10 +152,10 @@ export const faqs = [
 ];
 
 export const stats = [
-  { label: "Security Scanners", value: "11", icon: "Shield" },
-  { label: "Supported Ecosystems", value: "9", icon: "Package" },
-  { label: "Auto-Fix Success Rate", value: "95%", icon: "CheckCircle" },
-  { label: "False Positive Reduction", value: "80%", icon: "Target" }
+  { label: "Security Specializations", value: "11", icon: "Shield" },
+  { label: "Works With Your Stack", value: "9", icon: "Package" },
+  { label: "Fixes Autonomously", value: "95%", icon: "CheckCircle" },
+  { label: "Less Noise", value: "80%", icon: "Target" }
 ];
 
 export const pricingTiers = [
