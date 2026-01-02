@@ -195,7 +195,16 @@ const LandingPage = () => {
                 Watch Video
               </Button>
             </div>
-            {/* Stats moved to dedicated section below */}
+            
+            {/* Stats as inline badges */}
+            <div className="hero-stats-badges">
+              {stats.map((stat, index) => (
+                <div key={index} className="hero-stat-badge">
+                  <span className="hero-stat-value">{stat.value}</span>
+                  <span className="hero-stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="hero-image">
             <div className="image-glow-wrapper">
