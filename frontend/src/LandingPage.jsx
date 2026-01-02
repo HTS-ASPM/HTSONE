@@ -386,11 +386,14 @@ const LandingPage = () => {
             <div className="marquee-track">
               {/* First set of integrations */}
               {integrations.map((integration, index) => {
-                const Icon = iconMap[integration.logo];
                 return (
                   <div key={`first-${index}`} className="marquee-item" data-color={index}>
                     <div className="marquee-icon-wrapper">
-                      <Icon size={48} className="marquee-icon" />
+                      <img 
+                        src={integration.logoUrl} 
+                        alt={`${integration.name} logo`}
+                        className="marquee-logo"
+                      />
                     </div>
                     <span className="marquee-name">{integration.name}</span>
                   </div>
@@ -398,11 +401,14 @@ const LandingPage = () => {
               })}
               {/* Duplicate set for seamless loop */}
               {integrations.map((integration, index) => {
-                const Icon = iconMap[integration.logo];
                 return (
                   <div key={`second-${index}`} className="marquee-item" data-color={index}>
                     <div className="marquee-icon-wrapper">
-                      <Icon size={48} className="marquee-icon" />
+                      <img 
+                        src={integration.logoUrl} 
+                        alt={`${integration.name} logo`}
+                        className="marquee-logo"
+                      />
                     </div>
                     <span className="marquee-name">{integration.name}</span>
                   </div>
