@@ -286,7 +286,7 @@ const LandingPage = () => {
         <div className="divider-line"></div>
       </div>
 
-      {/* Scanners Section - Box-free Design */}
+      {/* Scanners Section - Orbital Layout */}
       <section className="scanners-section">
         <div className="section-container">
           <div className="section-header animate-on-scroll">
@@ -297,36 +297,89 @@ const LandingPage = () => {
             </p>
           </div>
 
-          {/* Hexagonal Scanner Grid */}
-          <div className="scanners-hex-container">
-            <div className="scanners-hex-grid">
-              {scanners.map((scanner, index) => {
-                const colors = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue', 'purple', 'cyan', 'green', 'orange', 'pink'];
-                const colorClass = colors[index % colors.length];
+          {/* Orbital Scanner Layout */}
+          <div className="scanners-orbital-container animate-on-scroll">
+            {/* Central Hub */}
+            <div className="orbital-center">
+              <div className="orbital-hub">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
+                  alt="HTSOne" 
+                  className="orbital-hub-logo"
+                />
+              </div>
+              <div className="orbital-pulse"></div>
+              <div className="orbital-pulse delay-1"></div>
+              <div className="orbital-pulse delay-2"></div>
+            </div>
+
+            {/* Inner Orbit - 5 scanners */}
+            <div className="orbital-ring inner-ring">
+              {scanners.slice(0, 5).map((scanner, index) => {
+                const colors = ['purple', 'cyan', 'green', 'orange', 'pink'];
+                const colorClass = colors[index];
+                const angle = (index * 72) - 90; // 360/5 = 72 degrees apart
                 return (
-                  <div key={index} className={`scanner-hex-item ${colorClass} animate-on-scroll delay-${(index % 5) + 1}`}>
-                    <div className={`scanner-hex-icon ${colorClass}`}>
-                      <Lock size={24} />
+                  <div 
+                    key={index} 
+                    className={`orbital-scanner ${colorClass}`}
+                    style={{ '--angle': `${angle}deg` }}
+                  >
+                    <div className="orbital-connector"></div>
+                    <div className={`orbital-scanner-node ${colorClass}`}>
+                      <Lock size={20} />
                     </div>
-                    <div className="scanner-hex-content">
-                      <span className={`scanner-hex-name ${colorClass}`}>{scanner.name}</span>
-                      <span className="scanner-hex-desc">{scanner.description}</span>
+                    <div className="orbital-scanner-label">
+                      <span className={`orbital-scanner-name ${colorClass}`}>{scanner.name}</span>
                     </div>
-                    <div className={`scanner-hex-glow ${colorClass}`}></div>
                   </div>
                 );
               })}
             </div>
-            
-            {/* Central Hub */}
-            <div className="scanner-central-hub animate-on-scroll">
-              <div className="hub-inner">
-                <Shield size={32} />
-                <span>HTSOne</span>
-              </div>
-              <div className="hub-ring"></div>
-              <div className="hub-ring delay"></div>
+
+            {/* Outer Orbit - 6 scanners */}
+            <div className="orbital-ring outer-ring">
+              {scanners.slice(5, 11).map((scanner, index) => {
+                const colors = ['blue', 'purple', 'cyan', 'green', 'orange', 'pink'];
+                const colorClass = colors[index];
+                const angle = (index * 60) - 60; // 360/6 = 60 degrees apart
+                return (
+                  <div 
+                    key={index + 5} 
+                    className={`orbital-scanner ${colorClass}`}
+                    style={{ '--angle': `${angle}deg` }}
+                  >
+                    <div className="orbital-connector"></div>
+                    <div className={`orbital-scanner-node ${colorClass}`}>
+                      <Lock size={20} />
+                    </div>
+                    <div className="orbital-scanner-label">
+                      <span className={`orbital-scanner-name ${colorClass}`}>{scanner.name}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+
+            {/* Orbit Lines */}
+            <div className="orbit-line inner"></div>
+            <div className="orbit-line outer"></div>
+          </div>
+
+          {/* Mobile Fallback - Simple Grid */}
+          <div className="scanners-mobile-grid">
+            {scanners.map((scanner, index) => {
+              const colors = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue'];
+              const colorClass = colors[index % colors.length];
+              return (
+                <div key={index} className={`scanner-mobile-item ${colorClass}`}>
+                  <div className={`scanner-mobile-icon ${colorClass}`}>
+                    <Lock size={18} />
+                  </div>
+                  <span className={`scanner-mobile-name ${colorClass}`}>{scanner.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
