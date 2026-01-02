@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
             <p>
               Horizontal Thinkers Cyber Security Private Limited ("we," "our," or "us") is committed to protecting your privacy. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
-              visit our website or use our Application Security Posture Management (ASPM) platform, HTSOne™.
+              visit our website or use HTSOne™, your AI Security Engineer.
             </p>
           </section>
 
