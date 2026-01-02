@@ -222,10 +222,10 @@ const LandingPage = () => {
       <section id="features" className="features-section">
         <div className="section-container">
           <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">Features</Badge>
-            <h2 className="section-title">Everything You Need for Complete Security</h2>
+            <Badge className="section-badge">Capabilities</Badge>
+            <h2 className="section-title">What Your AI Security Engineer Does</h2>
             <p className="section-description">
-              Comprehensive security scanning, automated remediation, and intelligent insights in one unified platform
+              HTSOne handles security work like a senior engineer — from scanning to fixing, so your team can focus on building
             </p>
           </div>
 
