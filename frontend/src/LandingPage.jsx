@@ -564,7 +564,7 @@ const LandingPage = () => {
                 />
               </div>
               <p className="footer-tagline">
-                Unified Application Security Posture Management for modern DevOps teams
+                Your AI Security Engineer for modern DevOps teams
               </p>
               <p className="company-legal-name">
                 A product by Horizontal Thinkers Cyber Security Private Limited
@@ -594,11 +594,6 @@ const LandingPage = () => {
             <p className="footer-copyright">
               © 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.
             </p>
-            <div className="footer-social">
-              <a href="#twitter" className="social-link">Twitter</a>
-              <a href="#linkedin" className="social-link">LinkedIn</a>
-              <a href="#github" className="social-link">GitHub</a>
-            </div>
           </div>
         </div>
       </footer>
