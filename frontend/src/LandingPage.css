@@ -1389,12 +1389,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo-svg {
-  height: 50px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   background: #ffffff;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
 }
 
 .footer-product-name {
