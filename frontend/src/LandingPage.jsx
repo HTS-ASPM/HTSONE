@@ -245,31 +245,36 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="features-grid">
+          {/* Bento Grid Features */}
+          <div className="features-bento-grid">
             {features.map((feature, index) => {
               const Icon = iconMap[feature.icon];
+              const colorClasses = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue'];
+              const colorClass = colorClasses[index % colorClasses.length];
+              const isHero = index === 0;
+              
               return (
-                <Card key={feature.id} className={`feature-card animate-on-scroll delay-${(index % 4) + 1}`}>
-                  <CardHeader>
-                    <div className="feature-icon">
-                      <Icon size={24} />
+                <div 
+                  key={feature.id} 
+                  className={`feature-bento-card ${colorClass} ${isHero ? 'hero-card' : ''} animate-on-scroll delay-${(index % 4) + 1}`}
+                >
+                  <div className="feature-bento-inner">
+                    <div className={`feature-icon-wrapper ${colorClass}`}>
+                      <Icon size={isHero ? 32 : 28} />
                     </div>
-                    <CardTitle className="feature-title">{feature.title}</CardTitle>
-                    <CardDescription className="feature-description">
-                      {feature.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="feature-highlights">
-                      {feature.highlights.map((highlight, idx) => (
-                        <li key={idx} className="highlight-item">
-                          <CheckCircle size={16} className="highlight-icon" />
+                    <h3 className="feature-bento-title">{feature.title}</h3>
+                    <p className="feature-bento-description">{feature.description}</p>
+                    <ul className="feature-bento-highlights">
+                      {feature.highlights.slice(0, isHero ? 4 : 3).map((highlight, idx) => (
+                        <li key={idx} className="feature-bento-item">
+                          <CheckCircle size={16} className={`check-icon ${colorClass}`} />
                           <span>{highlight}</span>
                         </li>
                       ))}
                     </ul>
-                  </CardContent>
-                </Card>
+                    <div className={`feature-glow ${colorClass}`}></div>
+                  </div>
+                </div>
               );
             })}
           </div>
