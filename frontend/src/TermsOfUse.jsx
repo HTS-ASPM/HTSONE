@@ -37,8 +37,8 @@ const TermsOfUse = () => {
             <h2>1. Acceptance of Terms</h2>
             <p>
               Welcome to Horizontal Thinkers Cyber Security Private Limited ("Company," "we," "our," or "us"). These Terms of Use 
-              ("Terms") govern your access to and use of our Application Security Posture Management (ASPM) platform, 
-              HTSOne™, website, and related services (collectively, the "Services").
+              ("Terms") govern your access to and use of HTSOne™, your AI Security Engineer, 
+              our website, and related services (collectively, the "Services").
             </p>
             <p>
               By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these 
@@ -49,15 +49,15 @@ const TermsOfUse = () => {
           <section className="legal-section">
             <h2>2. Description of Services</h2>
             <p>
-              Horizontal Thinkers Cyber Security Private Limited provides a comprehensive ASPM platform under the trademark HTSOne™ that includes:
+              Horizontal Thinkers Cyber Security Private Limited provides an AI Security Engineer under the trademark HTSOne™ that includes:
             </p>
             <ul>
-              <li>Unified security scanning across multiple vulnerability detection tools</li>
-              <li>Automated vulnerability remediation capabilities</li>
-              <li>Repository exposure management</li>
-              <li>DevOps integration with GitHub, GitLab, Jira, and AWS</li>
-              <li>AI-powered security analytics and chatbot</li>
-              <li>Enterprise-grade security posture management</li>
+              <li>Automated security scanning across 11 security specializations</li>
+              <li>Autonomous vulnerability remediation that fixes while you sleep</li>
+              <li>Intelligent blind spot monitoring and exposure management</li>
+              <li>Seamless workflow integration with GitHub, GitLab, Jira, and AWS</li>
+              <li>AI-powered security analytics that thinks like a senior engineer</li>
+              <li>Enterprise-grade scalability and security management</li>
             </ul>
             <p>
               We reserve the right to modify, suspend, or discontinue any aspect of the Services at any time.
