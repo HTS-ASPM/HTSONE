@@ -86,9 +86,9 @@ export const scanners = [
 export const integrations = [
   { name: "GitHub", logoUrl: "https://cdn.simpleicons.org/github/white", color: "#181717" },
   { name: "GitLab", logoUrl: "https://cdn.simpleicons.org/gitlab/white", color: "#FC6D26" },
-  { name: "Azure DevOps", logoUrl: "https://cdn.simpleicons.org/azuredevops/white", color: "#0078D4" },
+  { name: "Azure DevOps", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/azuredevops.svg", color: "#0078D4" },
   { name: "Jira", logoUrl: "https://cdn.simpleicons.org/jira/white", color: "#0052CC" },
-  { name: "Amazon AWS", logoUrl: "https://cdn.simpleicons.org/amazonaws/white", color: "#FF9900" }
+  { name: "AWS", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg", color: "#FF9900" }
 ];
 
 export const testimonials = [
