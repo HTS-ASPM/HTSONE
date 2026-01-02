@@ -3,8 +3,8 @@
 export const features = [
   {
     id: 1,
-    title: "Unified Security Scanning",
-    description: "11 integrated security scanners in one platform - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM scanning",
+    title: "Sees Everything",
+    description: "Your AI engineer monitors 11 security domains - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM scanning",
     icon: "Shield",
     highlights: [
       "Cross-Scanner Correlation",
@@ -14,8 +14,8 @@ export const features = [
   },
   {
     id: 2,
-    title: "Automated Remediation",
-    description: "Automatically creates PRs with secure dependency versions across npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, Composer",
+    title: "Fixes While You Sleep",
+    description: "HTSOne automatically creates PRs with secure dependency versions across npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, Composer",
     icon: "Wrench",
     highlights: [
       "Auto-Fix Dependencies",
@@ -25,8 +25,8 @@ export const features = [
   },
   {
     id: 3,
-    title: "Exposure Management",
-    description: "Detects when private repos go public with auto-revert capability and real-time fork & clone monitoring",
+    title: "Guards Your Blind Spots",
+    description: "It watches for when private repos go public with auto-revert capability and real-time fork & clone monitoring",
     icon: "Eye",
     highlights: [
       "Repository Exposure Tracking",
@@ -36,8 +36,8 @@ export const features = [
   },
   {
     id: 4,
-    title: "AI-Powered Security",
-    description: "AI-enhanced false positive detection, natural language vulnerability queries, and smart risk prioritization",
+    title: "Thinks Like a Senior Engineer",
+    description: "HTSOne uses AI to detect false positives, answer vulnerability queries in natural language, and prioritize risks intelligently",
     icon: "Brain",
     highlights: [
       "False Positive Detection",
@@ -47,8 +47,8 @@ export const features = [
   },
   {
     id: 5,
-    title: "DevOps Integration",
-    description: "Deep webhook integration with GitHub & GitLab, PR security gates, Jira ticketing, and AWS EventBridge triggers",
+    title: "Joins Your Workflow",
+    description: "Your AI engineer integrates with GitHub & GitLab, sets up PR security gates, handles Jira ticketing, and triggers AWS EventBridge",
     icon: "GitBranch",
     highlights: [
       "Native GitHub & GitLab",
@@ -58,8 +58,8 @@ export const features = [
   },
   {
     id: 6,
-    title: "Enterprise Ready",
-    description: "Multi-tenant architecture, RBAC, license compliance, DPDPA compliance, and SBOM generation for supply chain security",
+    title: "Scales With You",
+    description: "HTSOne handles multi-tenant architecture, RBAC, license compliance, DPDPA compliance, and SBOM generation as you grow",
     icon: "Building",
     highlights: [
       "Multi-Tenant Architecture",
