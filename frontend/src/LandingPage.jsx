@@ -442,9 +442,9 @@ const LandingPage = () => {
         <div className="section-container">
           <div className="section-header animate-on-scroll">
             <Badge className="section-badge">Pricing</Badge>
-            <h2 className="section-title">Choose Your Plan</h2>
+            <h2 className="section-title">Hire Your AI Security Engineer</h2>
             <p className="section-description">
-              Flexible pricing for teams of all sizes
+              Flexible plans for teams of all sizes. No recruiting. No onboarding. No burnout.
             </p>
           </div>
 
