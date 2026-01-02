@@ -678,12 +678,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Visual Dividers */
 .section-divider {
-  padding: 2rem 1.5rem;
+  padding: 2rem 2rem;
   background: var(--primary-blue);
 }
 
 .divider-line {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-color) 50%, transparent);
