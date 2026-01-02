@@ -286,7 +286,7 @@ const LandingPage = () => {
         <div className="divider-line"></div>
       </div>
 
-      {/* Scanners Section */}
+      {/* Scanners Section - Box-free Design */}
       <section className="scanners-section">
         <div className="section-container">
           <div className="section-header animate-on-scroll">
@@ -297,17 +297,39 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="scanners-grid-improved">
-            {scanners.map((scanner, index) => (
-              <div key={index} className={`scanner-card-improved animate-on-scroll delay-${(index % 5) + 1}`}>
-                <Lock size={24} className="scanner-icon" />
-                <div>
-                  <div className="scanner-name">{scanner.name}</div>
-                  <div className="scanner-description">{scanner.description}</div>
-                </div>
+          {/* Hexagonal Scanner Grid */}
+          <div className="scanners-hex-container">
+            <div className="scanners-hex-grid">
+              {scanners.map((scanner, index) => {
+                const colors = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue', 'purple', 'cyan', 'green', 'orange', 'pink'];
+                const colorClass = colors[index % colors.length];
+                return (
+                  <div key={index} className={`scanner-hex-item ${colorClass} animate-on-scroll delay-${(index % 5) + 1}`}>
+                    <div className={`scanner-hex-icon ${colorClass}`}>
+                      <Lock size={24} />
+                    </div>
+                    <div className="scanner-hex-content">
+                      <span className={`scanner-hex-name ${colorClass}`}>{scanner.name}</span>
+                      <span className="scanner-hex-desc">{scanner.description}</span>
+                    </div>
+                    <div className={`scanner-hex-glow ${colorClass}`}></div>
+                  </div>
+                );
+              })}
+            </div>
+            
+            {/* Central Hub */}
+            <div className="scanner-central-hub animate-on-scroll">
+              <div className="hub-inner">
+                <Shield size={32} />
+                <span>HTSOne</span>
               </div>
-            ))}
+              <div className="hub-ring"></div>
+              <div className="hub-ring delay"></div>
+            </div>
           </div>
+        </div>
+      </section>
         </div>
       </section>
 
