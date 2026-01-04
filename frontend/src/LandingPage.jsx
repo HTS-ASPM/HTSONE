@@ -630,13 +630,19 @@ const LandingPage = () => {
                 value={demoEmail}
                 onChange={(e) => setDemoEmail(e.target.value)}
                 required
+                disabled={isSubmitting}
                 className="cta-input"
               />
-              <Button type="submit" size="lg" className="cta-btn-primary">
-                Get Started
-                <ArrowRight size={18} />
+              <Button type="submit" size="lg" className="cta-btn-primary" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Get Started'}
+                {!isSubmitting && <ArrowRight size={18} />}
               </Button>
             </form>
+            {submitStatus.message && (
+              <div className={`submit-status ${submitStatus.type}`}>
+                {submitStatus.message}
+              </div>
+            )}
           </div>
         </div>
       </section>
