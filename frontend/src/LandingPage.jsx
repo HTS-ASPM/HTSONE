@@ -142,7 +142,7 @@ const LandingPage = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // User needs to replace this
+          access_key: 'c167b592-b19b-46df-9900-1a9d381f91c8',
           subject: 'New HTSOne Demo Request',
           from_name: 'HTSOne Website',
           email: demoEmail,
@@ -183,7 +183,7 @@ const LandingPage = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // User needs to replace this
+          access_key: 'c167b592-b19b-46df-9900-1a9d381f91c8',
           subject: `HTSOne ${selectedPlan} Plan Inquiry`,
           from_name: contactFormData.name,
           email: contactFormData.email,
