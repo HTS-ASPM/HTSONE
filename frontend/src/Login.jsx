@@ -243,6 +243,85 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      {/* Contact Form Modal */}
+      {showContactForm && (
+        <div className="modal-overlay" onClick={() => setShowContactForm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowContactForm(false)}>×</button>
+            <h3 className="modal-title">Request a Demo</h3>
+            <p className="modal-description">Fill out the form below and our team will get back to you shortly.</p>
+            
+            <form onSubmit={handleContactFormSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  value={contactFormData.name}
+                  onChange={(e) => setContactFormData({...contactFormData, name: e.target.value})}
+                  required
+                  disabled={isSubmitting}
+                  placeholder="John Doe"
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="email">Work Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={contactFormData.email}
+                  onChange={(e) => setContactFormData({...contactFormData, email: e.target.value})}
+                  required
+                  disabled={isSubmitting}
+                  placeholder="john@company.com"
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="company">Company Name *</label>
+                <input
+                  type="text"
+                  id="company"
+                  value={contactFormData.company}
+                  onChange={(e) => setContactFormData({...contactFormData, company: e.target.value})}
+                  required
+                  disabled={isSubmitting}
+                  placeholder="Your Company Inc."
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="message">Message (Optional)</label>
+                <textarea
+                  id="message"
+                  value={contactFormData.message}
+                  onChange={(e) => setContactFormData({...contactFormData, message: e.target.value})}
+                  disabled={isSubmitting}
+                  placeholder="Tell us about your requirements..."
+                  rows="4"
+                />
+              </div>
+
+              {submitStatus.message && (
+                <div className={`submit-status ${submitStatus.type}`}>
+                  {submitStatus.message}
+                </div>
+              )}
+              
+              <div className="modal-actions">
+                <Button type="button" variant="outline" onClick={() => setShowContactForm(false)} disabled={isSubmitting}>
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Submit Request'}
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
