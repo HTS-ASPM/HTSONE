@@ -187,12 +187,12 @@ const LandingPage = () => {
               HTSOne works alongside your developers — scanning every commit, triaging threats, and fixing vulnerabilities automatically. Like hiring a senior security engineer who never sleeps.
             </p>
             <div className="hero-actions">
-              <Button size="lg" className="hero-primary-btn">
+              <Button size="lg" className="hero-primary-btn" onClick={() => document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth', block: 'center' })}>
                 Hire HTSOne
                 <ArrowRight size={18} />
               </Button>
-              <Button size="lg" variant="outline" className="hero-secondary-btn">
-                See It In Action
+              <Button size="lg" variant="outline" className="hero-secondary-btn" onClick={() => document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth', block: 'center' })}>
+                Get Started
               </Button>
             </div>
             
