@@ -393,10 +393,24 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.75rem 0;
   font-weight: 500;
   transition: color 0.2s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .mobile-nav-link:hover {
   color: var(--accent-purple);
+}
+
+.mobile-demo-btn {
+  color: var(--accent-purple);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
 }
 
 /* Hero Section */
