@@ -169,7 +169,7 @@ const Login = () => {
               <CardFooter className="login-footer">
                 <p className="footer-text">
                   Don't have an account?{' '}
-                  <a href="#signup" className="signup-link">
+                  <a href="/#pricing" className="signup-link">
                     Request Demo
                   </a>
                 </p>
