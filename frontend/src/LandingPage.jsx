@@ -234,6 +234,13 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
+              <Button 
+                variant="ghost" 
+                className="request-demo-btn" 
+                onClick={() => handleContactSales('Demo')}
+              >
+                Request Demo
+              </Button>
               <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/login')}>
                 Sign In
               </Button>
