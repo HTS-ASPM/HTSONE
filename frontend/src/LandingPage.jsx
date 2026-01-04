@@ -260,6 +260,15 @@ const LandingPage = () => {
               <a href="#integrations" className="mobile-nav-link">Integrations</a>
               <a href="#pricing" className="mobile-nav-link">Pricing</a>
               <a href="#faq" className="mobile-nav-link">FAQ</a>
+              <button 
+                className="mobile-nav-link mobile-demo-btn" 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleContactSales('Demo');
+                }}
+              >
+                Request Demo
+              </button>
             </div>
           )}
         </div>
