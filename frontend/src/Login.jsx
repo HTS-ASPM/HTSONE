@@ -15,6 +15,15 @@ const Login = () => {
     password: '',
     rememberMe: false
   });
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +38,53 @@ const Login = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
+  };
+
+  const handleRequestDemo = (e) => {
+    e.preventDefault();
+    setShowContactForm(true);
+  };
+
+  const handleContactFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'c167b592-b19b-46df-9900-1a9d381f91c8',
+          subject: 'HTSOne Demo Request from Login Page',
+          from_name: contactFormData.name,
+          email: contactFormData.email,
+          company: contactFormData.company,
+          message: contactFormData.message,
+          source: 'Login Page'
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! Our team will contact you shortly.' });
+        setContactFormData({ name: '', email: '', company: '', message: '' });
+        setTimeout(() => {
+          setShowContactForm(false);
+          setSubmitStatus({ type: '', message: '' });
+        }, 2000);
+      } else {
+        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
