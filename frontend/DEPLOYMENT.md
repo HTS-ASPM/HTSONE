@@ -32,7 +32,7 @@ git push -u origin main
 |---------|-------|
 | **Framework preset** | `None` |
 | **Root directory** | `frontend` |
-| **Build command** | `npm install && npm run build` |
+| **Build command** | `npm run build` |
 | **Build output directory** | `build` |
 
 6. Add Environment Variable:
