@@ -129,11 +129,87 @@ const LandingPage = () => {
   // Initialize scroll animations
   useScrollAnimation();
 
-  const handleDemoRequest = (e) => {
+  const handleDemoRequest = async (e) => {
     e.preventDefault();
-    console.log('Demo requested for:', demoEmail);
-    alert(`Demo request submitted for ${demoEmail}! We'll contact you shortly.`);
-    setDemoEmail('');
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // User needs to replace this
+          subject: 'New HTSOne Demo Request',
+          from_name: 'HTSOne Website',
+          email: demoEmail,
+          message: `New demo request from: ${demoEmail}`
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! We\'ll contact you shortly.' });
+        setDemoEmail('');
+      } else {
+        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleContactSales = (planName) => {
+    setSelectedPlan(planName);
+    setShowContactForm(true);
+  };
+
+  const handleContactFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // User needs to replace this
+          subject: `HTSOne ${selectedPlan} Plan Inquiry`,
+          from_name: contactFormData.name,
+          email: contactFormData.email,
+          company: contactFormData.company,
+          plan: selectedPlan,
+          message: contactFormData.message
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! Our team will contact you shortly.' });
+        setContactFormData({ name: '', email: '', company: '', message: '' });
+        setTimeout(() => {
+          setShowContactForm(false);
+          setSubmitStatus({ type: '', message: '' });
+        }, 2000);
+      } else {
+        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
