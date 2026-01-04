@@ -225,7 +225,7 @@ const Login = () => {
               <CardFooter className="login-footer">
                 <p className="footer-text">
                   Don't have an account?{' '}
-                  <a href="/#pricing" className="signup-link">
+                  <a href="#demo" className="signup-link" onClick={handleRequestDemo}>
                     Request Demo
                   </a>
                 </p>
