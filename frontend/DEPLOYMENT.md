@@ -28,15 +28,19 @@ git push -u origin main
 4. Authorize GitHub and select your repository
 5. Configure build settings:
 
-```yaml
-Framework preset: Create React App
-Build command: yarn build
-Build output directory: build
-Node version: 18
-Root directory: / (leave empty if frontend is root)
-```
+| Setting | Value |
+|---------|-------|
+| **Framework preset** | `None` |
+| **Root directory** | `frontend` |
+| **Build command** | `npm install && npm run build` |
+| **Build output directory** | `build` |
 
-6. Click **Save and Deploy**
+6. Add Environment Variable:
+   - Click **Environment variables** → **Add variable**
+   - Name: `NODE_VERSION`
+   - Value: `18`
+
+7. Click **Save and Deploy**
 
 Your site will be live at: `https://YOUR_PROJECT.pages.dev`
 
