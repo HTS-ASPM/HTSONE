@@ -573,8 +573,12 @@ const LandingPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="pricing-btn" variant={tier.popular ? "default" : "outline"}>
-                    {tier.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
+                  <Button 
+                    className="pricing-btn" 
+                    variant={tier.popular ? "default" : "outline"}
+                    onClick={() => handleContactSales(tier.name)}
+                  >
+                    Contact Sales
                   </Button>
                 </CardContent>
               </Card>
