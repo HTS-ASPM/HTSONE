@@ -75,7 +75,7 @@ CI=false
 
 ### Build Command
 ```bash
-yarn build
+npm run build
 ```
 
 ### Output Directory
