@@ -234,13 +234,6 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
-              <Button 
-                variant="ghost" 
-                className="request-demo-btn" 
-                onClick={() => handleContactSales('Demo')}
-              >
-                Request Demo
-              </Button>
               <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/login')}>
                 Sign In
               </Button>
@@ -260,15 +253,6 @@ const LandingPage = () => {
               <a href="#integrations" className="mobile-nav-link">Integrations</a>
               <a href="#pricing" className="mobile-nav-link">Pricing</a>
               <a href="#faq" className="mobile-nav-link">FAQ</a>
-              <button 
-                className="mobile-nav-link mobile-demo-btn" 
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleContactSales('Demo');
-                }}
-              >
-                Request Demo
-              </button>
             </div>
           )}
         </div>
