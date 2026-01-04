@@ -115,6 +115,16 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [demoEmail, setDemoEmail] = useState('');
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
   // Initialize scroll animations
   useScrollAnimation();
