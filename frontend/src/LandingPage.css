@@ -314,8 +314,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #374151;
 }
 
+.request-demo-btn {
+  display: none;
+  color: var(--accent-purple);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.request-demo-btn:hover {
+  color: #7C3AED;
+  background: rgba(167, 139, 250, 0.1);
+}
+
 @media (min-width: 640px) {
-  .sign-in-btn {
+  .sign-in-btn,
+  .request-demo-btn {
     display: inline-flex;
   }
 }
