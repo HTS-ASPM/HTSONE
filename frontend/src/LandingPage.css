@@ -2434,6 +2434,91 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5rem;
 }
 
+/* Founder Section */
+.founder-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.founder-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(15, 11, 31, 0.4));
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.founder-card:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+.founder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.founder-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.founder-role {
+  font-size: 0.95rem;
+  color: var(--accent-purple);
+  font-weight: 500;
+  margin: 0;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--accent-purple);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-self: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.founder-linkedin:hover {
+  background-color: rgba(139, 92, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .founder-section {
+    padding: 4rem 0;
+  }
+
+  .founder-card {
+    padding: 1.75rem;
+  }
+
+  .founder-name {
+    font-size: 1.4rem;
+  }
+}
+
 .social-link {
   color: var(--text-muted);
   text-decoration: none;

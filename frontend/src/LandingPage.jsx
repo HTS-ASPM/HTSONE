@@ -22,7 +22,8 @@ import {
   X,
   Zap,
   Lock,
-  TrendingUp
+  TrendingUp,
+  Linkedin
 } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
@@ -219,9 +220,9 @@ const LandingPage = () => {
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
-              <img 
-                src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
-                alt="HTSOne Logo" 
+              <img
+                src="/assets/htsone-logo.png"
+                alt="HTSOne Logo"
                 className="logo-svg"
               />
             </div>
@@ -231,6 +232,7 @@ const LandingPage = () => {
               <a href="#integrations" className="nav-link">Integrations</a>
               <a href="#pricing" className="nav-link">Pricing</a>
               <a href="#faq" className="nav-link">FAQ</a>
+              <a href="#about" className="nav-link">About</a>
             </nav>
 
             <div className="header-actions">
@@ -253,6 +255,7 @@ const LandingPage = () => {
               <a href="#integrations" className="mobile-nav-link">Integrations</a>
               <a href="#pricing" className="mobile-nav-link">Pricing</a>
               <a href="#faq" className="mobile-nav-link">FAQ</a>
+              <a href="#about" className="mobile-nav-link">About</a>
             </div>
           )}
         </div>
@@ -615,6 +618,42 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section id="about" className="founder-section">
+        <div className="section-container-narrow">
+          <div className="section-header animate-on-scroll">
+            <Badge className="section-badge">About</Badge>
+            <h2 className="section-title">Meet the Founder</h2>
+          </div>
+
+          <div className="founder-card animate-on-scroll">
+            <div className="founder-info">
+              <h3 className="founder-name">Antony Arul Selvaraj</h3>
+              <p className="founder-role">
+                Founder — Horizontal Thinkers Cyber Security Private Limited
+              </p>
+              <p className="founder-bio">
+                Building HTSOne to give every engineering team an always-on AI security engineer —
+                one that scans, triages, and fixes vulnerabilities at the speed of development.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/antony-arul-selvaraj-2ba37b57/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="founder-linkedin"
+                aria-label="Connect with Antony on LinkedIn"
+              >
+                <Linkedin size={18} />
+                <span>Connect on LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Divider */}
+      <div className="section-divider"></div>
+
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-container">
@@ -653,9 +692,9 @@ const LandingPage = () => {
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_370487bb-a611-47f2-9179-b06c587317e9/artifacts/2hfezs95_Screenshot%202026-01-02%20at%2012.12.31%E2%80%AFAM.png" 
-                  alt="HTSOne Logo" 
+                <img
+                  src="/assets/htsone-logo.png"
+                  alt="HTSOne Logo"
                   className="footer-logo-svg"
                 />
               </div>
@@ -690,6 +729,17 @@ const LandingPage = () => {
             <p className="footer-copyright">
               © 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.
             </p>
+            <div className="footer-social">
+              <a
+                href="https://www.linkedin.com/company/htsconsultancy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="HTS Consulting on LinkedIn"
+                className="social-link"
+              >
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
