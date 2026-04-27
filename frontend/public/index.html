@@ -30,6 +30,23 @@
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Horizontal Thinkers Cyber Security Private Limited" />
 
+        <style>
+          html, body { margin: 0; padding: 0; background: #0F0B1F; color: #F1F5F9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+          /* Visually hide the SEO fallback content — React replaces #root on mount.
+             Crawlers and AI fetchers that do not execute JS still parse and index the content. */
+          .seo-fallback {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: normal;
+            border: 0;
+          }
+        </style>
+
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -41,12 +58,319 @@
           "description": "AI Security Engineer that scans, triages, and fixes vulnerabilities 24/7 across 11 security domains.",
           "sameAs": [
             "https://www.linkedin.com/company/htsconsultancy/"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Antony Arul Selvaraj",
+            "url": "https://www.linkedin.com/in/antony-arul-selvaraj-2ba37b57/"
+          }
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "HTSOne",
+          "brand": { "@type": "Brand", "name": "HTSOne" },
+          "description": "Autonomous AI Security Engineer covering 11 security domains: SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM. 95% auto-fix rate via automated pull requests across npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer.",
+          "image": "https://htsone.ai/assets/htsone-logo.png",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0",
+            "highPrice": "0",
+            "availability": "https://schema.org/InStock",
+            "url": "https://htsone.ai/#pricing"
+          }
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is this actually like having a security engineer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. HTSOne handles what a security engineer would: reviewing code, researching fixes, opening PRs, prioritizing risks. The difference? It works 24/7 across all repos simultaneously."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will this replace my security team?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No — it amplifies them. HTSOne handles repetitive work so your engineers focus on strategy. Think of it as giving your team superpowers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is this different from other security tools?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most tools generate reports. HTSOne takes action — it opens PRs with fixes, not just alerts. It's the difference between a dashboard and a team member."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What programming languages and package managers are supported?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "HTSOne works with npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. It fixes vulnerabilities across all these ecosystems automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can it integrate with our existing DevOps pipeline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! HTSOne joins your workflow with native integrations for GitHub, GitLab, Jira, and AWS EventBridge. It sets up PR security gates and handles ticketing automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this suitable for enterprise organizations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. HTSOne scales with you — handling multi-tenant architecture, role-based access control (RBAC), license compliance, DPDPA compliance, and SBOM generation."
+              }
+            }
           ]
         }
         </script>
     </head>
     <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
+        <noscript>
+          <p style="text-align:center;padding:24px;font-family:sans-serif;">
+            <strong>HTSOne — Your AI Security Engineer.</strong>
+            This site uses JavaScript for the interactive experience. The full content is available below for reference.
+          </p>
+        </noscript>
+        <div id="root">
+          <div class="seo-fallback">
+          <header>
+            <a href="/" aria-label="HTSOne home">
+              <img src="/assets/htsone-logo.png" alt="HTSOne logo" width="140" />
+            </a>
+            <nav aria-label="Primary">
+              <a href="#features">Features</a> ·
+              <a href="#specializations">Specializations</a> ·
+              <a href="#integrations">Integrations</a> ·
+              <a href="#pricing">Pricing</a> ·
+              <a href="#faq">FAQ</a> ·
+              <a href="#about">About</a> ·
+              <a href="/login">Sign In</a>
+            </nav>
+          </header>
+
+          <main>
+            <section aria-labelledby="hero-title">
+              <p>🤖 Meet Your New Team Member</p>
+              <h1 id="hero-title">Your AI Security Engineer</h1>
+              <p>HTSOne works alongside your developers — scanning every commit, triaging threats, and fixing vulnerabilities automatically. Like hiring a senior security engineer who never sleeps.</p>
+              <p>
+                <a href="#pricing"><strong>Hire HTSOne</strong></a> or
+                <a href="#pricing">Get Started</a>
+              </p>
+              <ul>
+                <li><strong>11</strong> Security Specializations</li>
+                <li><strong>9</strong> Works With Your Stack</li>
+                <li><strong>95%</strong> Fixes Autonomously</li>
+                <li><strong>80%</strong> Less Noise</li>
+              </ul>
+            </section>
+
+            <section id="features" aria-labelledby="features-title">
+              <h2 id="features-title">What Your AI Security Engineer Does</h2>
+              <p>HTSOne handles security work like a senior engineer — from scanning to fixing, so your team can focus on building.</p>
+
+              <article>
+                <h3>Sees Everything</h3>
+                <p>Your AI engineer monitors 11 security domains — SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM scanning.</p>
+                <ul>
+                  <li>Cross-Scanner Correlation</li>
+                  <li>Smart Deduplication</li>
+                  <li>Unified Visibility</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Fixes While You Sleep</h3>
+                <p>HTSOne automatically creates PRs with secure dependency versions across npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer.</p>
+                <ul>
+                  <li>Auto-Fix Dependencies</li>
+                  <li>Multi-Ecosystem Support</li>
+                  <li>Single PR for Multiple Scanners</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Guards Your Blind Spots</h3>
+                <p>It watches for when private repos go public with auto-revert capability and real-time fork &amp; clone monitoring.</p>
+                <ul>
+                  <li>Repository Exposure Tracking</li>
+                  <li>Auto-Revert Capability</li>
+                  <li>Fork &amp; Clone Monitoring</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Thinks Like a Senior Engineer</h3>
+                <p>HTSOne uses AI to detect false positives, answer vulnerability queries in natural language, and prioritize risks intelligently.</p>
+                <ul>
+                  <li>False Positive Detection</li>
+                  <li>Security Chatbot</li>
+                  <li>Smart Prioritization</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Joins Your Workflow</h3>
+                <p>Your AI engineer integrates with GitHub &amp; GitLab, sets up PR security gates, handles Jira ticketing, and triggers AWS EventBridge.</p>
+                <ul>
+                  <li>Native GitHub &amp; GitLab</li>
+                  <li>PR Security Gates</li>
+                  <li>Jira &amp; AWS Integration</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Scales With You</h3>
+                <p>HTSOne handles multi-tenant architecture, RBAC, license compliance, DPDPA compliance, and SBOM generation as you grow.</p>
+                <ul>
+                  <li>Multi-Tenant Architecture</li>
+                  <li>Role-Based Access Control</li>
+                  <li>SBOM Generation</li>
+                </ul>
+              </article>
+            </section>
+
+            <section id="specializations" aria-labelledby="specializations-title">
+              <h2 id="specializations-title">One Engineer. 11 Specializations.</h2>
+              <p>Expert-level knowledge across every security domain — from static analysis to runtime protection.</p>
+              <ul>
+                <li><strong>SAST</strong> — Static Application Security Testing</li>
+                <li><strong>SCA</strong> — Software Composition Analysis</li>
+                <li><strong>DAST</strong> — Dynamic Application Security Testing</li>
+                <li><strong>Container</strong> — Container Security Scanning</li>
+                <li><strong>IaC</strong> — Infrastructure as Code</li>
+                <li><strong>Secrets</strong> — Secret Detection</li>
+                <li><strong>Mobile</strong> — APK / AAB / IPA Analysis</li>
+                <li><strong>PII</strong> — Personal Data Detection</li>
+                <li><strong>API</strong> — API Security Testing</li>
+                <li><strong>SBOM</strong> — Software Bill of Materials</li>
+                <li><strong>CBOM</strong> — Crypto Bill of Materials</li>
+              </ul>
+            </section>
+
+            <section id="integrations" aria-labelledby="integrations-title">
+              <h2 id="integrations-title">Works Where You Work</h2>
+              <p>HTSOne lives in your existing workflow — showing up where decisions are made.</p>
+              <ul>
+                <li>GitHub</li>
+                <li>GitLab</li>
+                <li>Azure DevOps</li>
+                <li>Jira</li>
+                <li>AWS</li>
+              </ul>
+              <p>Trusted by security teams at fast-growing companies. SOC 2 Compliant · GDPR Ready · ISO 27001.</p>
+            </section>
+
+            <section id="pricing" aria-labelledby="pricing-title">
+              <h2 id="pricing-title">Hire Your AI Security Engineer</h2>
+              <p>Flexible plans for teams of all sizes. No recruiting. No onboarding. No burnout.</p>
+
+              <article>
+                <h3>Starter — Contact Sales</h3>
+                <p>Perfect for small teams.</p>
+                <ul>
+                  <li>Up to 10 repositories</li>
+                  <li>5 integrated scanners</li>
+                  <li>Basic auto-remediation</li>
+                  <li>Email support</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Professional (Most Popular) — Contact Sales</h3>
+                <p>For growing organizations.</p>
+                <ul>
+                  <li>Up to 100 repositories</li>
+                  <li>10+ integrated scanners</li>
+                  <li>Advanced auto-remediation</li>
+                  <li>Priority support</li>
+                  <li>Jira integration</li>
+                  <li>Custom SLA tracking</li>
+                </ul>
+              </article>
+
+              <article>
+                <h3>Enterprise — Custom Pricing</h3>
+                <p>For large-scale security.</p>
+                <ul>
+                  <li>Unlimited repositories</li>
+                  <li>All scanners &amp; features</li>
+                  <li>Multi-tenant architecture</li>
+                  <li>Dedicated support</li>
+                  <li>RBAC &amp; compliance</li>
+                  <li>Custom integrations</li>
+                  <li>SBOM generation</li>
+                </ul>
+              </article>
+            </section>
+
+            <section id="faq" aria-labelledby="faq-title">
+              <h2 id="faq-title">Frequently Asked Questions</h2>
+
+              <h3>Is this actually like having a security engineer?</h3>
+              <p>Yes. HTSOne handles what a security engineer would: reviewing code, researching fixes, opening PRs, prioritizing risks. The difference? It works 24/7 across all repos simultaneously.</p>
+
+              <h3>Will this replace my security team?</h3>
+              <p>No — it amplifies them. HTSOne handles repetitive work so your engineers focus on strategy. Think of it as giving your team superpowers.</p>
+
+              <h3>How is this different from other security tools?</h3>
+              <p>Most tools generate reports. HTSOne takes action — it opens PRs with fixes, not just alerts. It's the difference between a dashboard and a team member.</p>
+
+              <h3>What programming languages and package managers are supported?</h3>
+              <p>HTSOne works with npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. It fixes vulnerabilities across all these ecosystems automatically.</p>
+
+              <h3>Can it integrate with our existing DevOps pipeline?</h3>
+              <p>Yes. HTSOne joins your workflow with native integrations for GitHub, GitLab, Jira, and AWS EventBridge. It sets up PR security gates and handles ticketing automatically.</p>
+
+              <h3>Is this suitable for enterprise organizations?</h3>
+              <p>Absolutely. HTSOne scales with you — handling multi-tenant architecture, role-based access control (RBAC), license compliance, DPDPA compliance, and SBOM generation.</p>
+            </section>
+
+            <section id="about" aria-labelledby="about-title">
+              <h2 id="about-title">Meet the Founder</h2>
+              <h3>Antony Arul Selvaraj</h3>
+              <p>Founder — Horizontal Thinkers Cyber Security Private Limited</p>
+              <p>Building HTSOne to give every engineering team an always-on AI security engineer — one that scans, triages, and fixes vulnerabilities at the speed of development.</p>
+              <p><a href="https://www.linkedin.com/in/antony-arul-selvaraj-2ba37b57/" rel="noopener">Connect on LinkedIn</a></p>
+            </section>
+
+            <section aria-labelledby="cta-title">
+              <h2 id="cta-title">Ready to Hire Your AI Security Engineer?</h2>
+              <p>Join hundreds of teams who've added HTSOne to their roster. No interviews. No equity. Just results.</p>
+              <p><a href="#pricing">Get Started</a></p>
+            </section>
+          </main>
+
+          <footer>
+            <p><strong>HTSOne</strong> — Your AI Security Engineer</p>
+            <p>A product by Horizontal Thinkers Cyber Security Private Limited.</p>
+            <p>© 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.</p>
+            <nav aria-label="Footer">
+              <a href="/privacy">Privacy Policy</a> ·
+              <a href="/terms">Terms of Use</a> ·
+              <a href="https://www.linkedin.com/company/htsconsultancy/" rel="noopener">LinkedIn</a>
+            </nav>
+          </footer>
+          </div>
+        </div>
     </body>
 </html>
