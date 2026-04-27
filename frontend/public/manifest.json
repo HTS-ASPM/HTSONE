@@ -1,0 +1,25 @@
+{
+  "name": "HTSOne — Your AI Security Engineer",
+  "short_name": "HTSOne",
+  "description": "Hire an AI Security Engineer that scans, triages, and fixes vulnerabilities 24/7.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F0B1F",
+  "theme_color": "#0F0B1F",
+  "icons": [
+    {
+      "src": "/assets/htsone-logo.png",
+      "sizes": "914x412",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/htsone-logo.png",
+      "sizes": "914x412",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

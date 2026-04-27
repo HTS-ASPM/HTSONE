@@ -1,0 +1,4 @@
+Contact: mailto:antony@hts.consulting
+Expires: 2027-04-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://htsone.ai/.well-known/security.txt
