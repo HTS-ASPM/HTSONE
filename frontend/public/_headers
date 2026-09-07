@@ -1,6 +1,6 @@
-# Honored by Cloudflare Pages / Netlify. GitHub Pages ignores this file, and
-# the CSP currently served on htsone.ai comes from the Cloudflare edge rule —
-# keep the two in sync, since the browser enforces the intersection of both.
+# Served by Cloudflare Pages. CRA copies public/* into build/, so this ships
+# in the build output. If a zone-level Cloudflare transform rule also sets a
+# CSP, the browser enforces the intersection of both — keep them in sync.
 
 /*
   X-Frame-Options: DENY
