@@ -6,7 +6,7 @@
 
 This is a static React website built with Create React App.
 
-### Local Development
+### Local Development.
 
 ```bash
 cd frontend
