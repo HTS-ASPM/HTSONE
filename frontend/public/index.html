@@ -93,50 +93,50 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Is this actually like having a security engineer?",
+              "name": "How does HTSOne find vulnerabilities?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. HTSOne handles what a security engineer would: reviewing code, researching fixes, opening PRs, prioritizing risks. The difference? It works 24/7 across all repos simultaneously."
+                "text": "HTSOne uses its own scanning engines across application security (ASPM), cloud security (CSPM), AI Security, data security (DSPM), and API Security. Investigate findings with source and asset context, use AI insights during triage, and prepare supported fixes or tickets from the platform."
               }
             },
             {
               "@type": "Question",
-              "name": "Will this replace my security team?",
+              "name": "How does AI help with triage?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No — it amplifies them. HTSOne handles repetitive work so your engineers focus on strategy. Think of it as giving your team superpowers."
+                "text": "AI insights add context to findings, help identify potential false positives, and provide fix recommendations. Your team can review the evidence, update finding status, and decide what needs action."
               }
             },
             {
               "@type": "Question",
-              "name": "How is this different from other security tools?",
+              "name": "How do automatic fixes work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Most tools generate reports. HTSOne takes action — it opens PRs with fixes, not just alerts. It's the difference between a dashboard and a team member."
+                "text": "Tinker provides configurable dependency and container autofix settings. It can prepare update pull requests for review. Individual findings also expose available autofix and ticket actions; support depends on the finding and configured workflow."
               }
             },
             {
               "@type": "Question",
-              "name": "What programming languages and package managers are supported?",
+              "name": "Which package ecosystems are supported?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "HTSOne works with npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. It fixes vulnerabilities across all these ecosystems automatically."
+                "text": "The dependency workflow covers npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. Tinker includes settings for severity, version strategy, and handling transitive dependencies."
               }
             },
             {
               "@type": "Question",
-              "name": "Can it integrate with our existing DevOps pipeline?",
+              "name": "Can I connect my existing development workflow?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes! HTSOne joins your workflow with native integrations for GitHub, GitLab, Jira, and AWS EventBridge. It sets up PR security gates and handles ticketing automatically."
+                "text": "HTSOne includes GitHub and GitLab connections, pull request security gates, Jira ticketing, and AWS EventBridge integration. Configure the integrations and policies your team needs."
               }
             },
             {
               "@type": "Question",
-              "name": "Is this suitable for enterprise organizations?",
+              "name": "What happens when a private repository becomes public?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. HTSOne scales with you — handling multi-tenant architecture, role-based access control (RBAC), license compliance, DPDPA compliance, and SBOM generation."
+                "text": "Exposure Management tracks visibility events alongside fork and clone activity. Auto-revert can be configured for eligible repositories, with exceptions and review controls. Repository provider restrictions still apply, including restrictions on making public forks private."
               }
             }
           ]
@@ -157,95 +157,54 @@
               <img src="/assets/htsone-logo.png" alt="HTSOne logo" width="140" />
             </a>
             <nav aria-label="Primary">
-              <a href="#features">Features</a> ·
+              <a href="#features">Platform</a> ·
               <a href="#specializations">Specializations</a> ·
               <a href="#integrations">Integrations</a> ·
               <a href="#pricing">Pricing</a> ·
               <a href="#faq">FAQ</a> ·
-              <a href="#about">About</a> ·
-              <a href="https://platform.htsone.ai/">Sign In</a>
+              <a href="https://platform.htsone.ai/">Sign in</a>
             </nav>
           </header>
 
           <main>
             <section aria-labelledby="hero-title">
-              <p>🤖 Meet Your New Team Member</p>
-              <h1 id="hero-title">Your AI Security Engineer</h1>
-              <p>HTSOne works alongside your developers — scanning every commit, triaging threats, and fixing vulnerabilities automatically. Like hiring a senior security engineer who never sleeps.</p>
+              <p>Security across your entire stack</p>
+              <h1 id="hero-title">Find what puts your data at risk.</h1>
+              <p>Native security for your applications, cloud, AI, data, and APIs. Find the risks that matter. Move forward with evidence and AI-assisted fixes.</p>
               <p>
-                <a href="#pricing"><strong>Hire HTSOne</strong></a> or
-                <a href="#pricing">Get Started</a>
+                <a href="https://platform.htsone.ai/signup"><strong>Start for free</strong></a> ·
+                <a href="#features">Explore the platform</a>
               </p>
-              <ul>
-                <li><strong>11</strong> Security Specializations</li>
-                <li><strong>9</strong> Works With Your Stack</li>
-                <li><strong>95%</strong> Fixes Autonomously</li>
-                <li><strong>80%</strong> Less Noise</li>
-              </ul>
+              <p>Free forever plan · No credit card required</p>
             </section>
 
             <section id="features" aria-labelledby="features-title">
-              <h2 id="features-title">What Your AI Security Engineer Does</h2>
-              <p>HTSOne handles security work like a senior engineer — from scanning to fixing, so your team can focus on building.</p>
+              <h2 id="features-title">The HTSOne Platform</h2>
+              <p>Five security disciplines. Our own scanning engines. Discover the risks that matter, investigate with evidence, and act with supported fixes.</p>
 
               <article>
-                <h3>Sees Everything</h3>
-                <p>Your AI engineer monitors 11 security domains — SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CryptoBOM scanning.</p>
-                <ul>
-                  <li>Cross-Scanner Correlation</li>
-                  <li>Smart Deduplication</li>
-                  <li>Unified Visibility</li>
-                </ul>
+                <h3>Application Security (ASPM)</h3>
+                <p>Bring native scanning, application posture, and AI-assisted triage into one place. Review coverage, investigate prioritized findings, and move supported fixes into your development workflow. Includes SAST, SCA, DAST, secrets, container, IaC, and mobile scanning with SBOM, CryptoBOM, correlation, and configurable dependency/container update proposals.</p>
               </article>
 
               <article>
-                <h3>Fixes While You Sleep</h3>
-                <p>HTSOne automatically creates PRs with secure dependency versions across npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer.</p>
-                <ul>
-                  <li>Auto-Fix Dependencies</li>
-                  <li>Multi-Ecosystem Support</li>
-                  <li>Single PR for Multiple Scanners</li>
-                </ul>
+                <h3>Cloud Security (CSPM)</h3>
+                <p>Review the posture of your cloud assets, investigate misconfigurations, and explore connected attack paths. Brings cloud asset inventory, IAM analysis, Kubernetes security, compliance posture, and attack-path analysis into your investigation.</p>
               </article>
 
               <article>
-                <h3>Guards Your Blind Spots</h3>
-                <p>It watches for when private repos go public with auto-revert capability and real-time fork &amp; clone monitoring.</p>
-                <ul>
-                  <li>Repository Exposure Tracking</li>
-                  <li>Auto-Revert Capability</li>
-                  <li>Fork &amp; Clone Monitoring</li>
-                </ul>
+                <h3>AI Security (AI-SPM)</h3>
+                <p>Track AI security posture and changes across discovered components. Explore AI inventory, agents, and MCP, with discovery coverage and an AI bill of materials (AI-BOM) to support your review.</p>
               </article>
 
               <article>
-                <h3>Thinks Like a Senior Engineer</h3>
-                <p>HTSOne uses AI to detect false positives, answer vulnerability queries in natural language, and prioritize risks intelligently.</p>
-                <ul>
-                  <li>False Positive Detection</li>
-                  <li>Security Chatbot</li>
-                  <li>Smart Prioritization</li>
-                </ul>
+                <h3>Data Security (DSPM)</h3>
+                <p>Discover data stores and review how sensitive data is classified. Connect classification evidence with public access, encryption, and scan coverage — including repository data classification, data flows, and framework mappings — to see where investigation is needed.</p>
               </article>
 
               <article>
-                <h3>Joins Your Workflow</h3>
-                <p>Your AI engineer integrates with GitHub &amp; GitLab, sets up PR security gates, handles Jira ticketing, and triggers AWS EventBridge.</p>
-                <ul>
-                  <li>Native GitHub &amp; GitLab</li>
-                  <li>PR Security Gates</li>
-                  <li>Jira &amp; AWS Integration</li>
-                </ul>
-              </article>
-
-              <article>
-                <h3>Scales With You</h3>
-                <p>HTSOne handles multi-tenant architecture, RBAC, license compliance, DPDPA compliance, and SBOM generation as you grow.</p>
-                <ul>
-                  <li>Multi-Tenant Architecture</li>
-                  <li>Role-Based Access Control</li>
-                  <li>SBOM Generation</li>
-                </ul>
+                <h3>API Security</h3>
+                <p>Discover APIs from observed traffic and investigate endpoint risk with request, response, and sensitive-data context. Review inventory, runtime relationships, risky endpoints, and security findings in a dedicated workspace.</p>
               </article>
             </section>
 
@@ -359,37 +318,29 @@
             <section id="faq" aria-labelledby="faq-title">
               <h2 id="faq-title">Frequently Asked Questions</h2>
 
-              <h3>Is this actually like having a security engineer?</h3>
-              <p>Yes. HTSOne handles what a security engineer would: reviewing code, researching fixes, opening PRs, prioritizing risks. The difference? It works 24/7 across all repos simultaneously.</p>
+              <h3>How does HTSOne find vulnerabilities?</h3>
+              <p>HTSOne uses its own scanning engines across application security (ASPM), cloud security (CSPM), AI Security, data security (DSPM), and API Security. Investigate findings with source and asset context, use AI insights during triage, and prepare supported fixes or tickets from the platform.</p>
 
-              <h3>Will this replace my security team?</h3>
-              <p>No — it amplifies them. HTSOne handles repetitive work so your engineers focus on strategy. Think of it as giving your team superpowers.</p>
+              <h3>How does AI help with triage?</h3>
+              <p>AI insights add context to findings, help identify potential false positives, and provide fix recommendations. Your team can review the evidence, update finding status, and decide what needs action.</p>
 
-              <h3>How is this different from other security tools?</h3>
-              <p>Most tools generate reports. HTSOne takes action — it opens PRs with fixes, not just alerts. It's the difference between a dashboard and a team member.</p>
+              <h3>How do automatic fixes work?</h3>
+              <p>Tinker provides configurable dependency and container autofix settings. It can prepare update pull requests for review. Individual findings also expose available autofix and ticket actions; support depends on the finding and configured workflow.</p>
 
-              <h3>What programming languages and package managers are supported?</h3>
-              <p>HTSOne works with npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. It fixes vulnerabilities across all these ecosystems automatically.</p>
+              <h3>Which package ecosystems are supported?</h3>
+              <p>The dependency workflow covers npm, PyPI, Maven, Gradle, Go, Cargo, RubyGems, NuGet, and Composer. Tinker includes settings for severity, version strategy, and handling transitive dependencies.</p>
 
-              <h3>Can it integrate with our existing DevOps pipeline?</h3>
-              <p>Yes. HTSOne joins your workflow with native integrations for GitHub, GitLab, Jira, and AWS EventBridge. It sets up PR security gates and handles ticketing automatically.</p>
+              <h3>Can I connect my existing development workflow?</h3>
+              <p>HTSOne includes GitHub and GitLab connections, pull request security gates, Jira ticketing, and AWS EventBridge integration. Configure the integrations and policies your team needs.</p>
 
-              <h3>Is this suitable for enterprise organizations?</h3>
-              <p>Absolutely. HTSOne scales with you — handling multi-tenant architecture, role-based access control (RBAC), license compliance, DPDPA compliance, and SBOM generation.</p>
-            </section>
-
-            <section id="about" aria-labelledby="about-title">
-              <h2 id="about-title">Meet the Founder</h2>
-              <h3>Antony Arul Selvaraj</h3>
-              <p>Founder — Horizontal Thinkers Cyber Security Private Limited</p>
-              <p>Building HTSOne to give every engineering team an always-on AI security engineer — one that scans, triages, and fixes vulnerabilities at the speed of development.</p>
-              <p><a href="https://www.linkedin.com/in/antony-arul-selvaraj-2ba37b57/" rel="noopener">Connect on LinkedIn</a></p>
+              <h3>What happens when a private repository becomes public?</h3>
+              <p>Exposure Management tracks visibility events alongside fork and clone activity. Auto-revert can be configured for eligible repositories, with exceptions and review controls. Repository provider restrictions still apply, including restrictions on making public forks private.</p>
             </section>
 
             <section aria-labelledby="cta-title">
-              <h2 id="cta-title">Ready to Hire Your AI Security Engineer?</h2>
-              <p>Join hundreds of teams who've added HTSOne to their roster. No interviews. No equity. Just results.</p>
-              <p><a href="#pricing">Get Started</a></p>
+              <h2 id="cta-title">Find the risk. Know your next move.</h2>
+              <p>Uncover risks across your applications, cloud, AI, data, and APIs. Investigate with context and take action with HTSOne.</p>
+              <p><a href="https://platform.htsone.ai/signup">Get started</a></p>
             </section>
           </main>
 

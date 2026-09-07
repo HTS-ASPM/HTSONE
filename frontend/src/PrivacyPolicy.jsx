@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import './Legal.css';
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();

@@ -1,249 +1,109 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Shield, 
-  Wrench, 
-  Eye, 
-  Brain, 
-  GitBranch, 
-  Building, 
-  CheckCircle, 
-  Target, 
-  Package, 
-  Github, 
-  Workflow, 
-  Cloud, 
-  Container, 
-  Code, 
+import React, { useState, useEffect } from "react";
+import {
+  GitBranch,
+  CheckCircle,
+  Github,
+  Workflow,
+  Cloud,
   Box,
-  ChevronDown,
+  ArrowUpRight,
   ArrowRight,
   Menu,
   X,
-  Zap,
-  Lock,
   TrendingUp,
-  Linkedin
-} from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion';
-import { Badge } from './components/ui/badge';
-import { features, scanners, integrations, faqs, stats, pricingTiers } from './mock';
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const iconMap = {
-  Shield, Wrench, Eye, Brain, GitBranch, Building, CheckCircle, Target, Package,
-  Github, Workflow, Cloud, Container, Code, Box
-};
+import { Badge } from "@/components/ui/badge";
+import { integrations, pricingTiers } from "./mock";
+import { productFaqs } from "./capabilities";
+import NativePlatform, { NativeHeroVisual } from "./NativePlatform";
+import { BRAND_LOGO_MASK } from "@/lib/brand";
+import "./LandingPage.css";
 
-// Custom hook for scroll animations
-const useScrollAnimation = () => {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    elements.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-};
-
-// Custom hook for counter animation
-const useCounterAnimation = (end, duration = 2000) => {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (countRef.current) {
-      observer.observe(countRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime;
-    const numericEnd = parseInt(end.toString().replace(/[^0-9]/g, ''));
-    
-    const animate = (currentTime) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      
-      setCount(Math.floor(progress * numericEnd));
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isVisible, end, duration]);
-
-  return { count, countRef };
-};
-
-// The product app lives on its own origin; sign-in is a top-level navigation
-// to it, never an XHR, so the Keycloak flow starts from platform.htsone.ai.
-const PLATFORM_URL = 'https://platform.htsone.ai/';
-const SIGNUP_URL = 'https://platform.htsone.ai/signup';
-
-// Counter component
-const AnimatedCounter = ({ value, suffix = '' }) => {
-  const { count, countRef } = useCounterAnimation(value);
-  return <span ref={countRef}>{count}{suffix}</span>;
-};
+// The product app lives on its own origin. Auth is a top-level navigation to
+// it — never an in-page XHR — so the Keycloak flow starts from
+// platform.htsone.ai, the origin already allow-listed for the token exchange.
+const PLATFORM_URL = "https://platform.htsone.ai/";
+const SIGNUP_URL = "https://platform.htsone.ai/signup";
+const CONTACT_SALES_URL = "https://platform.htsone.ai/contact-sales";
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [billingPeriod, setBillingPeriod] = useState('annual');
-  const [demoEmail, setDemoEmail] = useState('');
-  const [showContactForm, setShowContactForm] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('');
-  const [contactFormData, setContactFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
-
-  // Initialize scroll animations
-  useScrollAnimation();
-
-  const handleDemoRequest = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: '', message: '' });
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: 'c167b592-b19b-46df-9900-1a9d381f91c8',
-          subject: 'New HTSOne Demo Request',
-          from_name: 'HTSOne Website',
-          email: demoEmail,
-          message: `New demo request from: ${demoEmail}`
-        })
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitStatus({ type: 'success', message: 'Thank you! We\'ll contact you shortly.' });
-        setDemoEmail('');
-      } else {
-        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
-      }
-    } catch (error) {
-      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
-    } finally {
-      setIsSubmitting(false);
+  const [billingPeriod, setBillingPeriod] = useState("annual");
+  // Clean up any session expiry markers silently — no popup, just land on the page
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (sessionStorage.getItem("session_expired")) {
+      sessionStorage.removeItem("session_expired");
     }
-  };
-
-  const handleContactSales = (planName) => {
-    setSelectedPlan(planName);
-    setShowContactForm(true);
-  };
-
-  const handleContactFormSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: '', message: '' });
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: 'c167b592-b19b-46df-9900-1a9d381f91c8',
-          subject: `HTSOne ${selectedPlan} Plan Inquiry`,
-          from_name: contactFormData.name,
-          email: contactFormData.email,
-          company: contactFormData.company,
-          plan: selectedPlan,
-          message: contactFormData.message
-        })
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Our team will contact you shortly.' });
-        setContactFormData({ name: '', email: '', company: '', message: '' });
-        setTimeout(() => {
-          setShowContactForm(false);
-          setSubmitStatus({ type: '', message: '' });
-        }, 2000);
-      } else {
-        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
-      }
-    } catch (error) {
-      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
-    } finally {
-      setIsSubmitting(false);
+    if (urlParams.get("expired")) {
+      window.history.replaceState({}, "", window.location.pathname);
     }
-  };
+  }, []);
 
   return (
-    <div className="landing-page">
+    // Use the shared brand mark without affecting the product UI.
+    <div
+      id="top"
+      className="landing-page native-landing"
+      style={{ "--brand-logo-mask": BRAND_LOGO_MASK }}
+    >
+      <a href="#main-content" className="landing-skip-link">
+        Skip to content
+      </a>
       {/* Header */}
       <header className="header">
         <div className="header-container">
           <div className="header-content">
-            <div className="logo-section" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
-              <img
-                src="/assets/htsone-logo.png"
-                alt="HTSOne Logo"
-                className="logo-svg"
-              />
-            </div>
-            
-            <nav className="desktop-nav">
-              <a href="#features" className="nav-link">Features</a>
-              <a href="#integrations" className="nav-link">Integrations</a>
-              <a href="#pricing" className="nav-link">Pricing</a>
-              <a href="#faq" className="nav-link">FAQ</a>
-              <a href="#about" className="nav-link">About</a>
+            <a className="logo-section" href="#top" aria-label="HTSOne home">
+              <span className="logo-svg" role="img" aria-label="HTSOne Logo" />
+            </a>
+
+            <nav className="desktop-nav" aria-label="Main navigation">
+              <a href="#features" className="nav-link">
+                Platform
+              </a>
+              <a href="#integrations" className="nav-link">
+                Integrations
+              </a>
+              <a href="#pricing" className="nav-link">
+                Pricing
+              </a>
+              <a href="#faq" className="nav-link">
+                FAQ
+              </a>
             </nav>
 
             <div className="header-actions">
-              <Button asChild variant="outline" className="sign-in-btn">
-                <a href={PLATFORM_URL}>Sign In</a>
+              <Button variant="outline" className="sign-in-btn" asChild>
+                <a href={PLATFORM_URL}>Sign in</a>
               </Button>
-              <button 
+              <Button className="get-started-btn" asChild>
+                <a href={SIGNUP_URL}>
+                  Start for free <ArrowUpRight size={15} />
+                </a>
+              </Button>
+              <button
+                type="button"
+                aria-label={
+                  mobileMenuOpen ? "Close navigation" : "Open navigation"
+                }
+                aria-expanded={mobileMenuOpen}
+                aria-controls="landing-mobile-nav"
                 className="mobile-menu-btn"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
@@ -254,634 +114,382 @@ const LandingPage = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="mobile-menu">
-              <a href="#features" className="mobile-nav-link">Features</a>
-              <a href="#integrations" className="mobile-nav-link">Integrations</a>
-              <a href="#pricing" className="mobile-nav-link">Pricing</a>
-              <a href="#faq" className="mobile-nav-link">FAQ</a>
-              <a href="#about" className="mobile-nav-link">About</a>
-            </div>
+            <nav
+              id="landing-mobile-nav"
+              className="mobile-menu"
+              aria-label="Mobile navigation"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <a href="#features" className="mobile-nav-link">
+                Platform
+              </a>
+              <a href="#integrations" className="mobile-nav-link">
+                Integrations
+              </a>
+              <a href="#pricing" className="mobile-nav-link">
+                Pricing
+              </a>
+              <a href="#faq" className="mobile-nav-link">
+                FAQ
+              </a>
+              <a href={PLATFORM_URL} className="mobile-nav-link">
+                Sign in
+              </a>
+            </nav>
           )}
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-container">
-          <div className="hero-content">
-            <Badge className="hero-badge">
-              <Zap size={14} />
-              <span>🤖 Meet Your New Team Member</span>
-            </Badge>
-            <h1 className="hero-title">
-              Your AI Security Engineer
-            </h1>
-            <p className="hero-description">
-              HTSOne works alongside your developers — scanning every commit, triaging threats, and fixing vulnerabilities automatically. Like hiring a senior security engineer who never sleeps.
-            </p>
-            <div className="hero-actions">
-              <Button size="lg" className="hero-primary-btn" onClick={() => document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth', block: 'center' })}>
-                Hire HTSOne
-                <ArrowRight size={18} />
-              </Button>
-              <Button size="lg" variant="outline" className="hero-secondary-btn" onClick={() => document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth', block: 'center' })}>
-                Get Started
-              </Button>
-            </div>
-            
-            {/* Stats as inline badges */}
-            <div className="hero-stats-badges">
-              {stats.map((stat, index) => (
-                <div key={index} className="hero-stat-badge">
-                  <span className="hero-stat-value">{stat.value}</span>
-                  <span className="hero-stat-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hero-image">
-            <div className="image-glow-wrapper">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_securescan-hub-1/artifacts/lvlu9sql_Dashboard%20%5BMain%20Dashboard%5D.jpg" 
-                alt="HTSOne AI Security Engineer Dashboard"
-                className="hero-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="features-section">
-        <div className="section-container">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">Capabilities</Badge>
-            <h2 className="section-title">What Your AI Security Engineer Does</h2>
-            <p className="section-description">
-              HTSOne handles security work like a senior engineer — from scanning to fixing, so your team can focus on building
-            </p>
-          </div>
-
-          {/* Bento Grid Features */}
-          <div className="features-bento-grid">
-            {features.map((feature, index) => {
-              const Icon = iconMap[feature.icon];
-              const colorClasses = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue'];
-              const colorClass = colorClasses[index % colorClasses.length];
-              const isHero = index === 0;
-              
-              return (
-                <div 
-                  key={feature.id} 
-                  className={`feature-bento-card ${colorClass} ${isHero ? 'hero-card' : ''} animate-on-scroll delay-${(index % 4) + 1}`}
+      <main id="main-content">
+        <section className="hero-section" aria-labelledby="hero-heading">
+          <div className="hero-container">
+            <div className="hero-content">
+              <Badge className="hero-badge">
+                <span className="status-dot" /> Security across your entire
+                stack <ArrowRight size={13} />
+              </Badge>
+              <h1 id="hero-heading" className="hero-title">
+                Find what puts
+                <br />
+                <span>your data at risk.</span>
+              </h1>
+              <p className="hero-description">
+                Native security for your applications, cloud, AI, data, and
+                APIs. Find the risks that matter. Move forward with evidence and
+                AI-assisted fixes.
+              </p>
+              <div className="hero-actions">
+                <Button size="lg" className="hero-primary-btn" asChild>
+                  <a href={SIGNUP_URL}>
+                    Start for free <ArrowUpRight size={18} />
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="hero-secondary-btn"
+                  asChild
                 >
-                  <div className="feature-bento-inner">
-                    <div className={`feature-icon-wrapper ${colorClass}`}>
-                      <Icon size={isHero ? 32 : 28} />
-                    </div>
-                    <h3 className="feature-bento-title">{feature.title}</h3>
-                    <p className="feature-bento-description">{feature.description}</p>
-                    <ul className="feature-bento-highlights">
-                      {feature.highlights.slice(0, isHero ? 4 : 3).map((highlight, idx) => (
-                        <li key={idx} className="feature-bento-item">
-                          <CheckCircle size={16} className={`check-icon ${colorClass}`} />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className={`feature-glow ${colorClass}`}></div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Divider */}
-      <div className="section-divider">
-        <div className="divider-line"></div>
-      </div>
-
-      {/* Scanners Section - Orbital Layout */}
-      <section className="scanners-section">
-        <div className="section-container">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">Specializations</Badge>
-            <h2 className="section-title">One Engineer. 11 Specializations.</h2>
-            <p className="section-description">
-              Expert-level knowledge across every security domain — from static analysis to runtime protection
-            </p>
-          </div>
-
-          {/* Orbital Scanner Layout */}
-          <div className="scanners-orbital-container animate-on-scroll">
-            {/* Central Hub */}
-            <div className="orbital-center">
-              <div className="orbital-hub">
-                <Shield size={36} className="orbital-hub-icon" />
-                <span className="orbital-hub-text">HTSOne</span>
+                  <a href="#features">
+                    Explore the platform <ArrowRight size={17} />
+                  </a>
+                </Button>
               </div>
-              <div className="orbital-pulse"></div>
-              <div className="orbital-pulse delay-1"></div>
-              <div className="orbital-pulse delay-2"></div>
+              <p className="hero-note">
+                <CheckCircle size={13} /> Free forever plan <span /> No credit
+                card required
+              </p>
             </div>
 
-            {/* Inner Orbit - 5 scanners */}
-            <div className="orbital-ring inner-ring">
-              {scanners.slice(0, 5).map((scanner, index) => {
-                const colors = ['purple', 'cyan', 'green', 'orange', 'pink'];
-                const colorClass = colors[index];
-                const angle = (index * 72) - 90; // 360/5 = 72 degrees apart
-                return (
-                  <div 
-                    key={index} 
-                    className={`orbital-scanner ${colorClass}`}
-                    style={{ '--angle': `${angle}deg` }}
-                  >
-                    <div className="orbital-connector"></div>
-                    <div className={`orbital-scanner-node ${colorClass}`}>
-                      <Lock size={20} />
-                    </div>
-                    <div className="orbital-scanner-label">
-                      <span className={`orbital-scanner-name ${colorClass}`}>{scanner.name}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Outer Orbit - 6 scanners */}
-            <div className="orbital-ring outer-ring">
-              {scanners.slice(5, 11).map((scanner, index) => {
-                const colors = ['blue', 'purple', 'cyan', 'green', 'orange', 'pink'];
-                const colorClass = colors[index];
-                const angle = (index * 60) - 60; // 360/6 = 60 degrees apart
-                return (
-                  <div 
-                    key={index + 5} 
-                    className={`orbital-scanner ${colorClass}`}
-                    style={{ '--angle': `${angle}deg` }}
-                  >
-                    <div className="orbital-connector"></div>
-                    <div className={`orbital-scanner-node ${colorClass}`}>
-                      <Lock size={20} />
-                    </div>
-                    <div className="orbital-scanner-label">
-                      <span className={`orbital-scanner-name ${colorClass}`}>{scanner.name}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Orbit Lines */}
-            <div className="orbit-line inner"></div>
-            <div className="orbit-line outer"></div>
+            <NativeHeroVisual />
           </div>
+        </section>
 
-          {/* Mobile Fallback - Simple Grid */}
-          <div className="scanners-mobile-grid">
-            {scanners.map((scanner, index) => {
-              const colors = ['purple', 'cyan', 'green', 'orange', 'pink', 'blue'];
-              const colorClass = colors[index % colors.length];
-              return (
-                <div key={index} className={`scanner-mobile-item ${colorClass}`}>
-                  <div className={`scanner-mobile-icon ${colorClass}`}>
-                    <Lock size={18} />
-                  </div>
-                  <span className={`scanner-mobile-name ${colorClass}`}>{scanner.name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+        <NativePlatform />
 
-      {/* Visual Divider */}
-      <div className="section-divider">
-        <div className="divider-line"></div>
-      </div>
-
-      {/* Integrations Section */}
-      <section id="integrations" className="integrations-section">
-        <div className="section-container">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">Integrations</Badge>
-            <h2 className="section-title">Works Where You Work</h2>
-            <p className="section-description">
-              HTSOne lives in your existing workflow — showing up where decisions are made
-            </p>
-          </div>
-
-          {/* Infinite Marquee */}
-          <div className="marquee-container">
-            <div className="marquee-track">
-              {/* First set of integrations */}
+        <section id="integrations" className="integrations-section">
+          <div className="section-container integrations-layout">
+            <div className="native-integration-list">
+              <span className="native-eyebrow">DEVELOPER WORKFLOW</span>
               {integrations.map((integration, index) => {
+                const Icon = [Github, GitBranch, Box, Workflow, Cloud][index];
                 return (
-                  <div key={`first-${index}`} className="marquee-item" data-color={index}>
-                    <div className="marquee-icon-wrapper">
-                      <img 
-                        src={integration.logoUrl} 
-                        alt={`${integration.name} logo`}
-                        className="marquee-logo"
-                      />
-                    </div>
-                    <span className="marquee-name">{integration.name}</span>
-                  </div>
-                );
-              })}
-              {/* Duplicate set for seamless loop */}
-              {integrations.map((integration, index) => {
-                return (
-                  <div key={`second-${index}`} className="marquee-item" data-color={index}>
-                    <div className="marquee-icon-wrapper">
-                      <img 
-                        src={integration.logoUrl} 
-                        alt={`${integration.name} logo`}
-                        className="marquee-logo"
-                      />
-                    </div>
-                    <span className="marquee-name">{integration.name}</span>
+                  <div key={integration.name}>
+                    <Icon size={23} />
+                    <strong>{integration.name}</strong>
+                    <span>
+                      {
+                        [
+                          "Repositories & pull requests",
+                          "Repositories & pull requests",
+                          "Development integration",
+                          "Issue tracking",
+                          "EventBridge events",
+                        ][index]
+                      }
+                    </span>
                   </div>
                 );
               })}
             </div>
-          </div>
-
-          {/* Social Proof - Trust Indicators */}
-          <div className="trust-section animate-on-scroll">
-            <p className="trust-text">Trusted by security teams at fast-growing companies</p>
-            <div className="trust-badges">
-              <div className="trust-badge">
-                <Shield size={20} />
-                <span>SOC 2 Compliant</span>
-              </div>
-              <div className="trust-badge">
-                <CheckCircle size={20} />
-                <span>GDPR Ready</span>
-              </div>
-              <div className="trust-badge">
-                <Lock size={20} />
-                <span>ISO 27001</span>
-              </div>
+            <div className="section-header">
+              <Badge className="section-badge">Fits right in</Badge>
+              <h2 className="section-title">
+                Take action where
+                <br />
+                your team works.
+              </h2>
+              <p className="section-description">
+                Keep your tools. Skip the context switching. HTSOne brings
+                security checks, actionable tickets, and fixes into your
+                existing development workflow.
+              </p>
+              <ul className="integration-benefits">
+                <li>
+                  <CheckCircle size={17} /> Native GitHub and GitLab integration
+                </li>
+                <li>
+                  <CheckCircle size={17} /> Security gates in your pull requests
+                </li>
+                <li>
+                  <CheckCircle size={17} /> Jira ticketing and AWS EventBridge
+                </li>
+              </ul>
+              <Button className="hero-secondary-btn" asChild>
+                <a href={SIGNUP_URL}>
+                  Connect your first repository <ArrowUpRight size={16} />
+                </a>
+              </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Visual Divider */}
-      <div className="section-divider">
-        <div className="divider-line"></div>
-      </div>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="pricing-section">
-        <div className="section-container">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">Pricing</Badge>
-            <h2 className="section-title">Hire Your AI Security Engineer</h2>
-            <p className="section-description">
-              Every paid plan includes 10 team members. Add seats anytime at a fixed price — no per-developer surprises.
-            </p>
-          </div>
-
-          <div className="pricing-billing animate-on-scroll">
-            <div className="billing-switch" role="group" aria-label="Billing period">
-              <button
-                type="button"
-                className={`billing-option ${billingPeriod === 'annual' ? 'active' : ''}`}
-                onClick={() => setBillingPeriod('annual')}
-              >
-                <span>Annual</span>
-                <span className="billing-save">save 12%</span>
-              </button>
-              <button
-                type="button"
-                className={`billing-option ${billingPeriod === 'monthly' ? 'active' : ''}`}
-                onClick={() => setBillingPeriod('monthly')}
-              >
-                Monthly
-              </button>
+        {/* Pricing Section */}
+        <section id="pricing" className="pricing-section">
+          <div className="section-container">
+            <div className="section-header">
+              <Badge className="section-badge">Plans</Badge>
+              <h2 className="section-title">
+                Better security. A plan that fits.
+              </h2>
+              <p className="section-description max-w-screen-2xl">
+                Every paid plan includes 10 team members. Add seats anytime at a
+                fixed price — no per-developer surprises.
+              </p>
             </div>
-            <p className="billing-note">
-              All prices in INR, exclusive of 18% GST · India billing · the 12% annual discount also applies to extra seats
-            </p>
-          </div>
 
-          <div className="pricing-grid">
-            {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`pricing-card ${tier.popular ? 'popular' : ''} animate-on-scroll delay-${index + 1}`}>
-                {tier.popular && (
-                  <div className="popular-badge">
-                    <TrendingUp size={14} />
-                    <span>Recommended</span>
-                  </div>
-                )}
-                <CardHeader className="pricing-header">
-                  <CardTitle className="pricing-title">{tier.name}</CardTitle>
-                  <CardDescription className="pricing-description">
-                    {tier.description}
-                  </CardDescription>
-                  {tier.price && (
-                    <div
-                      className={`pricing-price ${tier.price.annual !== tier.price.monthly ? 'pricing-price--animated' : ''}`}
-                      key={billingPeriod}
-                    >
-                      <div className="pricing-amount-row">
-                        <span className="pricing-amount">{tier.price[billingPeriod]}</span>
-                        {tier.priceSuffix && (
-                          <span className="pricing-amount-suffix">{tier.priceSuffix[billingPeriod]}</span>
+            <div className="pricing-billing">
+              <div
+                className="billing-switch"
+                role="group"
+                aria-label="Billing period"
+              >
+                <button
+                  type="button"
+                  className={`billing-option ${billingPeriod === "annual" ? "active" : ""}`}
+                  aria-pressed={billingPeriod === "annual"}
+                  onClick={() => setBillingPeriod("annual")}
+                >
+                  <span>Annual</span>
+                  <span className="billing-save">save 12%</span>
+                </button>
+                <button
+                  type="button"
+                  className={`billing-option ${billingPeriod === "monthly" ? "active" : ""}`}
+                  aria-pressed={billingPeriod === "monthly"}
+                  onClick={() => setBillingPeriod("monthly")}
+                >
+                  Monthly
+                </button>
+              </div>
+              <p className="billing-note">
+                All prices in INR, exclusive of 18% GST · India billing · the
+                12% annual discount also applies to extra seats
+              </p>
+            </div>
+
+            <div className="pricing-grid">
+              {pricingTiers.map((tier, index) => (
+                <Card
+                  key={index}
+                  className={`pricing-card ${tier.popular ? "popular" : ""}`}
+                >
+                  {tier.popular && (
+                    <div className="popular-badge">
+                      <TrendingUp size={14} />
+                      <span>Recommended</span>
+                    </div>
+                  )}
+                  <CardHeader className="pricing-header">
+                    <CardTitle className="pricing-title">{tier.name}</CardTitle>
+                    <CardDescription className="pricing-description text-white">
+                      {tier.description}
+                    </CardDescription>
+                    {tier.price && (
+                      <div
+                        className={`pricing-price ${tier.price.annual !== tier.price.monthly ? "pricing-price--animated" : ""}`}
+                        key={billingPeriod}
+                      >
+                        <div className="pricing-amount-row">
+                          <span className="pricing-amount">
+                            {tier.price[billingPeriod]}
+                          </span>
+                          {tier.priceSuffix && (
+                            <span className="pricing-amount-suffix">
+                              {tier.priceSuffix[billingPeriod]}
+                            </span>
+                          )}
+                        </div>
+                        {tier.priceNote && (
+                          <span className="pricing-price-note">
+                            {tier.priceNote[billingPeriod]}
+                          </span>
                         )}
                       </div>
-                      {tier.priceNote && (
-                        <span className="pricing-price-note">{tier.priceNote[billingPeriod]}</span>
-                      )}
-                    </div>
-                  )}
-                  {tier.seats && (
-                    <div className="pricing-seats">
-                      <strong>{tier.seats}</strong>{' '}
-                      {tier.seatTail ?? `included${tier.seatNote ? ` · ${tier.seatNote}` : ''}`}
-                    </div>
-                  )}
-                </CardHeader>
-                <CardContent className="pricing-card-body">
-                  <ul className="pricing-features">
-                    {tier.features.map((feature, idx) => {
-                      const isLead = feature.startsWith('Everything in');
-                      return (
-                        <li key={idx} className={`pricing-feature-item ${isLead ? 'pricing-feature-lead' : ''}`}>
-                          {isLead ? (
-                            <span>{feature}</span>
-                          ) : (
-                            <>
-                              <CheckCircle size={16} className="pricing-check-icon" />
+                    )}
+                    {tier.seats && (
+                      <div className="pricing-seats">
+                        <strong>{tier.seats}</strong>{" "}
+                        {tier.seatTail ??
+                          `included${tier.seatNote ? ` · ${tier.seatNote}` : ""}`}
+                      </div>
+                    )}
+                  </CardHeader>
+                  <CardContent className="pricing-card-body">
+                    <ul className="pricing-features">
+                      {tier.features.map((feature, idx) => {
+                        const isLead = feature.startsWith("Everything in");
+                        return (
+                          <li
+                            key={idx}
+                            className={`pricing-feature-item ${isLead ? "pricing-feature-lead" : ""}`}
+                          >
+                            {isLead ? (
                               <span>{feature}</span>
-                            </>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  {/* Self-serve tier goes straight to the platform's signup; paid tiers
-                      stay on the marketing site and open the contact form. */}
-                  {tier.name === 'Free' ? (
-                    <Button asChild className="pricing-btn" variant={tier.popular ? "default" : "outline"}>
-                      <a href={SIGNUP_URL}>{tier.buttonLabel ?? 'Start Free Trial'}</a>
-                    </Button>
-                  ) : (
+                            ) : (
+                              <>
+                                <CheckCircle
+                                  size={16}
+                                  className="pricing-check-icon"
+                                />
+                                <span>{feature}</span>
+                              </>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
                     <Button
                       className="pricing-btn"
                       variant={tier.popular ? "default" : "outline"}
-                      onClick={() => handleContactSales(tier.name)}
+                      asChild
                     >
-                      {tier.buttonLabel ?? 'Contact Sales'}
+                      <a href={tier.name === "Free" ? SIGNUP_URL : CONTACT_SALES_URL}>
+                        {tier.buttonLabel ??
+                          (tier.name === "Free"
+                            ? "Start Free Trial"
+                            : "Contact Sales")}
+                      </a>
                     </Button>
-                  )}
-                  {tier.buttonNote && (
-                    <p className="pricing-btn-note">{tier.buttonNote}</p>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Divider */}
-      <div className="section-divider">
-        <div className="divider-line"></div>
-      </div>
-
-      {/* FAQ Section */}
-      <section id="faq" className="faq-section">
-        <div className="section-container-narrow">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">FAQ</Badge>
-            <h2 className="section-title">Frequently Asked Questions</h2>
-          </div>
-
-          <Accordion type="single" collapsible className="faq-accordion animate-on-scroll">
-            {faqs.map((faq) => (
-              <AccordionItem key={faq.id} value={`item-${faq.id}`}>
-                <AccordionTrigger className="faq-question">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="faq-answer">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* Founder Section */}
-      <section id="about" className="founder-section">
-        <div className="section-container-narrow">
-          <div className="section-header animate-on-scroll">
-            <Badge className="section-badge">About</Badge>
-            <h2 className="section-title">Meet the Founder</h2>
-          </div>
-
-          <div className="founder-card animate-on-scroll">
-            <div className="founder-info">
-              <h3 className="founder-name">Antony Arul Selvaraj</h3>
-              <p className="founder-role">
-                Founder — Horizontal Thinkers Cyber Security Private Limited
-              </p>
-              <p className="founder-bio">
-                Building HTSOne to give every engineering team an always-on AI security engineer —
-                one that scans, triages, and fixes vulnerabilities at the speed of development.
-              </p>
-              <a
-                href="https://www.linkedin.com/in/antony-arul-selvaraj-2ba37b57/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="founder-linkedin"
-                aria-label="Connect with Antony on LinkedIn"
-              >
-                <Linkedin size={18} />
-                <span>Connect on LinkedIn</span>
-              </a>
+                    {tier.buttonNote && (
+                      <p className="pricing-btn-note">{tier.buttonNote}</p>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
+        </section>
+
+        {/* Visual Divider */}
+        <div className="section-divider">
+          <div className="divider-line"></div>
         </div>
-      </section>
 
-      {/* Visual Divider */}
-      <div className="section-divider"></div>
+        {/* FAQ Section */}
+        <section id="faq" className="faq-section">
+          <div className="section-container-narrow">
+            <div className="section-header">
+              <Badge className="section-badge">FAQ</Badge>
+              <h2 className="section-title">Good questions. Clear answers.</h2>
+            </div>
 
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <div className="cta-content">
-            <h2 className="cta-title">Ready to Hire Your AI Security Engineer?</h2>
-            <p className="cta-description">
-              Join hundreds of teams who've added HTSOne to their roster. No interviews. No equity. Just results.
-            </p>
-            <form onSubmit={handleDemoRequest} className="cta-form">
-              <input 
-                type="email" 
-                placeholder="Enter your work email"
-                value={demoEmail}
-                onChange={(e) => setDemoEmail(e.target.value)}
-                required
-                disabled={isSubmitting}
-                className="cta-input"
-              />
-              <Button type="submit" size="lg" className="cta-btn-primary" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Get Started'}
-                {!isSubmitting && <ArrowRight size={18} />}
-              </Button>
-            </form>
-            {submitStatus.message && (
-              <div className={`submit-status ${submitStatus.type}`}>
-                {submitStatus.message}
-              </div>
-            )}
+            <Accordion type="single" collapsible className="faq-accordion">
+              {productFaqs.map((faq) => (
+                <AccordionItem key={faq.id} value={`item-${faq.id}`}>
+                  <AccordionTrigger className="faq-question">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="faq-answer">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* CTA Section */}
+        <section className="cta-section">
+          <div className="cta-container">
+            <div className="cta-content">
+              <h2 className="cta-title">Find the risk. Know your next move.</h2>
+              <p className="cta-description">
+                Uncover risks across your applications, cloud, AI, data, and APIs.
+                Investigate with context and take action with HTSOne.
+              </p>
+              <div className="cta-form">
+                <Button size="lg" className="cta-btn-primary" asChild>
+                  <a href={SIGNUP_URL}>
+                    Get Started
+                    <ArrowRight size={18} />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
       {/* Footer */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img
-                  src="/assets/htsone-logo.png"
-                  alt="HTSOne Logo"
+                <span
                   className="footer-logo-svg"
+                  role="img"
+                  aria-label="HTSOne Logo"
                 />
               </div>
-              <p className="footer-tagline">
-                Your AI Security Engineer
-              </p>
+              <p className="footer-tagline">Security across your entire stack.</p>
               <p className="company-legal-name">
-                A product by Horizontal Thinkers Cyber Security Private Limited
+                A product by Horizontal Thinkers Private Limited
               </p>
             </div>
 
             <div className="footer-links-section">
               <h4 className="footer-heading">Product</h4>
               <ul className="footer-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#integrations">Integrations</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li>
+                  <a href="#features">Platform</a>
+                </li>
+                <li>
+                  <a href="#integrations">Integrations</a>
+                </li>
+                <li>
+                  <a href="#pricing">Pricing</a>
+                </li>
+                <li>
+                  <a href="#faq">FAQ</a>
+                </li>
               </ul>
             </div>
 
             <div className="footer-links-section">
               <h4 className="footer-heading">Legal</h4>
               <ul className="footer-links">
-                <li><a href="/privacy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms of Use</a></li>
+                <li>
+                  <a href="/privacy">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="/terms">Terms of Use</a>
+                </li>
+                <li>
+                  <a href={CONTACT_SALES_URL}>Contact Sales</a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="footer-bottom">
             <p className="footer-copyright">
-              © 2025 Horizontal Thinkers Cyber Security Private Limited. All rights reserved. HTSOne is a registered trademark.
+              © {new Date().getFullYear()} Horizontal Thinkers Private Limited. All rights reserved. HTSOne is a registered
+              trademark.
             </p>
-            <div className="footer-social">
-              <a
-                href="https://www.linkedin.com/company/htsconsultancy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="HTS Consulting on LinkedIn"
-                className="social-link"
-              >
-                <Linkedin size={18} />
-              </a>
-            </div>
           </div>
         </div>
       </footer>
-
-      {/* Contact Sales Modal */}
-      {showContactForm && (
-        <div className="modal-overlay" onClick={() => setShowContactForm(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setShowContactForm(false)}>×</button>
-            <h3 className="modal-title">Contact Sales - {selectedPlan} Plan</h3>
-            <p className="modal-description">Fill out the form below and our team will get back to you shortly.</p>
-            
-            <form onSubmit={handleContactFormSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Full Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={contactFormData.name}
-                  onChange={(e) => setContactFormData({...contactFormData, name: e.target.value})}
-                  required
-                  disabled={isSubmitting}
-                  placeholder="John Doe"
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="email">Work Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={contactFormData.email}
-                  onChange={(e) => setContactFormData({...contactFormData, email: e.target.value})}
-                  required
-                  disabled={isSubmitting}
-                  placeholder="john@company.com"
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="company">Company Name *</label>
-                <input
-                  type="text"
-                  id="company"
-                  value={contactFormData.company}
-                  onChange={(e) => setContactFormData({...contactFormData, company: e.target.value})}
-                  required
-                  disabled={isSubmitting}
-                  placeholder="Your Company Inc."
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="message">Message (Optional)</label>
-                <textarea
-                  id="message"
-                  value={contactFormData.message}
-                  onChange={(e) => setContactFormData({...contactFormData, message: e.target.value})}
-                  disabled={isSubmitting}
-                  placeholder="Tell us about your requirements..."
-                  rows="4"
-                />
-              </div>
-
-              {submitStatus.message && (
-                <div className={`submit-status ${submitStatus.type}`}>
-                  {submitStatus.message}
-                </div>
-              )}
-              
-              <div className="modal-actions">
-                <Button type="button" variant="outline" onClick={() => setShowContactForm(false)} disabled={isSubmitting}>
-                  Cancel
-                </Button>
-                <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Submit Request'}
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
