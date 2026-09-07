@@ -1,0 +1,192 @@
+.landing-page .pillar-art-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #ccd3eb transparent;
+}
+.landing-page .pillar-art-scroll:focus-visible {
+  outline: 2px solid #929bdd;
+  outline-offset: -3px;
+}
+.landing-page .pillar-art-scroll > svg {
+  display: block;
+  width: 100%;
+  max-height: 470px;
+  color: #8591b4;
+}
+.landing-page .pv-node rect {
+  fill: #f9faff;
+  stroke: #d4dcf0;
+  stroke-width: 1.2;
+  filter: drop-shadow(0 5px 8px #45578108);
+}
+.landing-page .pv-node.pv-green rect {
+  fill: #f0faf6;
+  stroke: #c4e1d4;
+}
+.landing-page .pv-node.pv-violet rect {
+  fill: #f8f4ff;
+  stroke: #ddd0f1;
+}
+.landing-page .pv-node.pv-coral rect {
+  fill: #fff5f1;
+  stroke: #edd5cb;
+}
+.landing-page .pv-label {
+  font-size: 13px;
+  font-weight: 500;
+  fill: #7483a4;
+}
+.landing-page .pv-note {
+  font-size: 10px;
+  fill: #9aa6bc;
+}
+.landing-page .pv-small {
+  font-size: 11px;
+  fill: #b48b82;
+}
+.landing-page .pv-kicker {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  fill: #a1abc1;
+}
+.landing-page .pv-wire > path {
+  fill: none;
+  stroke: #b9afd5;
+  stroke-width: 1.7;
+  stroke-dasharray: 4 7;
+  stroke-linecap: round;
+}
+.landing-page .pv-wire > circle {
+  fill: #aa8adb;
+}
+.landing-page .pv-wire.pv-green > path {
+  stroke: #a1cbb9;
+}
+.landing-page .pv-wire.pv-green > circle {
+  fill: #72b69b;
+}
+.landing-page .pv-wire.pv-coral > path {
+  stroke: #d6afa5;
+}
+.landing-page .pv-wire.pv-coral > circle {
+  fill: #cc9586;
+}
+.landing-page .pv-core {
+  fill: #606fbd;
+  stroke: #8998d4;
+  stroke-width: 1;
+  filter: drop-shadow(0 8px 14px #6479b822);
+}
+.landing-page .pv-core-title {
+  font-size: 19px;
+  font-weight: 500;
+  fill: white;
+}
+.landing-page .pv-core-note {
+  font-size: 10px;
+  fill: #d2ddfa;
+}
+.landing-page .pv-orbit {
+  fill: #dbe3fa15;
+  stroke: #d5ddf0;
+  stroke-width: 1;
+}
+.landing-page .orbit-dotted {
+  stroke-dasharray: 3 7;
+}
+.landing-page .pv-code-surface {
+  fill: #f8f9fd;
+  stroke: #dae0ed;
+}
+.landing-page .pv-code-line {
+  fill: #d4dced;
+}
+.landing-page .pv-code-line.line-2 {
+  fill: #e9c4b8;
+}
+.landing-page .pv-warning-fill {
+  fill: #fbede7;
+}
+.landing-page .pv-fix-surface {
+  fill: #f6fbf8;
+  stroke: #dcebe2;
+}
+.landing-page .pv-diff-before {
+  fill: #c0998e;
+  font:
+    12px ui-monospace,
+    monospace;
+}
+.landing-page .pv-diff-after {
+  fill: #81a993;
+  font:
+    12px ui-monospace,
+    monospace;
+}
+.landing-page .pv-cloud-boundary {
+  fill: #edf3fc60;
+  stroke: #d6e1f0;
+  stroke-dasharray: 6 6;
+}
+.landing-page .pv-context-line {
+  fill: none;
+  stroke: #cbd5e8;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+.landing-page .pv-path-title {
+  font-size: 20px;
+  font-weight: 500;
+  fill: #8f9db8;
+}
+.landing-page .pv-database-body {
+  fill: #f4effb;
+  stroke: #d0c1e8;
+}
+.landing-page .pv-database-cap {
+  fill: #faf7ff;
+  stroke: #d0c1e8;
+}
+.landing-page .pv-database-ring {
+  fill: none;
+  stroke: #d7c9e9;
+}
+.landing-page .pv-classifier {
+  fill: #eff2fb;
+  stroke: #d3dbef;
+}
+.landing-page .pv-request-pill {
+  fill: #f7f8fe;
+  stroke: #dbe1f1;
+}
+.landing-page .pv-response-pill {
+  fill: #fdf3ee;
+  stroke: #ead3c9;
+}
+.landing-page .pv-inspection {
+  fill: #f3f4fd;
+  stroke: #d5daf1;
+}
+.landing-page .pillar-scroll-hint {
+  display: none;
+}
+@media (max-width: 650px) {
+  .landing-page .pillar-art-scroll > svg {
+    width: 680px;
+    max-width: none;
+    max-height: none;
+  }
+  .landing-page .pillar-scroll-hint {
+    display: inline;
+  }
+  .landing-page .pillar-desktop-note {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .pillar-art .flow-particle {
+    display: none;
+  }
+}

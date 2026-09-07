@@ -1,0 +1,214 @@
+/*
+ * Styles for the Privacy Policy and Terms of Use pages.
+ *
+ * These used to live in LandingPage.css and reach the legal pages through the
+ * old landing design's unscoped `.header` / `.logo-svg` / `.legal-*` rules plus
+ * its :root tokens. The landing page has since been replaced by the platform-hts
+ * design, which scopes everything under `.landing-page` and defines its own
+ * tokens — so the legal pages carry their own styling here instead.
+ *
+ * Everything is scoped under `.legal-page` (including the design tokens, as
+ * local custom properties) so nothing here can collide with the landing page.
+ */
+.legal-page {
+  --primary-blue: #1a1625;
+  --secondary-blue: #241f31;
+  --accent-purple: #a78bfa;
+  --accent-cyan: #7dd3fc;
+  --accent-red: #f87171;
+  --success-green: #6ee7b7;
+  --dark-bg: #1c1829;
+  --card-bg: rgba(36, 31, 49, 0.4);
+  --text-primary: #f1f5f9;
+  --text-secondary: #d1d5db;
+  --text-muted: #a8b3c1;
+  --border-color: rgba(167, 139, 250, 0.15);
+  --hover-glow: rgba(167, 139, 250, 0.08);
+
+  background: var(--primary-blue);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Header (shared shape with the old landing header) */
+.legal-page .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #ffffff;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.legal-page .header-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.legal-page .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.legal-page .logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.legal-page .logo-svg {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.legal-page .logo-svg:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.legal-page .back-btn {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legal-page .back-btn:hover {
+  color: var(--accent-cyan);
+  background: var(--hover-glow);
+}
+
+/* Body */
+.legal-page .legal-content {
+  padding: 4rem 1.5rem;
+  margin-top: 72px;
+  min-height: calc(100vh - 200px);
+}
+
+.legal-page .legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+@media (max-width: 768px) {
+  .legal-page .legal-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.legal-page .legal-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .legal-page .legal-title {
+    font-size: 2rem;
+  }
+}
+
+.legal-page .legal-updated {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.legal-page .legal-section {
+  margin-bottom: 2.5rem;
+}
+
+.legal-page .legal-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.legal-page .legal-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.legal-page .legal-section p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.legal-page .legal-section ul {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-page .legal-section li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-page .legal-section strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.legal-page .contact-info {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.legal-page .contact-info li {
+  padding: 0.5rem 0;
+}
+
+/* Footer */
+.legal-page .legal-footer {
+  background: var(--dark-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.legal-page .legal-footer p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.legal-page .footer-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem 2rem 1.5rem;
+}
+
+.legal-page .company-legal-name {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}

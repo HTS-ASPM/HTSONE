@@ -1,5 +1,4 @@
 import "./App.css";
-import "./LandingPage.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import PrivacyPolicy from "./PrivacyPolicy";
