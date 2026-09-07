@@ -28,7 +28,7 @@ yarn build
 ├── frontend/           # React application
 │   ├── public/        # Static assets
 │   ├── src/          # Source code
-│   ├── build/        # Production build (generated)
+│   ├── build/        # Production build (generated).
 │   └── package.json  # Dependencies
 └── README.md         # This file
 ```
