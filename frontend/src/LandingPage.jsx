@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { 
   Shield, 
   Wrench, 
@@ -106,6 +105,11 @@ const useCounterAnimation = (end, duration = 2000) => {
   return { count, countRef };
 };
 
+// The product app lives on its own origin; sign-in is a top-level navigation
+// to it, never an XHR, so the Keycloak flow starts from platform.htsone.ai.
+const PLATFORM_URL = 'https://platform.htsone.ai/';
+const SIGNUP_URL = 'https://platform.htsone.ai/signup';
+
 // Counter component
 const AnimatedCounter = ({ value, suffix = '' }) => {
   const { count, countRef } = useCounterAnimation(value);
@@ -113,8 +117,8 @@ const AnimatedCounter = ({ value, suffix = '' }) => {
 };
 
 const LandingPage = () => {
-  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [billingPeriod, setBillingPeriod] = useState('annual');
   const [demoEmail, setDemoEmail] = useState('');
   const [showContactForm, setShowContactForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
@@ -236,8 +240,8 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
-              <Button variant="outline" className="sign-in-btn" onClick={() => navigate('/login')}>
-                Sign In
+              <Button asChild variant="outline" className="sign-in-btn">
+                <a href={PLATFORM_URL}>Sign In</a>
               </Button>
               <button 
                 className="mobile-menu-btn"
@@ -539,7 +543,30 @@ const LandingPage = () => {
             <Badge className="section-badge">Pricing</Badge>
             <h2 className="section-title">Hire Your AI Security Engineer</h2>
             <p className="section-description">
-              Flexible plans for teams of all sizes. No recruiting. No onboarding. No burnout.
+              Every paid plan includes 10 team members. Add seats anytime at a fixed price — no per-developer surprises.
+            </p>
+          </div>
+
+          <div className="pricing-billing animate-on-scroll">
+            <div className="billing-switch" role="group" aria-label="Billing period">
+              <button
+                type="button"
+                className={`billing-option ${billingPeriod === 'annual' ? 'active' : ''}`}
+                onClick={() => setBillingPeriod('annual')}
+              >
+                <span>Annual</span>
+                <span className="billing-save">save 12%</span>
+              </button>
+              <button
+                type="button"
+                className={`billing-option ${billingPeriod === 'monthly' ? 'active' : ''}`}
+                onClick={() => setBillingPeriod('monthly')}
+              >
+                Monthly
+              </button>
+            </div>
+            <p className="billing-note">
+              All prices in INR, exclusive of 18% GST · India billing · the 12% annual discount also applies to extra seats
             </p>
           </div>
 
@@ -549,40 +576,73 @@ const LandingPage = () => {
                 {tier.popular && (
                   <div className="popular-badge">
                     <TrendingUp size={14} />
-                    <span>Most Popular</span>
+                    <span>Recommended</span>
                   </div>
                 )}
-                <CardHeader>
+                <CardHeader className="pricing-header">
                   <CardTitle className="pricing-title">{tier.name}</CardTitle>
                   <CardDescription className="pricing-description">
                     {tier.description}
                   </CardDescription>
-                  <div className="pricing-price">
-                    {tier.name === 'Enterprise' ? (
-                      <span className="price-custom">Custom Pricing</span>
-                    ) : tier.name === 'Professional' ? (
-                      <span className="price-contact">Contact Sales</span>
-                    ) : (
-                      <span className="price-contact">Contact Sales</span>
-                    )}
-                  </div>
+                  {tier.price && (
+                    <div
+                      className={`pricing-price ${tier.price.annual !== tier.price.monthly ? 'pricing-price--animated' : ''}`}
+                      key={billingPeriod}
+                    >
+                      <div className="pricing-amount-row">
+                        <span className="pricing-amount">{tier.price[billingPeriod]}</span>
+                        {tier.priceSuffix && (
+                          <span className="pricing-amount-suffix">{tier.priceSuffix[billingPeriod]}</span>
+                        )}
+                      </div>
+                      {tier.priceNote && (
+                        <span className="pricing-price-note">{tier.priceNote[billingPeriod]}</span>
+                      )}
+                    </div>
+                  )}
+                  {tier.seats && (
+                    <div className="pricing-seats">
+                      <strong>{tier.seats}</strong>{' '}
+                      {tier.seatTail ?? `included${tier.seatNote ? ` · ${tier.seatNote}` : ''}`}
+                    </div>
+                  )}
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pricing-card-body">
                   <ul className="pricing-features">
-                    {tier.features.map((feature, idx) => (
-                      <li key={idx} className="pricing-feature-item">
-                        <CheckCircle size={16} className="pricing-check-icon" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
+                    {tier.features.map((feature, idx) => {
+                      const isLead = feature.startsWith('Everything in');
+                      return (
+                        <li key={idx} className={`pricing-feature-item ${isLead ? 'pricing-feature-lead' : ''}`}>
+                          {isLead ? (
+                            <span>{feature}</span>
+                          ) : (
+                            <>
+                              <CheckCircle size={16} className="pricing-check-icon" />
+                              <span>{feature}</span>
+                            </>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
-                  <Button 
-                    className="pricing-btn" 
-                    variant={tier.popular ? "default" : "outline"}
-                    onClick={() => handleContactSales(tier.name)}
-                  >
-                    Contact Sales
-                  </Button>
+                  {/* Self-serve tier goes straight to the platform's signup; paid tiers
+                      stay on the marketing site and open the contact form. */}
+                  {tier.name === 'Free' ? (
+                    <Button asChild className="pricing-btn" variant={tier.popular ? "default" : "outline"}>
+                      <a href={SIGNUP_URL}>{tier.buttonLabel ?? 'Start Free Trial'}</a>
+                    </Button>
+                  ) : (
+                    <Button
+                      className="pricing-btn"
+                      variant={tier.popular ? "default" : "outline"}
+                      onClick={() => handleContactSales(tier.name)}
+                    >
+                      {tier.buttonLabel ?? 'Contact Sales'}
+                    </Button>
+                  )}
+                  {tier.buttonNote && (
+                    <p className="pricing-btn-note">{tier.buttonNote}</p>
+                  )}
                 </CardContent>
               </Card>
             ))}

@@ -4,7 +4,7 @@ export const features = [
   {
     id: 1,
     title: "Sees Everything",
-    description: "Your AI engineer monitors 11 security domains - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CBOM scanning",
+    description: "Your AI engineer monitors 11 security domains - SAST, SCA, DAST, Container, IaC, Secrets, Mobile, PII, API, SBOM, and CryptoBOM scanning",
     icon: "Shield",
     highlights: [
       "Cross-Scanner Correlation",
@@ -80,7 +80,7 @@ export const scanners = [
   { name: "PII", description: "Personal Data Detection" },
   { name: "API", description: "API Security Testing" },
   { name: "SBOM", description: "Software Bill of Materials" },
-  { name: "CBOM", description: "Crypto Bill of Materials" }
+  { name: "CryptoBOM", description: "Cryptography Bill of Materials" }
 ];
 
 export const integrations = [
@@ -158,41 +158,121 @@ export const stats = [
   { label: "Less Noise", value: "80%", icon: "Target" }
 ];
 
+/**
+ * @typedef {Object} PricingTier
+ * @property {string}  name
+ * @property {string}  description
+ * @property {boolean} [popular]
+ * @property {{annual: string, monthly: string}} [price]       Price shown per billing period.
+ * @property {{annual: string, monthly: string}} [priceSuffix] Suffix after the amount, e.g. "/mo".
+ * @property {{annual: string, monthly: string}} [priceNote]   Small note under the price (e.g. "free forever").
+ * @property {string}  [seats]      Seat count phrase, e.g. "2 members" — rendered bold.
+ * @property {string}  [seatNote]   Extra text after "included ·", e.g. "₹1,000/mo per extra seat".
+ * @property {string}  [seatTail]   Overrides the text after the bold seat count (default "included [· seatNote]").
+ * @property {string}  [buttonLabel]
+ * @property {string}  [buttonNote]
+ * @property {string[]} features
+ */
+
+/** @type {PricingTier[]} */
 export const pricingTiers = [
   {
-    name: "Starter",
-    description: "Perfect for small teams",
+    name: "Free",
+    description: "Perfect for getting started",
+    price: { annual: "₹0", monthly: "₹0" },
+    priceNote: { annual: "free forever", monthly: "free forever" },
+    seats: "2 members",
+    buttonLabel: "Start free",
+    buttonNote: "Free forever · no credit card",
     features: [
-      "Up to 10 repositories",
-      "5 integrated scanners",
-      "Basic auto-remediation",
+      "3 repositories",
+      "All code scanners — SAST, SCA, Secrets, IaC, Container",
+      "Cloud Security (CSPM) — 1 account",
+      "AI auto-fix — 10 fixes / month",
+      "3 PR checks & 3 rescans / day",
       "Email support"
     ]
   },
   {
-    name: "Professional",
-    description: "For growing organizations",
+    name: "Basic",
+    description: "For small teams",
+    price: { annual: "₹14,080", monthly: "₹16,000" },
+    priceSuffix: { annual: "/mo", monthly: "/mo" },
+    priceNote: { annual: "billed annually (₹1,68,960/yr)", monthly: "billed monthly" },
+    seats: "10 members",
+    seatNote: "₹1,000/mo per extra seat",
+    buttonLabel: "Try free for 14 days",
+    buttonNote: "No credit card · downgrades to Free",
     features: [
-      "Up to 100 repositories",
-      "10+ integrated scanners",
-      "Advanced auto-remediation",
-      "Priority support",
+      "Everything in Free, plus:",
+      "100 repositories",
+      "AI auto-fix — 100 fixes / month",
+      "Unlimited PR checks · 25 rescans / day",
+      "Kubernetes security scanning",
+      "Exposure Management",
+      "Build-break CI gates",
+      "3 cloud accounts"
+    ]
+  },
+  {
+    name: "Pro",
+    description: "For growing organizations",
+    popular: true,
+    price: { annual: "₹39,600", monthly: "₹45,000" },
+    priceSuffix: { annual: "/mo", monthly: "/mo" },
+    priceNote: { annual: "billed annually (₹4,75,200/yr)", monthly: "billed monthly" },
+    seats: "10 members",
+    seatNote: "₹1,500/mo per extra seat",
+    buttonLabel: "Try free for 14 days",
+    buttonNote: "No credit card · downgrades to Free",
+    features: [
+      "Everything in Basic, plus:",
+      "200 repositories",
+      "Unlimited AI auto-fixes",
+      "Advanced K8s & IAM posture — RBAC, policies",
+      "AI Security monitoring (AI-SPM)",
+      "AI Assistant",
+      "Mobile app security",
       "Jira integration",
-      "Custom SLA tracking"
-    ],
-    popular: true
+      "SBOM generation",
+      "10 cloud accounts"
+    ]
+  },
+  {
+    name: "Advanced",
+    description: "For organizations with advanced security needs",
+    price: { annual: "₹83,600", monthly: "₹95,000" },
+    priceSuffix: { annual: "/mo", monthly: "/mo" },
+    priceNote: { annual: "billed annually (₹10,03,200/yr)", monthly: "billed monthly" },
+    seats: "10 members",
+    seatNote: "₹2,000/mo per extra seat",
+    buttonLabel: "Try free for 14 days",
+    buttonNote: "No credit card · downgrades to Free",
+    features: [
+      "Everything in Pro, plus:",
+      "API Security (runtime API observability)",
+      "Data Security (DSPM)",
+      "500 repositories",
+      "20 cloud accounts"
+    ]
   },
   {
     name: "Enterprise",
     description: "For large-scale security",
+    price: { annual: "Custom", monthly: "Custom" },
+    priceNote: { annual: "tailored contract", monthly: "tailored contract" },
+    seats: "Unlimited members",
+    seatTail: "— flat rate, known upfront",
+    buttonLabel: "Contact sales",
+    buttonNote: "Guided proof of concept available",
     features: [
-      "Unlimited repositories",
-      "All scanners & features",
+      "Everything in Advanced, plus:",
+      "Unlimited repositories & cloud accounts",
       "Multi-tenant architecture",
-      "Dedicated support",
-      "RBAC & compliance",
-      "Custom integrations",
-      "SBOM generation"
+      "RBAC, SSO (SAML) & audit logs",
+      "99.9% uptime SLA",
+      "On-prem scanning & India data residency",
+      "Dedicated support & custom integrations"
     ]
   }
 ];
