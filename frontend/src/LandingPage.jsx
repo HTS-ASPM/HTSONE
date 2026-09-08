@@ -36,8 +36,10 @@ import "./LandingPage.css";
 
 // The product app lives on its own origin. Auth is a top-level navigation to
 // it — never an in-page XHR — so the Keycloak flow starts from
-// platform.htsone.ai, the origin already allow-listed for the token exchange.
-const PLATFORM_URL = "https://platform.htsone.ai/";
+// platform.htsone.ai, the origin that owns the PKCE state and is allow-listed
+// for the token exchange. /login there sends the visitor straight to Keycloak
+// (rather than the platform landing page) and lands them in the app afterward.
+const LOGIN_URL = "https://platform.htsone.ai/login";
 const SIGNUP_URL = "https://platform.htsone.ai/signup";
 const CONTACT_SALES_URL = "https://platform.htsone.ai/contact-sales";
 
@@ -90,7 +92,7 @@ const LandingPage = () => {
 
             <div className="header-actions">
               <Button variant="outline" className="sign-in-btn" asChild>
-                <a href={PLATFORM_URL}>Sign in</a>
+                <a href={LOGIN_URL}>Sign in</a>
               </Button>
               <Button className="get-started-btn" asChild>
                 <a href={SIGNUP_URL}>
@@ -132,7 +134,7 @@ const LandingPage = () => {
               <a href="#faq" className="mobile-nav-link">
                 FAQ
               </a>
-              <a href={PLATFORM_URL} className="mobile-nav-link">
+              <a href={LOGIN_URL} className="mobile-nav-link">
                 Sign in
               </a>
             </nav>
