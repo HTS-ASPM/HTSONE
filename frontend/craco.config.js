@@ -103,4 +103,6 @@ webpackConfig.devServer = (devServerConfig) => {
   return devServerConfig;
 };
 
+webpackConfig.jest = { configure: { moduleNameMapper: { "^@/(.*)$": "<rootDir>/src/$1" } } };
+
 module.exports = webpackConfig;

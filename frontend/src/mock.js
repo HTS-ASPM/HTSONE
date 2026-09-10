@@ -177,102 +177,69 @@ export const stats = [
 /** @type {PricingTier[]} */
 export const pricingTiers = [
   {
-    name: "Free",
-    description: "Perfect for getting started",
-    price: { annual: "₹0", monthly: "₹0" },
-    priceNote: { annual: "free forever", monthly: "free forever" },
-    seats: "2 members",
-    buttonLabel: "Start free",
-    buttonNote: "Free forever · no credit card",
-    features: [
-      "3 repositories",
-      "All code scanners — SAST, SCA, Secrets, IaC, Container",
-      "Cloud Security (CSPM) — 1 account",
-      "AI auto-fix — 10 fixes / month",
-      "3 PR checks & 3 rescans / day",
-      "Email support"
-    ]
-  },
-  {
     name: "Basic",
     description: "For small teams",
-    price: { annual: "₹14,080", monthly: "₹16,000" },
-    priceSuffix: { annual: "/mo", monthly: "/mo" },
-    priceNote: { annual: "billed annually (₹1,68,960/yr)", monthly: "billed monthly" },
-    seats: "10 members",
-    seatNote: "₹1,000/mo per extra seat",
-    buttonLabel: "Try free for 14 days",
-    buttonNote: "No credit card · downgrades to Free",
+    buttonLabel: "Contact sales",
+    buttonNote: "Talk to us about your requirements",
     features: [
-      "Everything in Free, plus:",
+      "Included in Basic:",
       "100 repositories",
-      "AI auto-fix — 100 fixes / month",
+      "Code scanning — SAST, SCA, Secrets, IaC & Container",
+      "GitHub login",
+      "GitHub & GitLab repository integration",
       "Unlimited PR checks · 25 rescans / day",
-      "Kubernetes security scanning",
-      "Exposure Management",
-      "Build-break CI gates",
-      "3 cloud accounts"
+      "CI security gates",
+      "Platform AI-assisted fixes",
+      "Cloud Security (CSPM) — 3 accounts",
+      "Repository exposure monitoring"
     ]
   },
   {
     name: "Pro",
     description: "For growing organizations",
     popular: true,
-    price: { annual: "₹39,600", monthly: "₹45,000" },
-    priceSuffix: { annual: "/mo", monthly: "/mo" },
-    priceNote: { annual: "billed annually (₹4,75,200/yr)", monthly: "billed monthly" },
-    seats: "10 members",
-    seatNote: "₹1,500/mo per extra seat",
-    buttonLabel: "Try free for 14 days",
-    buttonNote: "No credit card · downgrades to Free",
+    buttonLabel: "Contact sales",
+    buttonNote: "Talk to us about your requirements",
     features: [
       "Everything in Basic, plus:",
-      "200 repositories",
-      "Unlimited AI auto-fixes",
-      "Advanced K8s & IAM posture — RBAC, policies",
-      "AI Security monitoring (AI-SPM)",
-      "AI Assistant",
-      "Mobile app security",
+      "200 repositories · 10 cloud accounts",
+      "Cloud IAM permission analysis",
+      "AI Security Posture Management (AI-SPM)",
+      "AI Security Assistant",
+      "Mobile application security",
       "Jira integration",
       "SBOM generation",
-      "10 cloud accounts"
+      "IDE plugins with AI auto-fix"
     ]
   },
   {
     name: "Advanced",
     description: "For organizations with advanced security needs",
-    price: { annual: "₹83,600", monthly: "₹95,000" },
-    priceSuffix: { annual: "/mo", monthly: "/mo" },
-    priceNote: { annual: "billed annually (₹10,03,200/yr)", monthly: "billed monthly" },
-    seats: "10 members",
-    seatNote: "₹2,000/mo per extra seat",
-    buttonLabel: "Try free for 14 days",
-    buttonNote: "No credit card · downgrades to Free",
+    buttonLabel: "Contact sales",
+    buttonNote: "Talk to us about your requirements",
     features: [
       "Everything in Pro, plus:",
-      "API Security (runtime API observability)",
-      "Data Security (DSPM)",
-      "500 repositories",
-      "20 cloud accounts"
+      "300 repositories · 20 cloud accounts",
+      "Kubernetes security scanning",
+      "Runtime API discovery & observability",
+      "Data Security (DSPM)"
     ]
   },
   {
     name: "Enterprise",
     description: "For large-scale security",
-    price: { annual: "Custom", monthly: "Custom" },
-    priceNote: { annual: "tailored contract", monthly: "tailored contract" },
-    seats: "Unlimited members",
-    seatTail: "— flat rate, known upfront",
     buttonLabel: "Contact sales",
     buttonNote: "Guided proof of concept available",
     features: [
       "Everything in Advanced, plus:",
       "Unlimited repositories & cloud accounts",
-      "Multi-tenant architecture",
-      "RBAC, SSO (SAML) & audit logs",
-      "99.9% uptime SLA",
-      "On-prem scanning & India data residency",
-      "Dedicated support & custom integrations"
+      "By agreement:",
+      "SAML SSO",
+      "Multi-workspace organization management",
+      "Extended audit-log access & export",
+      "On-premises scanning",
+      "Custom integrations",
+      "Dedicated support, SLA & data residency"
     ]
   }
 ];

@@ -33,6 +33,8 @@ import { productFaqs } from "./capabilities";
 import NativePlatform, { NativeHeroVisual } from "./NativePlatform";
 import { BRAND_LOGO_MASK } from "@/lib/brand";
 import "./LandingPage.css";
+import { useLocation } from "react-router-dom";
+import ContactSalesDialog from "./ContactSalesDialog";
 
 // The product app lives on its own origin. Auth is a top-level navigation to
 // it — never an in-page XHR — so the Keycloak flow starts from
@@ -45,7 +47,19 @@ const CONTACT_SALES_URL = "https://platform.htsone.ai/contact-sales";
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [billingPeriod, setBillingPeriod] = useState("annual");
+  const [salesPlan, setSalesPlan] = useState(null);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname !== "/pricing") return;
+    let cancelled = false;
+    const scrollToPricing = () => {
+      if (!cancelled) document.getElementById("pricing")?.scrollIntoView({ block: "start", behavior: "instant" });
+    };
+    const frame = requestAnimationFrame(scrollToPricing);
+    // Re-align once fonts settle so a direct visit lands at the correct section.
+    void document.fonts?.ready.then(scrollToPricing);
+    return () => { cancelled = true; cancelAnimationFrame(frame); };
+  }, [location.pathname]);
   // Clean up any session expiry markers silently — no popup, just land on the page
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -96,7 +110,7 @@ const LandingPage = () => {
               </Button>
               <Button className="get-started-btn" asChild>
                 <a href={SIGNUP_URL}>
-                  Start for free <ArrowUpRight size={15} />
+                  Get started <ArrowUpRight size={15} />
                 </a>
               </Button>
               <button
@@ -163,7 +177,7 @@ const LandingPage = () => {
               <div className="hero-actions">
                 <Button size="lg" className="hero-primary-btn" asChild>
                   <a href={SIGNUP_URL}>
-                    Start for free <ArrowUpRight size={18} />
+                    Get started <ArrowUpRight size={18} />
                   </a>
                 </Button>
                 <Button
@@ -178,8 +192,7 @@ const LandingPage = () => {
                 </Button>
               </div>
               <p className="hero-note">
-                <CheckCircle size={13} /> Free forever plan <span /> No credit
-                card required
+                <CheckCircle size={13} /> Native security engines <span /> AI-assisted fixes
               </p>
             </div>
 
@@ -255,38 +268,8 @@ const LandingPage = () => {
                 Better security. A plan that fits.
               </h2>
               <p className="section-description max-w-screen-2xl">
-                Every paid plan includes 10 team members. Add seats anytime at a
-                fixed price — no per-developer surprises.
-              </p>
-            </div>
-
-            <div className="pricing-billing">
-              <div
-                className="billing-switch"
-                role="group"
-                aria-label="Billing period"
-              >
-                <button
-                  type="button"
-                  className={`billing-option ${billingPeriod === "annual" ? "active" : ""}`}
-                  aria-pressed={billingPeriod === "annual"}
-                  onClick={() => setBillingPeriod("annual")}
-                >
-                  <span>Annual</span>
-                  <span className="billing-save">save 12%</span>
-                </button>
-                <button
-                  type="button"
-                  className={`billing-option ${billingPeriod === "monthly" ? "active" : ""}`}
-                  aria-pressed={billingPeriod === "monthly"}
-                  onClick={() => setBillingPeriod("monthly")}
-                >
-                  Monthly
-                </button>
-              </div>
-              <p className="billing-note">
-                All prices in INR, exclusive of 18% GST · India billing · the
-                12% annual discount also applies to extra seats
+                Choose the security capabilities your team needs. Contact us to
+                discuss the right plan for your organization.
               </p>
             </div>
 
@@ -307,40 +290,11 @@ const LandingPage = () => {
                     <CardDescription className="pricing-description text-white">
                       {tier.description}
                     </CardDescription>
-                    {tier.price && (
-                      <div
-                        className={`pricing-price ${tier.price.annual !== tier.price.monthly ? "pricing-price--animated" : ""}`}
-                        key={billingPeriod}
-                      >
-                        <div className="pricing-amount-row">
-                          <span className="pricing-amount">
-                            {tier.price[billingPeriod]}
-                          </span>
-                          {tier.priceSuffix && (
-                            <span className="pricing-amount-suffix">
-                              {tier.priceSuffix[billingPeriod]}
-                            </span>
-                          )}
-                        </div>
-                        {tier.priceNote && (
-                          <span className="pricing-price-note">
-                            {tier.priceNote[billingPeriod]}
-                          </span>
-                        )}
-                      </div>
-                    )}
-                    {tier.seats && (
-                      <div className="pricing-seats">
-                        <strong>{tier.seats}</strong>{" "}
-                        {tier.seatTail ??
-                          `included${tier.seatNote ? ` · ${tier.seatNote}` : ""}`}
-                      </div>
-                    )}
                   </CardHeader>
                   <CardContent className="pricing-card-body">
                     <ul className="pricing-features">
                       {tier.features.map((feature, idx) => {
-                        const isLead = feature.startsWith("Everything in");
+                        const isLead = feature.startsWith("Everything in") || feature.startsWith("Included in") || feature === "By agreement:";
                         return (
                           <li
                             key={idx}
@@ -364,14 +318,9 @@ const LandingPage = () => {
                     <Button
                       className="pricing-btn"
                       variant={tier.popular ? "default" : "outline"}
-                      asChild
+                      onClick={() => setSalesPlan(tier.name)}
                     >
-                      <a href={tier.name === "Free" ? SIGNUP_URL : CONTACT_SALES_URL}>
-                        {tier.buttonLabel ??
-                          (tier.name === "Free"
-                            ? "Start Free Trial"
-                            : "Contact Sales")}
-                      </a>
+                      {tier.buttonLabel ?? "Contact sales"}
                     </Button>
                     {tier.buttonNote && (
                       <p className="pricing-btn-note">{tier.buttonNote}</p>
@@ -380,6 +329,9 @@ const LandingPage = () => {
                 </Card>
               ))}
             </div>
+            <p className="pricing-scope-note">
+              AI usage allowances are confirmed with your plan. Enterprise extras are available where supported and included in your agreement.
+            </p>
           </div>
         </section>
 
@@ -478,7 +430,7 @@ const LandingPage = () => {
                   <a href="/terms">Terms of Use</a>
                 </li>
                 <li>
-                  <a href={CONTACT_SALES_URL}>Contact Sales</a>
+                  <a href={CONTACT_SALES_URL} onClick={(event) => { event.preventDefault(); setSalesPlan(""); }}>Contact Sales</a>
                 </li>
               </ul>
             </div>
@@ -492,6 +444,7 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+      {salesPlan !== null && <ContactSalesDialog plan={salesPlan} onClose={() => setSalesPlan(null)} />}
     </div>
   );
 };
