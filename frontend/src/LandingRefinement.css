@@ -1,29 +1,4 @@
-/* Approved pricing preview and consistent contrast on landing surfaces. */
-.landing-page.native-landing .refined-pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}
-.landing-page.native-landing .refined-plan{background:#fff;border:1px solid #d9e1ee;border-radius:16px;box-shadow:0 4px 12px #253a6405;overflow:hidden;color:#12151c;text-align:left}
-.landing-page.native-landing .refined-plan-pro{border:2px solid #315dd4;box-shadow:0 12px 32px #315dd417;margin-top:-1px}
-.landing-page.native-landing .refined-plan-top{padding:24px 23px 21px;background:linear-gradient(145deg,#fff,#f7f9fd);border-bottom:1px solid #e4e9f2}
-.landing-page.native-landing .refined-plan-pro .refined-plan-top{background:linear-gradient(135deg,#edf3ff,#fff)}
-.landing-page.native-landing .refined-plan-title{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.landing-page.native-landing .refined-plan-title h3{font-size:24px;font-weight:700;letter-spacing:-.65px;line-height:1.3;color:#111827}
-.landing-page.native-landing .refined-plan-title>span{font-size:10px;color:#fff;background:#315dd4;font-weight:650;border-radius:5px;padding:5px 7px}
-.landing-page.native-landing .refined-plan-description{font-size:13px;color:#475569;line-height:1.5;margin:9px 0 22px;min-height:39px}
-.landing-page.native-landing .refined-capacity{display:flex;gap:19px;margin:0 0 22px}
-.landing-page.native-landing .refined-capacity div+div{border-left:1px solid #dbe3f0;padding-left:19px}
-.landing-page.native-landing .refined-capacity strong{display:block;font-size:30px;font-weight:700;line-height:1.12;color:#152c54;letter-spacing:-1px}
-.landing-page.native-landing .refined-capacity span{font-size:11px;color:#48586e;display:block;margin-top:6px}
-.landing-page.native-landing .refined-plan-cta{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;border:1px solid #162742;border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.5;font-weight:650;background:#182a46;color:#fff;cursor:pointer;transition:background .15s,transform .15s}
-.landing-page.native-landing .refined-plan-cta:hover{background:#28466e;transform:translateY(-1px)}
-.landing-page.native-landing .refined-plan-pro .refined-plan-cta{background:#315dd4;border-color:#315dd4}
-.landing-page.native-landing .refined-plan-pro .refined-plan-cta:hover{background:#254dbb}
-.landing-page.native-landing .refined-plan-features{padding:22px 23px 12px}
-.landing-page.native-landing .refined-plan-lead{font-size:13px;font-weight:650;color:#152c54;line-height:1.5;margin:0 0 17px}
-.landing-page.native-landing .refined-plan-features ul{padding:0;margin:0;list-style:none}
-.landing-page.native-landing .refined-plan-features li{display:flex;gap:10px;font-size:14px;color:#334155;font-weight:450;line-height:1.55;margin-bottom:14px}
-.landing-page.native-landing .refined-plan-features li svg{flex:0 0 16px;margin-top:3px;color:#3764d2;stroke-width:2}
-.landing-page.native-landing .refined-plan-features li.refined-plan-subhead{margin-top:20px;font-weight:650;color:#142c52}
-.landing-page.native-landing .refined-plan-foot{font-size:11px;line-height:1.5;color:#536278;border-top:1px solid #edf0f5;margin:6px 23px 0;padding:15px 0}
-.landing-page.native-landing .pricing-scope-note{color:#475569;background:#eaf0fa;border:1px solid #dbe4f1;border-radius:10px;padding:17px 20px;max-width:none;font-size:12px;line-height:1.6}
+/* Readability improvements outside the restored pricing cards. */
 .landing-page.native-landing .hero-title{font-weight:650;letter-spacing:-.055em}
 .landing-page.native-landing :is(.section-title,.platform-heading-row h2,.platform-story h3,.faq-question){font-weight:650;color:#111827}
 .landing-page.native-landing :is(.hero-description,.section-description,.platform-story p,.platform-story li,.faq-answer){color:#334155;font-weight:450}
@@ -35,5 +10,3 @@
 .landing-page.native-landing .integrations-section :is(.native-eyebrow,.section-badge){color:#a8c4ff}
 .landing-page.native-landing .footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .landing-page.native-landing :is(button,a,input,textarea):focus-visible{outline:3px solid #6389f2;outline-offset:3px}
-@media(max-width:1100px){.landing-page.native-landing .refined-pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.landing-page.native-landing .refined-plan-description{min-height:20px}}
-@media(max-width:600px){.landing-page.native-landing .refined-pricing-grid{grid-template-columns:1fr;gap:24px}.landing-page.native-landing .refined-capacity strong{font-size:32px}}
