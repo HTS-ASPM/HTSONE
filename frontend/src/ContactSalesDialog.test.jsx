@@ -28,3 +28,17 @@ test('retains details and shows an error if submission is not accepted',async()=
  expect(document.querySelector('[name="email"]').value).toBe('test@example.com');
  expect(document.body.textContent).not.toContain('Your enquiry has been received.');
 });
+
+test('refined cards preserve each plan capacity and send the selected tier', () => {
+ const PricingCards = require('./PricingCards').default;
+ const onContact = jest.fn();
+ act(() => root.render(<PricingCards onContact={onContact} />));
+ const cards = host.querySelectorAll('article');
+ expect(cards.length).toBe(4);
+ expect(cards[0].querySelector('.refined-capacity').textContent).toBe('100repositories3cloud accounts');
+ expect(cards[1].querySelector('.refined-capacity').textContent).toBe('200repositories10cloud accounts');
+ expect(cards[2].querySelector('.refined-capacity').textContent).toBe('300repositories20cloud accounts');
+ expect(cards[3].querySelector('.refined-capacity').textContent).toContain('Unlimited');
+ act(() => cards[2].querySelector('button').click());
+ expect(onContact).toHaveBeenCalledWith('Advanced');
+});

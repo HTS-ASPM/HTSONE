@@ -10,16 +10,8 @@ import {
   ArrowRight,
   Menu,
   X,
-  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -28,13 +20,14 @@ import {
 } from "@/components/ui/accordion";
 
 import { Badge } from "@/components/ui/badge";
-import { integrations, pricingTiers } from "./mock";
+import { integrations } from "./mock";
 import { productFaqs } from "./capabilities";
 import NativePlatform, { NativeHeroVisual } from "./NativePlatform";
 import { BRAND_LOGO_MASK } from "@/lib/brand";
 import "./LandingPage.css";
 import { useLocation } from "react-router-dom";
 import ContactSalesDialog from "./ContactSalesDialog";
+import PricingCards from "./PricingCards";
 
 // The product app lives on its own origin. Auth is a top-level navigation to
 // it — never an in-page XHR — so the Keycloak flow starts from
@@ -273,62 +266,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="pricing-grid">
-              {pricingTiers.map((tier, index) => (
-                <Card
-                  key={index}
-                  className={`pricing-card ${tier.popular ? "popular" : ""}`}
-                >
-                  {tier.popular && (
-                    <div className="popular-badge">
-                      <TrendingUp size={14} />
-                      <span>Recommended</span>
-                    </div>
-                  )}
-                  <CardHeader className="pricing-header">
-                    <CardTitle className="pricing-title">{tier.name}</CardTitle>
-                    <CardDescription className="pricing-description text-white">
-                      {tier.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pricing-card-body">
-                    <ul className="pricing-features">
-                      {tier.features.map((feature, idx) => {
-                        const isLead = feature.startsWith("Everything in") || feature.startsWith("Included in") || feature === "By agreement:";
-                        return (
-                          <li
-                            key={idx}
-                            className={`pricing-feature-item ${isLead ? "pricing-feature-lead" : ""}`}
-                          >
-                            {isLead ? (
-                              <span>{feature}</span>
-                            ) : (
-                              <>
-                                <CheckCircle
-                                  size={16}
-                                  className="pricing-check-icon"
-                                />
-                                <span>{feature}</span>
-                              </>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <Button
-                      className="pricing-btn"
-                      variant={tier.popular ? "default" : "outline"}
-                      onClick={() => setSalesPlan(tier.name)}
-                    >
-                      {tier.buttonLabel ?? "Contact sales"}
-                    </Button>
-                    {tier.buttonNote && (
-                      <p className="pricing-btn-note">{tier.buttonNote}</p>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <PricingCards onContact={setSalesPlan} />
             <p className="pricing-scope-note">
               AI usage allowances are confirmed with your plan. Enterprise extras are available where supported and included in your agreement.
             </p>
