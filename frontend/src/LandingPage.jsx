@@ -263,9 +263,18 @@ const LandingPage = () => {
                 Better security. A plan that fits.
               </h2>
               <p className="section-description max-w-screen-2xl">
-                Choose the security capabilities your team needs. Contact us to
-                discuss the right plan for your organization.
+                Choose the security capabilities your team needs. Talk to our team
+                or explore HTSOne on AWS Marketplace.
               </p>
+            </div>
+
+            <div className="pricing-marketplace">
+              <a className="pricing-marketplace-link" href="https://aws.amazon.com/marketplace/pp/prodview-huu7npgj4glvs" target="_blank" rel="noopener noreferrer" aria-label="View HTSOne on AWS Marketplace (opens in a new tab)">
+                <img src="/aws-official.svg" alt="AWS" width="43" height="26" />
+                <span className="pricing-marketplace-divider" aria-hidden="true" />
+                <span>Available on AWS Marketplace</span>
+                <span className="pricing-marketplace-arrow" aria-hidden="true">↗</span>
+              </a>
             </div>
 
             <div className="pricing-grid">

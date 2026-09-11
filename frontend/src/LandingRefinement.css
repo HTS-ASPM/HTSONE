@@ -10,3 +10,12 @@
 .landing-page.native-landing .integrations-section :is(.native-eyebrow,.section-badge){color:#a8c4ff}
 .landing-page.native-landing .footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .landing-page.native-landing :is(button,a,input,textarea):focus-visible{outline:3px solid #6389f2;outline-offset:3px}
+
+/* Optional AWS Marketplace purchasing path. */
+.landing-page.native-landing .pricing-marketplace{display:flex;justify-content:center;margin:-20px 0 42px}
+.landing-page.native-landing .pricing-marketplace-link{display:inline-flex;align-items:center;justify-content:center;gap:11px;max-width:100%;border:1px solid #d5deeb;border-radius:999px;padding:11px 17px;background:#fff;box-shadow:0 2px 6px #23385406;color:#172b49;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none}
+.landing-page.native-landing .pricing-marketplace-link:hover{border-color:#8096ba;background:#f3f6fc}
+.landing-page.native-landing .pricing-marketplace-link img{display:block;width:43px;height:26px;object-fit:contain;flex-shrink:0}
+.landing-page.native-landing .pricing-marketplace-divider{height:18px;width:1px;background:#d9e1ed;flex-shrink:0}
+.landing-page.native-landing .pricing-marketplace-arrow{font-size:16px;font-weight:400;color:#536985}
+@media(max-width:380px){.landing-page.native-landing .pricing-marketplace-link{font-size:12px;gap:8px;padding:11px 12px}}
