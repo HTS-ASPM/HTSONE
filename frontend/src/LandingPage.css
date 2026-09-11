@@ -1033,3 +1033,6 @@
 }
 
 .landing-page .pricing-scope-note{font-size:13px;line-height:1.6;color:#52627a;text-align:center;max-width:850px;margin:24px auto 0;}
+
+/* Keep all landing controls consistent with the page typography. */
+.landing-page :is(button,input,textarea,select){font-family:"DM Sans",sans-serif;}
