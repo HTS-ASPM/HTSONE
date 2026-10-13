@@ -3,13 +3,13 @@
 .landing-page.native-landing :is(.section-title,.platform-heading-row h2,.platform-story h3,.faq-question){font-weight:650;color:#111827}
 .landing-page.native-landing :is(.hero-description,.section-description,.platform-story p,.platform-story li,.faq-answer){color:#334155;font-weight:450}
 .landing-page.native-landing :is(.hero-note,.hero-badge,.hero-domain-rail a,.hero-proof-strip,.platform-heading-row>p,.platform-summary,.platform-card-footer,.platform-caption,.flow-toolbar,.flow-footer){color:#475569}
-.landing-page.native-landing :is(.section-badge,.native-eyebrow){color:#3156af;font-weight:650}
+.landing-page.native-landing :is(.section-badge,.native-eyebrow){color:var(--lp-primary);font-weight:650}
 .landing-page.native-landing .faq-answer{font-size:15px;line-height:1.75}
 .landing-page.native-landing :is(.integrations-section,.cta-section,.footer) :is(h2,h3,h4,.section-title,.cta-title,.footer-heading){color:#fff}
 .landing-page.native-landing :is(.integrations-section,.cta-section,.footer) :is(p,li,.section-description,.footer-links a,.footer-tagline,.footer-copyright,.integration-benefits,.native-integration-list div>span){color:#cbd5e1}
 .landing-page.native-landing .integrations-section :is(.native-eyebrow,.section-badge){color:#a8c4ff}
 .landing-page.native-landing .footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
-.landing-page.native-landing :is(button,a,input,textarea):focus-visible{outline:3px solid #6389f2;outline-offset:3px}
+.landing-page.native-landing :is(button,a,input,textarea):focus-visible{outline:3px solid var(--lp-primary);outline-offset:3px}
 
 /* Optional AWS Marketplace purchasing path. */
 .landing-page.native-landing .pricing-marketplace{display:flex;justify-content:center;margin:-20px 0 42px}

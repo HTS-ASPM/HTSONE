@@ -9,9 +9,14 @@
         <meta name="description" content="Hire an AI Security Engineer that scans, triages, and fixes vulnerabilities 24/7. 11 security domains. 95% auto-fix rate. Works in your workflow." />
         <link rel="canonical" href="https://htsone.ai/" />
 
-        <link rel="icon" type="image/png" href="/assets/htsone-logo.png" />
-        <link rel="apple-touch-icon" href="/assets/htsone-logo.png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- sizes="32x32", not "any": Chrome treats an "any" .ico as the best match
+             and then never loads the SVG icons below. Order matters: browsers take the
+             LAST icon they understand, so .ico first, SVG last. -->
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+        <!-- Dark browser chrome: declared after the default SVG so it wins when the media matches. -->
+        <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" sizes="any" media="(prefers-color-scheme: dark)" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
         <meta property="og:type" content="website" />

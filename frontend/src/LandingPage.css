@@ -1,4 +1,14 @@
 /* All landing styles are scoped: this stylesheet is also loaded on product routes. */
+/* Primary action colour: Get started buttons, pricing cards and the Contact Sales
+   dialog share it. The dialog renders in a portal outside .landing-page, so it is
+   listed here to receive the same tokens. */
+.landing-page,
+.hts-sales-dialog,
+.lp-contact-sheet {
+  --lp-primary: #4e59dc;
+  --lp-primary-hover: #3d47c3;
+  --lp-primary-shadow: #464db51f;
+}
 .landing-page {
   --lp-bg: #080c14;
   --lp-surface: #0e1420;
@@ -79,14 +89,25 @@
   align-items: center;
   flex-shrink: 0;
 }
+/* The wordmark. One masked asset, so the ink is the only thing that changes with the
+   surface. The mask, the aspect ratio and both inks come from lib/brand via
+   LandingPage.jsx; only the sizes below are this page's own.
+
+   48px: this is the marketing header's own 80px bar, the one slot with room for it. */
 .landing-page .logo-svg,
 .landing-page .footer-logo-svg {
   display: block;
-  width: 106px;
   height: 48px;
-  background: #edf3ff;
+  width: calc(48px * var(--brand-logo-aspect));
   -webkit-mask: var(--brand-logo-mask);
   mask: var(--brand-logo-mask);
+}
+/* Header sits on the light page; the footer is the one dark panel on it. */
+.landing-page .logo-svg {
+  background: var(--brand-logo-ink-on-light);
+}
+.landing-page .footer-logo-svg {
+  background: var(--brand-logo-ink-on-dark);
 }
 .landing-page .desktop-nav {
   display: flex;
@@ -129,9 +150,9 @@
   height: 38px;
   padding: 0 17px;
   gap: 10px;
-  border: 1px solid #527feb;
+  border: 1px solid var(--lp-primary);
   border-radius: 6px;
-  background: #3868dd;
+  background: var(--lp-primary);
   color: #fff;
   font-size: 12px;
   box-shadow: 0 2px 6px #0003;
@@ -139,7 +160,7 @@
 .landing-page .get-started-btn:hover,
 .landing-page .hero-primary-btn:hover,
 .landing-page .cta-btn-primary:hover {
-  background: #487cf0;
+  background: var(--lp-primary-hover);
 }
 .landing-page .mobile-menu-btn {
   display: none;
@@ -242,8 +263,8 @@
     border-color 0.2s;
 }
 .landing-page .hero-primary-btn {
-  background: #3868dd;
-  border: 1px solid #5886f2;
+  background: var(--lp-primary);
+  border: 1px solid var(--lp-primary);
   color: #fff;
   box-shadow:
     inset 0 1px 0 #ffffff20,
@@ -433,10 +454,11 @@
   align-items: center;
   padding: 4px 11px;
   color: #fff;
-  background: #416bc9;
-  border: 1px solid #7697e7;
+  background: var(--lp-primary);
+  border: 1px solid var(--lp-primary);
   border-radius: 4px;
-  font-size: 9px;
+  font-size: 11px;
+  font-weight: 600;
   white-space: nowrap;
 }
 .landing-page .pricing-header {
@@ -479,6 +501,51 @@
   min-height: 29px;
   margin-top: 3px;
 }
+/* Sits where the price block used to be, so the card keeps its rhythm. */
+.landing-page .pricing-contact {
+  margin-top: 18px;
+}
+/* The tier CTA that used to sit below the feature list is hidden, so the list's
+   bottom margin — which existed only to clear that button — would now leave a
+   gap at the foot of every card. Restore it if the CTA ever comes back. */
+.landing-page .pricing-features {
+  margin-bottom: 4px;
+}
+.landing-page .pricing-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid #364962;
+  border-radius: 5px;
+  background: #182337;
+  color: #dce7fa;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.landing-page .pricing-contact-btn:hover {
+  background: #263955;
+}
+.landing-page .pricing-contact-btn svg {
+  flex-shrink: 0;
+}
+.landing-page .popular .pricing-contact-btn {
+  background: var(--lp-primary);
+  border-color: var(--lp-primary);
+  color: #fff;
+}
+.landing-page .popular .pricing-contact-btn:hover {
+  background: var(--lp-primary-hover);
+}
+
 .landing-page .pricing-seats {
   font-size: 10px;
   color: #8394af;
@@ -518,7 +585,7 @@
   font-size: 10px;
 }
 .landing-page .pricing-check-icon {
-  color: #748db7;
+  color: var(--lp-primary);
   width: 12px;
   height: 12px;
   flex-shrink: 0;
@@ -539,12 +606,12 @@
   background: #263955;
 }
 .landing-page .popular .pricing-btn {
-  background: #3a6bdc;
-  border-color: #5885e9;
+  background: var(--lp-primary);
+  border-color: var(--lp-primary);
   color: #fff;
 }
 .landing-page .popular .pricing-btn:hover {
-  background: #4c7dea;
+  background: var(--lp-primary-hover);
 }
 .landing-page .pricing-btn-note {
   margin-top: 10px;
@@ -629,9 +696,9 @@
   height: auto;
   gap: 10px;
   font-size: 12px;
-  border: 1px solid #5d8af0;
+  border: 1px solid var(--lp-primary);
   border-radius: 5px;
-  background: #396bdc;
+  background: var(--lp-primary);
   color: white;
 }
 .landing-page .footer-container {
@@ -765,8 +832,8 @@
 }
 @media (max-width: 480px) {
   .landing-page .logo-svg {
-    width: 88px;
     height: 40px;
+    width: calc(40px * var(--brand-logo-aspect));
   }
   .landing-page .get-started-btn {
     padding: 0 12px;
@@ -856,16 +923,13 @@
   background: #f8faffed;
   border-color: #dce3ee;
 }
-.landing-page .logo-svg {
-  background: #213f78;
-}
 .landing-page .nav-link,
 .landing-page .sign-in-btn,
 .landing-page .github-sign-in-btn {
   color: #4c5c75;
 }
 .landing-page .nav-link:hover {
-  color: #2858c2;
+  color: var(--lp-primary);
 }
 .landing-page .mobile-menu-btn,
 .landing-page .mobile-nav-link {
@@ -885,13 +949,13 @@
   color: #4f6694;
 }
 .landing-page .hero-badge .status-dot {
-  background: #5278e4;
+  background: var(--lp-primary);
 }
 .landing-page .hero-title {
   font-size: clamp(39px, 4.9vw, 67px);
 }
 .landing-page .hero-title > span {
-  color: #3d68d4;
+  color: var(--lp-primary);
 }
 .landing-page .hero-description {
   color: #64728a;
@@ -903,7 +967,7 @@
 }
 .landing-page .hero-secondary-btn:hover {
   background: #e7eeff;
-  border-color: #8ba6dc;
+  border-color: var(--lp-primary);
 }
 .landing-page .hero-note {
   color: #697993;
@@ -912,16 +976,16 @@
   background: #a3b0c4;
 }
 .landing-page .section-badge {
-  color: #4d71c7;
+  color: var(--lp-primary);
 }
 .landing-page .section-divider {
   background: #e0e6f0;
 }
 .landing-page .text-link {
-  color: #426ac4;
+  color: var(--lp-primary);
 }
 .landing-page .text-link:hover {
-  color: #12387f;
+  color: var(--lp-primary-hover);
 }
 .landing-page .integrations-section {
   color: #edf3ff;
@@ -949,11 +1013,11 @@
 }
 .landing-page .billing-option.active {
   background: #fff;
-  color: #294b8c;
+  color: var(--lp-primary);
   box-shadow: 0 2px 5px #1c376014;
 }
 .landing-page .billing-save {
-  color: #4f73bf;
+  color: var(--lp-primary);
 }
 .landing-page .billing-note {
   color: #73819a;
@@ -965,7 +1029,7 @@
 }
 .landing-page .pricing-card.popular {
   background: linear-gradient(#eef3ff, #fff 60%);
-  border-color: #6f93e6;
+  border-color: var(--lp-primary);
 }
 .landing-page .pricing-description {
   color: #687c9b;
@@ -983,17 +1047,35 @@
 }
 .landing-page .pricing-feature-item {
   color: #5e7393;
+  font-weight: 500;
 }
 .landing-page .pricing-feature-lead {
   color: #4c6daf;
+  font-weight: 600;
 }
 .landing-page .pricing-btn {
   background: #f3f6fc;
-  border-color: #c4d2e8;
-  color: #3c5884;
+  border-color: var(--lp-primary);
+  color: var(--lp-primary);
 }
 .landing-page .pricing-btn:hover {
   background: #e7eeff;
+}
+.landing-page .pricing-contact-btn {
+  background: #f3f6fc;
+  border-color: var(--lp-primary);
+  color: var(--lp-primary);
+}
+.landing-page .pricing-contact-btn:hover {
+  background: #e7eeff;
+}
+.landing-page .popular .pricing-contact-btn {
+  background: var(--lp-primary);
+  border-color: var(--lp-primary);
+  color: #fff;
+}
+.landing-page .popular .pricing-contact-btn:hover {
+  background: var(--lp-primary-hover);
 }
 .landing-page .pricing-btn-note {
   color: #7183a0;
@@ -1005,7 +1087,7 @@
   color: #3d526f;
 }
 .landing-page .faq-question:hover {
-  color: #3a67c6;
+  color: var(--lp-primary);
 }
 .landing-page .faq-answer {
   color: #6c7d98;
@@ -1032,7 +1114,202 @@
   }
 }
 
-.landing-page .pricing-scope-note{font-size:13px;line-height:1.6;color:#52627a;text-align:center;max-width:850px;margin:24px auto 0;}
+/* ---------------------------------------------------------------------------
+   Pricing "Contact Us" sheet.
+
+   Radix portals the popover to <body>, so it lands OUTSIDE `.landing-page` and
+   cannot use the `.landing-page`-scoped rules above. The `lp-` prefix keeps
+   these unscoped selectors unique enough not to leak into product routes, which
+   also load this stylesheet.
+
+   The `div.` prefix on the container raises specificity over the shadcn
+   PopoverContent defaults (`w-72`, `p-4`, `bg-popover`) regardless of which
+   stylesheet the bundler emits first.
+   --------------------------------------------------------------------------- */
+div.lp-contact-sheet {
+  /* Never wider than the viewport on a phone, never cramped on desktop. */
+  width: min(20rem, calc(100vw - 2rem));
+  padding: 16px;
+  border: 1px solid #d7e0ee;
+  border-radius: 10px;
+  background: #fff;
+  color: #253956;
+  box-shadow: 0 18px 44px #16264a26;
+  font-family: "DM Sans", "Inter", sans-serif;
+}
+.lp-contact-form,
+.lp-contact-done {
+  display: flex;
+  flex-direction: column;
+}
+.lp-contact-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d2f4c;
+}
+.lp-contact-sub {
+  margin: 4px 0 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #687c9b;
+}
+.lp-contact-label {
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #47597a;
+}
+.lp-contact-input {
+  width: 100%;
+  min-height: 36px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border: 1px solid #cdd8ea;
+  border-radius: 6px;
+  background: #fbfcff;
+  color: #253956;
+  /* 16px avoids iOS Safari zooming the page when the field takes focus. */
+  font-size: 16px;
+  line-height: 1.3;
+}
+.lp-contact-input::placeholder {
+  color: #9aa8c0;
+}
+.lp-contact-input:focus-visible {
+  outline: 2px solid var(--lp-primary);
+  outline-offset: 1px;
+  border-color: var(--lp-primary);
+}
+.lp-contact-input[aria-invalid="true"] {
+  border-color: #d0596a;
+}
+.lp-contact-error {
+  margin: -6px 0 10px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #b8394d;
+}
+.lp-contact-submit {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--lp-primary);
+  border-radius: 6px;
+  background: var(--lp-primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+.lp-contact-submit:hover {
+  background: var(--lp-primary-hover);
+}
+.lp-contact-done-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #e2f5ea;
+  color: #1f7a4d;
+}
+.lp-contact-done-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d2f4c;
+}
+.lp-contact-done-text {
+  margin: 4px 0 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #687c9b;
+  /* Long addresses must wrap rather than widen the sheet. */
+  overflow-wrap: anywhere;
+}
+.lp-contact-id-label {
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7b8aa1;
+}
+.lp-contact-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #cdd8ea;
+  border-radius: 6px;
+  background: #f5f8ff;
+}
+.lp-contact-id a {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--lp-primary);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.lp-contact-id a:hover {
+  text-decoration: underline;
+}
+.lp-contact-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #cdd8ea;
+  border-radius: 5px;
+  background: #fff;
+  color: #4a628c;
+  cursor: pointer;
+}
+.lp-contact-copy:hover {
+  background: #e9f0ff;
+}
+.lp-contact-hint {
+  margin: 9px 0 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #7b8aa1;
+}
+.lp-contact-submit:focus-visible,
+.lp-contact-copy:focus-visible,
+.lp-contact-id a:focus-visible {
+  outline: 2px solid var(--lp-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  /* Roomier tap targets and text once the cards stack to one column. */
+  .landing-page .pricing-contact-btn {
+    min-height: 44px;
+    font-size: 13px;
+  }
+  div.lp-contact-sheet {
+    padding: 14px;
+  }
+  .lp-contact-sub,
+  .lp-contact-done-text {
+    font-size: 12px;
+  }
+  .lp-contact-submit {
+    min-height: 44px;
+  }
+  .lp-contact-copy {
+    width: 30px;
+    height: 30px;
+  }
+}
+.landing-page .pricing-scope-note { margin: 24px auto 0; max-width: 900px; text-align: center; font-size: 13px; line-height: 1.6; color: #536079; }
 
 /* Keep all landing controls consistent with the page typography. */
 .landing-page :is(button,input,textarea,select){font-family:"DM Sans",sans-serif;}

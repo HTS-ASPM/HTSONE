@@ -43,3 +43,11 @@ export const BRAND_LOGO_ASPECT = 1525 / 688;
  * rather than rendering the PNG's own colours. Only the alpha channel is used.
  */
 export const BRAND_LOGO_MASK = `url('${BRAND_LOGO_URL}') left center / contain no-repeat`;
+
+/**
+ * The two inks the masked mark is painted in: one for light surfaces (the
+ * landing header) and one for dark ones (the footer). Declared beside the mask
+ * so a rebrand changes the logo and its colours in one file.
+ */
+export const BRAND_LOGO_INK_ON_LIGHT = '#213f78';
+export const BRAND_LOGO_INK_ON_DARK = '#edf3ff';

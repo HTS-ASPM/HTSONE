@@ -77,6 +77,7 @@
 .landing-page .hero-domain-rail {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 28px;
   padding: 0 7px 22px;
 }
@@ -161,7 +162,7 @@
 }
 .landing-page .platform-tabs {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   border: 1px solid #e1e4ed;
   background: #f6f7fa;
   border-radius: 10px 10px 0 0;
@@ -482,6 +483,8 @@
     font-size: 39px;
   }
   .landing-page .platform-tabs {
+    /* Six areas: two rows of three keeps the labels readable on phones. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2px;
     padding: 5px;
   }

@@ -137,7 +137,7 @@ function Application({ moving }) {
         className="pv-fix-surface"
       />
       <text x="579" y="219" className="pv-diff-before">
-        − hardcoded value
+        âˆ’ hardcoded value
       </text>
       <text x="579" y="254" className="pv-diff-after">
         + environment variable
@@ -222,7 +222,7 @@ function CloudExposure({ moving }) {
       </text>
       <circle cx="281" cy="374" r="4" fill="#cf978d" />
       <text x="295" y="378" className="pv-note">
-        Illustrative exposure path — review evidence and permissions
+        Illustrative exposure path â€” review evidence and permissions
       </text>
     </>
   );
@@ -261,13 +261,13 @@ function AiDiscovery({ moving }) {
         AI inventory
       </text>
       <text x="412" y="239" textAnchor="middle" className="pv-core-note">
-        Models · Agents · MCP
+        Models Â· Agents Â· MCP
       </text>
       <text x="412" y="29" textAnchor="middle" className="pv-kicker">
         DISCOVER YOUR AI ESTATE
       </text>
       <text x="412" y="385" textAnchor="middle" className="pv-note">
-        Provenance · Exposure · AI-BOM · Governance review
+        Provenance Â· Exposure Â· AI-BOM Â· Governance review
       </text>
     </>
   );
@@ -303,7 +303,7 @@ function DataClassification({ moving }) {
         Data sources
       </text>
       <text x="133" y="354" textAnchor="middle" className="pv-note">
-        Stores · Schemas · Repositories
+        Stores Â· Schemas Â· Repositories
       </text>
       <Wire d="M 213 207 L 320 207" moving={moving} />
       <rect
@@ -399,7 +399,7 @@ function ApiJourney({ moving }) {
         className="pv-request-pill"
       />
       <text x="418" y="73" textAnchor="middle" className="pv-label">
-        Request → /api/v1/integrations
+        Request â†’ /api/v1/integrations
       </text>
       <rect
         x="289"
@@ -414,7 +414,7 @@ function ApiJourney({ moving }) {
         HTSOne API analysis
       </text>
       <text x="309" y="213" className="pv-note">
-        Endpoint · Data · Transport
+        Endpoint Â· Data Â· Transport
       </text>
       <path d="M 418 247 L 418 313" className="pv-context-line" />
       <rect
@@ -426,7 +426,7 @@ function ApiJourney({ moving }) {
         className="pv-response-pill"
       />
       <text x="418" y="338" textAnchor="middle" className="pv-small">
-        ← Response: sensitive data over HTTP
+        â† Response: sensitive data over HTTP
       </text>
       <text x="418" y="389" textAnchor="middle" className="pv-note">
         Connect findings to the request that exposed them.
@@ -473,9 +473,9 @@ export default function PillarVisual({ area, active }) {
       </div>
       <figcaption>
         <span>Illustrated capability flow</span>
-        <span className="pillar-scroll-hint">Scroll to explore →</span>
+        <span className="pillar-scroll-hint">Scroll to explore â†’</span>
         <span className="pillar-desktop-note">
-          Discovery · Evidence · Action
+          Discovery Â· Evidence Â· Action
         </span>
       </figcaption>
     </figure>

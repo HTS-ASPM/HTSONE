@@ -25,7 +25,12 @@ import { Badge } from "@/components/ui/badge";
 import { integrations, pricingTiers } from "./mock";
 import { productFaqs } from "./capabilities";
 import NativePlatform, { NativeHeroVisual } from "./NativePlatform";
-import { BRAND_LOGO_MASK } from "@/lib/brand";
+import {
+  BRAND_LOGO_ASPECT,
+  BRAND_LOGO_INK_ON_DARK,
+  BRAND_LOGO_INK_ON_LIGHT,
+  BRAND_LOGO_MASK,
+} from "@/lib/brand";
 import "./LandingPage.css";
 import { useLocation } from "react-router-dom";
 import ContactSalesDialog from "./ContactSalesDialog";
@@ -39,10 +44,15 @@ import "./LandingRefinement.css";
 const LOGIN_URL = "https://platform.htsone.ai/login";
 const SIGNUP_URL = "https://platform.htsone.ai/signup";
 const CONTACT_SALES_URL = "https://platform.htsone.ai/contact-sales";
+// One-click sign-in through GitHub. kc_idp_hint is Keycloak's standard way to
+// deep-link past its own login screen straight to the provider. Serves RETURNING
+// users — new users go through /signup, which offers all providers.
+const GITHUB_LOGIN_URL = `${LOGIN_URL}?kc_idp_hint=github`;
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [salesPlan, setSalesPlan] = useState(null);
+  const [signupEmail, setSignupEmail] = useState("");
   const location = useLocation();
   useEffect(() => {
     if (location.pathname !== "/pricing") return;
@@ -66,12 +76,28 @@ const LandingPage = () => {
     }
   }, []);
 
+  const handleSignupRequest = (e) => {
+    e.preventDefault();
+    // Hand off to the platform's signup flow, carrying the work email as a prefill.
+    const email = signupEmail.trim();
+    window.location.assign(
+      email ? `${SIGNUP_URL}?email=${encodeURIComponent(email)}` : SIGNUP_URL,
+    );
+  };
+
   return (
-    // Use the shared brand mark without affecting the product UI.
+    // The shared brand mark, handed to the stylesheet as variables so this page draws
+    // the logo in the right ink for each surface — the header on light, the footer on
+    // dark. The stylesheet owns only the sizes from here on.
     <div
       id="top"
       className="landing-page native-landing"
-      style={{ "--brand-logo-mask": BRAND_LOGO_MASK }}
+      style={{
+        "--brand-logo-mask": BRAND_LOGO_MASK,
+        "--brand-logo-aspect": BRAND_LOGO_ASPECT,
+        "--brand-logo-ink-on-light": BRAND_LOGO_INK_ON_LIGHT,
+        "--brand-logo-ink-on-dark": BRAND_LOGO_INK_ON_DARK,
+      }}
     >
       <a href="#main-content" className="landing-skip-link">
         Skip to content
@@ -100,6 +126,14 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
+              <a
+                className="github-sign-in-btn"
+                href={GITHUB_LOGIN_URL}
+                aria-label="Sign in with GitHub"
+                title="Sign in with GitHub"
+              >
+                <Github size={16} aria-hidden="true" />
+              </a>
               <Button variant="outline" className="sign-in-btn" asChild>
                 <a href={LOGIN_URL}>Sign in</a>
               </Button>
@@ -165,9 +199,9 @@ const LandingPage = () => {
                 <span>your data at risk.</span>
               </h1>
               <p className="hero-description">
-                Native security for your applications, cloud, AI, data, and
-                APIs. Find the risks that matter. Move forward with evidence and
-                AI-assisted fixes.
+                Security for your applications, cloud, AI, data, APIs, and developer
+                endpoints. Stop malicious packages on supported install paths,
+                uncover exposure, and move forward with evidence.
               </p>
               <div className="hero-actions">
                 <Button size="lg" className="hero-primary-btn" asChild>
@@ -373,17 +407,25 @@ const LandingPage = () => {
             <div className="cta-content">
               <h2 className="cta-title">Find the risk. Know your next move.</h2>
               <p className="cta-description">
-                Uncover risks across your applications, cloud, AI, data, and APIs.
+                Uncover risks across your applications, cloud, AI, data, APIs, and developer endpoints.
                 Investigate with context and take action with HTSOne.
               </p>
-              <div className="cta-form">
-                <Button size="lg" className="cta-btn-primary" asChild>
-                  <a href={SIGNUP_URL}>
-                    Get Started
-                    <ArrowRight size={18} />
-                  </a>
+              <form onSubmit={handleSignupRequest} className="cta-form">
+                <input
+                  type="email"
+                  aria-label="Work email"
+                  autoComplete="email"
+                  placeholder="Enter your work email"
+                  value={signupEmail}
+                  onChange={(e) => setSignupEmail(e.target.value)}
+                  required
+                  className="cta-input"
+                />
+                <Button type="submit" size="lg" className="cta-btn-primary">
+                  Get Started
+                  <ArrowRight size={18} />
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </section>
