@@ -136,6 +136,9 @@ const LandingPage = () => {
               <a href="#faq" className="nav-link">
                 FAQ
               </a>
+              <a href="#research" className="nav-link">
+                Research
+              </a>
             </nav>
 
             <div className="header-actions">
@@ -189,6 +192,9 @@ const LandingPage = () => {
               </a>
               <a href="#faq" className="mobile-nav-link">
                 FAQ
+              </a>
+              <a href="#research" className="mobile-nav-link">
+                Research
               </a>
               <a href={LOGIN_URL} className="mobile-nav-link">
                 Sign in
