@@ -36,6 +36,19 @@ import { useLocation } from "react-router-dom";
 import ContactSalesDialog from "./ContactSalesDialog";
 import "./LandingRefinement.css";
 
+// Public disclosures: listed only after the maintainers fixed the issue and agreed to be named (consent on record per entry).
+const disclosures = [
+  {
+    project: "Dexie.js",
+    pkg: "npm: dexie",
+    summary:
+      "Release workflow hardened after a private report from HTSOne. Third-party actions in the npm publish job were pinned to commit SHAs and workflow inputs are now validated.",
+    ref: "dexie/Dexie.js#2346",
+    url: "https://github.com/dexie/Dexie.js/pull/2346",
+    date: "October 2026",
+  },
+];
+
 // The product app lives on its own origin. Auth is a top-level navigation to
 // it — never an in-page XHR — so the Keycloak flow starts from
 // platform.htsone.ai, the origin that owns the PKCE state and is allow-listed
@@ -401,6 +414,38 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* Research Section */}
+        <section id="research" className="research-section" aria-labelledby="research-heading">
+          <div className="section-container-narrow">
+            <div className="section-header">
+              <Badge className="section-badge">Research</Badge>
+              <h2 id="research-heading" className="section-title">Release pipelines we helped harden</h2>
+              <p className="section-description">
+                Our supply-chain research reviews the public release workflows of widely used open-source packages.
+                When we find a weakness, we report it privately to the maintainers. Projects appear here only after
+                they have fixed the issue and agreed to be named.
+              </p>
+            </div>
+
+            <ul className="research-list">
+              {disclosures.map((d) => (
+                <li key={d.project} className="research-item">
+                  <div className="research-item-head">
+                    <h3 className="research-project">{d.project}</h3>
+                    <span className="research-package">{d.pkg}</span>
+                  </div>
+                  <p className="research-summary">{d.summary}</p>
+                  <a className="research-link" href={d.url} target="_blank" rel="noopener noreferrer">
+                    {d.ref}
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
+                  <span className="research-date">{d.date}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="cta-section">
           <div className="cta-container">
@@ -462,6 +507,9 @@ const LandingPage = () => {
                 </li>
                 <li>
                   <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                  <a href="#research">Research</a>
                 </li>
               </ul>
             </div>
